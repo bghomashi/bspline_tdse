@@ -1,0 +1,104 @@
+INFO: Initializing PETsc.
+Validating TISE input file.
+...
+Validating TISE input file.
+...
+...
+Validating TISE input file.
+...
+...
+Validating TISE input file.
+...
+...
+Validating TISE input file.
+...
+...
+Validating TISE input file.
+...
+...
+Validating TISE input file.
+...
+...
+Validating TISE input file.
+...
+...
+Validating TISE input file.
+...
+...
+Validating TISE input file.
+...
+...
+8...
+INFO: Input file validated. Initializing TISE.
+INFO: Setting up basis.
+8
+500
+8
+500
+8
+500
+
+500
+8
+500
+0
+300
+8
+500
+0
+300
+8
+500
+8
+500
+0
+300
+8
+500
+0
+300
+0
+300
+8
+500
+0
+300
+0
+300
+0
+300
+0
+300
+0
+300
+504
+504
+504
+504
+504
+504
+INFO: Building potentials.
+INFO: Success.
+
+
+INFO: Starting up TISE
+504
+504
+504
+504
+INFO: Building overlap matrix.
+INFO: Building Hamiltonian matrix (l=0).
+energy 0: (-114.797932, -0.000000)
+energy 1: (-11.439005, 0.000000)
+energy 2: (-1.121953, -0.000000)
+energy 3: (-0.172026, 0.000000)
+INFO: Building Hamiltonian matrix (l=1).
+energy 0: (-9.079703, 0.000000)
+energy 1: (-0.606833, -0.000000)
+energy 2: (-0.108426, 0.000000)
+INFO: Building Hamiltonian matrix (l=2).
+energy 0: (-0.071696, 0.000000)
+energy 1: (-0.038260, 0.000000)
+INFO: Building Hamiltonian matrix (l=3).
+energy 0: (-0.031546, 0.000000)
+INFO: Shutting down.
