@@ -38,7 +38,7 @@ CPPFLAGS =      -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_CPP \
 #linker flags (directories)
 #LDFLAGS
 #linker libraries
-LDLIBS =-lm -pthread -lgsl -lhdf5 -lgslcblas -L$(SLEPC_DIR)/$(PETSC_ARCH)/lib -L$(PETSC_DIR)/$(PETSC_ARCH)/lib -lpetsc -lslepc
+LDLIBS =-lm -pthread -lhdf5 -L$(SLEPC_DIR)/$(PETSC_ARCH)/lib -L$(PETSC_DIR)/$(PETSC_ARCH)/lib -lpetsc -lslepc
 #LDLIBS =-lm -lGL -lGLU -lglfw -lX11 -ldl -lfreetype -pthread -llapacke -lblas
 
 CC = $(PETSC_DIR)/$(PETSC_ARCH)/bin/mpicxx
