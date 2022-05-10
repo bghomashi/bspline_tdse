@@ -6,25 +6,25 @@ static Logger::Ptr_t s_logger(new Logger());
 static std::ofstream s_logger_file;
 
 void Logger::info(const std::string& text) {
-    if (s_logger_file.bad())
+    if (s_logger_file && s_logger_file.good())
         s_logger_file << "INFO: " << text << "\n";
     else
         std::cout << "INFO: " << text << "\n";
 }
 void Logger::warn(const std::string& text) {
-    if (s_logger_file.bad())
+    if (s_logger_file && s_logger_file.good())
         s_logger_file << "WARN: " << text << "\n";
     else
         std::cout << "WARN: " << text << "\n";
 }
 void Logger::critical(const std::string& text) {
-    if (s_logger_file.bad())
+    if (s_logger_file && s_logger_file.good())
         s_logger_file << "CRITICAL: " << text << "\n";
     else
         std::cout << "CRITICAL: " << text << "\n";
 }
 void Logger::debug(const std::string& text) {
-    if (s_logger_file.bad())
+    if (s_logger_file && s_logger_file.good())
         s_logger_file << "DEBUG: " <<  text << "\n";
     else
         std::cout << "DEBUG: " << text << "\n";
