@@ -1,6 +1,7 @@
 
 #include "eigen_solvers/gen_eigen_tise.h"
 #include "utility/logger.h"
+#include "utility/profiler.h"
 
 #include <string>
 #include <sstream>
@@ -9,6 +10,8 @@ GeneralizeEigenvalueTISE::GeneralizeEigenvalueTISE(MathLib& mathlib) :
     _MathLib(mathlib) {
 }
 void GeneralizeEigenvalueTISE::Solve() {
+    ProfilerPush();
+
     double memory = 3.*(2*_order-1)*_N + 2.;
     memory = memory*16/1024./1024./1024.;
     Log::info("Estimated memory required: " + std::to_string(memory) + " GB.");
@@ -82,11 +85,12 @@ void GeneralizeEigenvalueTISE::Solve() {
         // }
 
     }
+    
+    ProfilerPop();
 }
 
-#include <iostream>
-
 void GeneralizeEigenvalueTISE::Store() const {
+    ProfilerPush();
     // Overwrites any existing file
     // maybe unnecessary?
     std::stringstream ss;
@@ -105,6 +109,8 @@ void GeneralizeEigenvalueTISE::Store() const {
         }
     }    
     hdf5->PopGroup();
+    
+    ProfilerPop();
 }
 
 

@@ -4,8 +4,8 @@ obj/input_validation/validate_tise.o: \
  src/core/tdse/tdse.h src/core/bspline/bspline.h \
  src/core/tdse/potential.h src/core/tdse/laser.h \
  src/core/tdse/observable.h src/core/tise/tise.h \
- src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h \
- src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h \
+ src/core/utility/profiler.h src/core/utility/timer.h \
+ src/math_libs/petsc/petsc_lib.h /home/bghomashi/petsc/include/petsc.h \
  /home/bghomashi/petsc/include/petscbag.h \
  /home/bghomashi/petsc/include/petscsys.h \
  /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h \

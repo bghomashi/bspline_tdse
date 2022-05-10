@@ -89,3 +89,7 @@ bool Profile::PrintTo(const std::string& filename) {
 void Profile::Print() {
     s_profiler->Print();
 }
+void Profile::SetProfiler(Profiler* profiler) {
+    s_profiler.reset(profiler);
+}
+

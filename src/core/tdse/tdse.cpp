@@ -5,6 +5,7 @@
 #include <algorithm>
 #include "utility/index_manip.h"
 #include "utility/logger.h"
+#include "utility/profiler.h"
 
 TDSE::TDSE(MathLib& lib) : _MathLib(lib), _cylindricalSymmetry(true), _checkpoints(0) {
     _pol[X] = _pol[Y] = _pol[Z] = false;
@@ -195,6 +196,8 @@ void TDSE::Propagate() {
         obs->Startup();
 
     Log::info("Propagation for " + std::to_string(NT) + " timesteps...");
+    Profile::Push("Total time stepping");
+    
     // do simulation
     for (int it = 0; it < NT; it++) {
         t = it*_dt;
@@ -202,6 +205,9 @@ void TDSE::Propagate() {
         DoCheckpoint(it, NT);
         DoObservables(it, t, _dt);
     }
+    
+    Profile::Pop("Total time stepping");
+
     for (auto& obs : _observables)
         obs->Shutdown();
 

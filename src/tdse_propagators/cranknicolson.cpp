@@ -9,6 +9,7 @@
 
 #include "utility/index_manip.h"
 #include "utility/logger.h"
+#include "utility/profiler.h"
 
 
 using namespace std::complex_literals;
@@ -16,6 +17,8 @@ using namespace std::complex_literals;
 CrankNicolsonTDSE::CrankNicolsonTDSE(MathLib& lib) : TDSE(lib) {
 }
 void CrankNicolsonTDSE::Initialize() {
+    ProfilerPush();
+
     double memory = 2*(2*_order-1) + 4*_maxBands;
     if (_pol[X]) memory += 8*_order-4;
     if (_pol[Y]) memory += 8*_order-4;
@@ -130,6 +133,8 @@ void CrankNicolsonTDSE::Initialize() {
     // z -> m=m, l=l+-1
     // x -> m=m+-1, l=l+-1
     // y -> m=m+-1, l=l+-1
+    
+    ProfilerPop();
 }
 
 void CrankNicolsonTDSE::Finish() {

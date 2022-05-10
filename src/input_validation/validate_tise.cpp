@@ -3,6 +3,7 @@
 #include <iostream>
 #include <fstream>
 #include "utility/logger.h"
+#include "utility/profiler.h"
 #include "math_libs/petsc/petsc_lib.h"
 #include "eigen_solvers/gen_eigen_tise.h"
 
@@ -23,6 +24,7 @@ bool ValidateTISEInputFile(int argc, char **args, const std::string& filename, M
         if (ToLower(eigen_state["solver"]) == "slepc") {
             matlib = &Petsc::get();
             Log::set_logger(new PetscLogger());
+            Profile::SetProfiler(new PetscProfiler());
         } else { //if (ToLower(eigen_state["solver"]) == "??") {
             Log::critical("only SLEPC is supported");
             return false;

@@ -7,6 +7,7 @@
 #include <memory>
 #include "utility/timer.h"
 
+// For profiling time spent in a particular function
 #define ProfilerPush() Profile::Push(__FUNCTION__)
 #define ProfilerPop() Profile::Pop(__FUNCTION__)
 
@@ -16,7 +17,7 @@ class Profiler {
 public:
     typedef std::shared_ptr<Profiler> Ptr_t;
     
-    virtual void Push(const std::string& name);       // does this work? I doubt it
+    virtual void Push(const std::string& name);
     virtual void Pop(const std::string& name);
 
     virtual bool PrintTo(const std::string& filename);
@@ -27,9 +28,11 @@ public:
 
 
 namespace Profile {
-    static void Push(const std::string& name);       // does this work? I doubt it
-    static void Pop(const std::string& name);
+    void Push(const std::string& name);
+    void Pop(const std::string& name);
 
-    static bool PrintTo(const std::string& filename);
-    static void Print();
+    bool PrintTo(const std::string& filename);
+    void Print();
+    
+    void SetProfiler(Profiler* profiler);
 };
