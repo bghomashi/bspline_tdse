@@ -3,7 +3,7 @@ SDIR =  src/
 ODIR =	obj/
 DDIR =	dep/
 csrc =  $(wildcard src/*.c)
-#		$(wildcard src/graphics/*.c)
+
 ccsrc = $(wildcard src/*.cpp) \
 		$(wildcard src/core/maths/*.cpp) \
 		$(wildcard src/core/bspline/*.cpp) \
@@ -33,7 +33,7 @@ CPPFLAGS =      -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_CPP \
 				-I$(PETSC_DIR)/include -I$(PETSC_DIR)/$(PETSC_ARCH)/include \
 				-I$(SLEPC_DIR)/include -I$(SLEPC_DIR)/$(PETSC_ARCH)/include \
 				-Iinc -I/usr/include \
-				-Isrc/core -Isrc/core/bspline -Isrc/core/maths -Isrc/cire/tdse -Isrc/cire/tise \
+				-Isrc/core -Isrc/core/bspline -Isrc/core/maths -Isrc/core/tdse -Isrc/core/tise \
 				-Isrc -std=c++14
 #linker flags (directories)
 #LDFLAGS

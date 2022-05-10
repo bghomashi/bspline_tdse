@@ -42,7 +42,7 @@ bool Profiler::PrintTo(const std::string& filename) {
         return a.cumulative_time < b.cumulative_time;
     });
     
-    std::ofstream file(filename);
+    std::ofstream file(filename, std::ios_base::app);
     if (!file.is_open()) return false;
 
     file    << std::setw(20) << "Name" 
