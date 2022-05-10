@@ -48,8 +48,9 @@ int main(int argc, char **args) {
         Profile::Pop("Total TDSE time");
     }
     Log::info("Shutting down.");
+    Profile::PrintTo("profile.txt");
+    
     matLib->Shutdown();
 
-    Profile::PrintTo("profile.txt");
     return 0;
 }
