@@ -1,11 +1,12 @@
 #include "observables/norm_obs.h"
 #include "utility/logger.h"
+#include "utility/file_exists.h"
 #include <iostream>
 #include <sstream>
 
 NormObservable::NormObservable(TDSE& tdse) : Observable(tdse) {
 }
-void NormObservable::Startup() {
+void NormObservable::Startup(int start_it) {
     auto& basis = _tdse.Basis();
     int order = basis.getOrder();
     int NBsplines = basis.getNumBSplines();
@@ -29,8 +30,26 @@ void NormObservable::Startup() {
         return overlapStore[i + j*NBsplines];
     });
 
-    if (_output_filename.length() > 0) {
-        _file = ASCII(_MathLib.OpenASCII(_output_filename, 'w'));
+    if (start_it > 0 && file_exists(_output_filename)) {
+        std::vector<complex> norm((start_it+1)/_compute_period_in_iterations);
+        std::stringstream line;
+        
+        // first read all the values back that we want to keep
+        _file = _MathLib.OpenASCII(_output_filename, 'r');
+        for (int i = 0; i < norm.size(); i++) {
+            line.str(_file->ReadLine());
+            line >> norm[i];
+        }
+
+        // now clear the file and write them all back
+        _file = _MathLib.OpenASCII(_output_filename, 'w');
+        for (int i = 0; i < norm.size(); i++) {
+            line.str("");
+            line << norm[i] << std::endl;
+            _file->Write(line.str().c_str());
+        }
+    } else {
+        _file = _MathLib.OpenASCII(_output_filename, 'w');
     }
 }
 void NormObservable::Shutdown() {

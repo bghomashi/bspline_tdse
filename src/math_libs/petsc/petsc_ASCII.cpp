@@ -10,7 +10,7 @@ PetscASCII::PetscASCII(const std::string& filename, char mode) {
     if (rank == 0)
         if (!Open(filename, mode)) {
             Log::critical("failed to open file: " + filename);
-            exit(-1);
+            PetscEnd();
         }
 }
 PetscASCII::~PetscASCII() {

@@ -16,10 +16,13 @@ protected:
 
     // math library
     MathLib& _MathLib;
+
     // basis 
     Basis::BSpline _basis;
     bool _cylindricalSymmetry;
+
     // dimension information
+    double _ecs_r0, _ecs_theta;
     int _N, _order, _nodes;
     int _lmax, _mmax;
     int _dof, _maxBands;
@@ -32,6 +35,7 @@ protected:
 
     // the time domain
     double _dt, _tmin, _tmax;
+    int _NT;
 
     // physical quantities
     bool _pol[DimIndex::NUM];                   // quick access if there is/is not polarization in x,y,z
@@ -48,6 +52,10 @@ protected:
     // a list of observables specified in the input file.
     std::vector<Observable::Ptr_t> _observables;
     int _checkpoints;
+
+    // TDSE simulation output file
+    bool _restarting;
+    HDF5 _tdse_out;
 public:
     typedef std::shared_ptr<TDSE> Ptr_t;
 
@@ -63,6 +71,8 @@ public:
     void AddObservable(Observable::Ptr_t obs);
     void SetTimestep(double dt);
     void SetCheckpoints(int checkpoint);
+    void SetRestart(bool flag);
+    void SetECS(double ecs_r0, double ecs_theta);
     void SetInitialStateFile(const std::string& filename);
     void SetEigenStateNmax(int nmax);
     const std::string& GetInitialStateFile() const;
@@ -81,13 +91,26 @@ public:
     const std::vector<int>& Ms() const;
     const std::vector<int>& MRows() const;  
     double Xmin() const; 
-    double Xmax() const;
+    double Xmax() const; 
+    double Tmin() const; 
+    double Tmax() const;
+    double Timestep() const;
+    int NumTimeSteps() const;
     const bool* Polarization() const;
+    const std::vector<double>& GetField(int dim_index) const;
 
+
+    void DoCheckpoint(int it);
+    void DoObservables(int it, double t, double dt);
+    void ComputeFields();
+    bool CompareTDSEH5wInput() const;
+    void WriteParametersToTDSE() const;
+    void WriteInitialState() const;
+    void WriteFinalState() const;
+    void LoadInitialState();
+    bool LoadLastCheckpoint(int &it);
 
     virtual void Initialize() = 0;
     virtual bool DoStep(int it, double t, double dt) = 0;
-    void DoCheckpoint(int it, int NT);
-    void DoObservables(int it, double t, double dt);
     virtual void Finish() = 0;
 };

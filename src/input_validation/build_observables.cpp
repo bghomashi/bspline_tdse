@@ -3,6 +3,8 @@
 #include "observables/dipole_acc_obs.h"
 #include "observables/wavefunction_obs.h"
 #include "observables/population_obs.h"
+#include "observables/pulse_obs.h"
+#include "observables/potential_obs.h"
 
 Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& obs_item, TDSE::Ptr_t tdse) {
     // grab the compute period if provided
@@ -43,6 +45,21 @@ Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& 
         wf_obs->SetNumGrid(obs_item["grid_points"]);
 
         return Observable::Ptr_t(wf_obs);
+    } else if (key == "pulse") {
+        PulseObservable* pl_obs = new PulseObservable(*tdse);
+
+        pl_obs->SetComputePeriod(compute_period);
+        pl_obs->SetFilename(filename);
+
+        return Observable::Ptr_t(pl_obs);
+    } else if (key == "potential") {
+        PotentialObservable* pot_obs = new PotentialObservable(*tdse);
+
+        pot_obs->SetComputePeriod(compute_period);
+        pot_obs->SetNumGrid(obs_item["grid_points"]);
+        pot_obs->SetFilename(filename);
+
+        return Observable::Ptr_t(pot_obs);
     }
     return nullptr;
 }

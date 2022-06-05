@@ -17,7 +17,7 @@ class PopulationObservable : public Observable {
 public:
     PopulationObservable(TDSE& tdse);
 
-    void Startup();
+    void Startup(int it);
     void Shutdown();
     void Compute(int it, double t, double  dt);
     void Flush();

@@ -117,15 +117,24 @@ class IHDF5 {
 public:
     virtual void PushGroup(const std::string& group_name) = 0;
     virtual void PopGroup() = 0;
+    virtual bool HasGroup(const std::string& group_name) const = 0;
 
+    virtual void ReadAttribute(const std::string& attr_name, complex* value) = 0;
+    virtual void ReadAttribute(const std::string& attr_name, double* value) = 0;
+    virtual void ReadAttribute(const std::string& attr_name, int* value) = 0;
+    virtual void ReadAttribute(const Vector object, const std::string& attr_name, complex* value) = 0;
+    virtual void ReadAttribute(const Vector object, const std::string& attr_name, double* value) = 0;
+    virtual void ReadAttribute(const Vector object, const std::string& attr_name, int* value) = 0;
     virtual void WriteAttribute(const Vector object, const std::string& attr_name, const complex value) = 0;
     virtual void WriteAttribute(const Vector object, const std::string& attr_name, const double value) = 0;
     virtual void WriteAttribute(const Vector object, const std::string& attr_name, const int value) = 0;
     virtual void WriteAttribute(const std::string& attr_name, const complex value) = 0;
     virtual void WriteAttribute(const std::string& attr_name, const double value) = 0;
     virtual void WriteAttribute(const std::string& attr_name, const int value) = 0;
+    virtual bool HasAttribute(const std::string& attr_name) const = 0;
     virtual void WriteVector(const std::string& obj_name, const Vector value) = 0;
     virtual void ReadVector(const std::string& obj_name, Vector value) = 0;
+    virtual bool HasVector(const std::string& obj_name) const = 0;
 };
 
 class IGMRESSolver {

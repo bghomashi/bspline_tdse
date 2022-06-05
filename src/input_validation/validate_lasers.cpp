@@ -30,8 +30,16 @@ bool ValidateLasers(const nlohmann::json& input) {
                 MustContain("cep", "number");
                 return false;
             }
+            if (pulse.contains("ellipticity") && !pulse["ellipticity"].is_number()) {
+                Log::critical("optional parameter \"ellipticity\" must be a number.");
+                return false;
+            }
             if (!(pulse.contains("polarization_vector") && pulse["polarization_vector"].is_array())) {
                 MustContain("polarization_vector", "3-vector", "lasers");
+                return false;
+            }
+            if (!(pulse.contains("poynting_vector") && pulse["poynting_vector"].is_array())) {
+                MustContain("poynting_vector", "3-vector", "lasers");
                 return false;
             }
         }

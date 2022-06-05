@@ -67,6 +67,7 @@
         "typeinfo": "cpp",
         "any": "cpp",
         "forward_list": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "unordered_set": "cpp"
     }
 }

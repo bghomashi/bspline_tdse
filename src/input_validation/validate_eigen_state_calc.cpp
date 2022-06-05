@@ -23,6 +23,14 @@ bool ValidateEigenStateCalculation(const nlohmann::json& input) {
         Log::critical("Entry nmax must be a number greater than 0.");
         return false;
     }
+    if (eigen_state.contains("lmax") && !eigen_state["lmax"].is_number()) {
+        Log::critical("Entry lmax must be a number greater than 0.");
+        return false;
+    }
+    if (eigen_state.contains("lmin") && !eigen_state["lmin"].is_number()) {
+        Log::critical("Entry lmin must be a number greater than 0.");
+        return false;
+    }
     {
         std::string filename = eigen_state["filename"];
         if ((filename.length() <= 3) || 

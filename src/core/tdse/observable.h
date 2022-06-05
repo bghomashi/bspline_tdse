@@ -28,7 +28,7 @@ public:
     
     virtual void Flush() {};
     virtual int MemoryAlloced() const;
-    virtual void Startup() = 0;
+    virtual void Startup(int it) = 0;
     virtual void Shutdown() = 0;
     virtual void Compute(int it, double t, double dt) = 0;
 };

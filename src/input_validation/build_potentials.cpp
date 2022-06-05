@@ -44,6 +44,6 @@ Potential::Ptr_t BuildPotential(const nlohmann::json& potential_item) {
         ExponentialPotential* expon = new ExponentialPotential(Z, D, x, y, z);
         return Potential::Ptr_t(expon);
     }
-    Log::debug(std::string(__FILE__) + ":" + std::to_string(__LINE__));
+    LOG_DEBUG(std::string(__FILE__) + ":" + std::to_string(__LINE__));
     return nullptr;
 }

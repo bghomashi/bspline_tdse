@@ -17,7 +17,7 @@ public:
 
     void SetNumGrid(int numGrid);
 
-    void Startup();
+    void Startup(int it);
     void Shutdown();
     void Compute(int it, double t, double dt);
 };

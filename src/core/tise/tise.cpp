@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-TISE::TISE() : _nmax(1), _tol(1e-10) {}
+TISE::TISE() : _expanding(false), _nmax(1), _tol(1e-10), _lmax(0), _lmin(0) {}
 void TISE::SetupBasis(double xmin, double xmax, 
                     int order, int nodes,
                     double ecs_r0, double ecs_theta,
@@ -31,6 +31,15 @@ void TISE::SetTolerance(double tolerance) {
 void TISE::SetNMax(int nmax) {
     _nmax = nmax;
 }
+void TISE::SetLMax(int lmax) {
+    _lmax = lmax;
+}
+void TISE::SetLMin(int lmin) {
+    _lmin = lmin;
+}
 void TISE::SetFilename(const std::string& filename) {
     _output_filename = filename;
+}
+void TISE::SetExpanding(bool flag) {
+    _expanding = flag;
 }

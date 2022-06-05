@@ -2,11 +2,12 @@
     "propagator": "crank_nicolson",
     "time_step": 0.1,
     "math_library": "PETsc",
-    "checkpoint": 100,
+    "checkpoint": 5000,
+    "restart" : false,
     
     "basis": {
         "order": 8,
-        "node_sequence": "parabolic",
+        "node_sequence": "linear",
         "num_nodes": 500,
         "x_min": 0.0,
         "x_max": 300.0,
@@ -16,23 +17,28 @@
     },
     "lasers": [
         {
-            "num_cycles": 20,
+            "num_cycles": 10,
             "cycles_delay": 0.0,
             "envelope": "sin2",
-            "intensity": 2.5e14,
+            "intensity": 1.0e14,
             "polarization_vector": [
                 0.0,
                 0.0,
                 1.0
             ],
-            "wavelength": 800,
+            "poynting_vector": [
+                1.0,
+                0.0,
+                0.0
+            ],
+            "wavelength": 400,
             "cep": 0
         }
     ],
     "initial_state": [
         {
-            "n": 3,
-            "l": 1,
+            "n": 1,
+            "l": 0,
             "m": 0,
             "phase": 0
         }
@@ -41,45 +47,32 @@
         {
             "type": "coulomb",
             "Z": 1
-        },
-        {
-            "type": "yukawa",
-            "Z": 17.0,
-            "decay": 0.8103
-        },
-        {
-            "type": "exponential",
-            "amplitude": -15.9583,
-            "decay": 1.2305
-        },
-        {
-            "type": "exponential",
-            "amplitude": -27.7467,
-            "decay": 4.3946
-        },
-        {
-            "type": "exponential",
-            "amplitude": 2.1768,
-            "decay": 86.7179
         }
     ],
     "observables": {
         "norm": {
             "compute_period": 1,
-            "filename" : "data/argon/800nm_20cyc_L30_N1000/z_norm.txt"
+            "filename" : "data/hydrogen/400nm_10cyc_L30_N1000/z_norm.txt"
         },
         "dipole_acc": {
-            "filename" : "data/argon/800nm_20cyc_L30_N1000/z_dip_acc.txt"
+            "filename" : "data/hydrogen/400nm_10cyc_L30_N1000/z_dip_acc.txt"
         },
         "populations": {
-            "filename" : "data/argon/800nm_20cyc_L30_N1000/z_populations.txt"
+            "filename" : "data/hydrogen/400nm_10cyc_L30_N1000/z_populations.txt"
+        },
+        "pulse": {
+            "filename" : "data/hydrogen/400nm_10cyc_L30_N1000/pulse.txt"
+        },
+        "potential": {
+            "grid_points" : 500,
+            "filename" : "data/hydrogen/400nm_10cyc_L30_N1000/potential.txt"
         }
     },
     "eigen_state": {
         "solver": "SLEPC",
         "nmax": 4,
         "tol": 1e-10,
-        "filename": "Ar.h5"
+        "filename": "H.h5"
     },
     "log_filename": "log.txt"
 }

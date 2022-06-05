@@ -32,6 +32,7 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
     if (ToLower(input["math_library"]) == "petsc") {
         matlib = &Petsc::get();
         Log::set_logger(new PetscLogger());
+        Profile::SetProfiler(new PetscProfiler());
     } else if (ToLower(input["math_library"]) == "thread_pool") {
         std::cout << "thread_pool is not yet supported" << std::endl;
         return false;
@@ -97,6 +98,10 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
         tdse = TDSE::Ptr_t(new CrankNicolsonTDSE(*matlib));
     tdse->SetTimestep(input["time_step"]);
     tdse->SetCheckpoints(input["checkpoint"]);
+    if (input.contains("restart") && input["restart"].is_boolean())
+        tdse->SetRestart(input["restart"]);
+    tdse->SetCheckpoints(input["checkpoint"]);
+
     // set up lasers
     Log::info("Setting up lasers.");
 
@@ -107,17 +112,23 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
         double cycles_delay = pulse["cycles_delay"];
         double intensity = pulse["intensity"];
         double cep = pulse["cep"];
-        std::vector<double> pol_vector(3);
+        double ellipticity = 0.;
+        Vec3 pol_vector, poy_vector;
         double norm = 0;
-        for (int i = 0; i < 3; i++) {
-            pol_vector[i] = pulse["polarization_vector"][i];
-            norm += pol_vector[i]*pol_vector[i];
-        }
-        // not sure if we need to bother with normalization
-        for (int i = 0; i < 3; i++) 
-            pol_vector[i] /= sqrt(norm);
+
+        pol_vector.x = pulse["polarization_vector"][0];
+        pol_vector.y = pulse["polarization_vector"][1];
+        pol_vector.z = pulse["polarization_vector"][2];
+        pol_vector = normal(pol_vector);
+        
+        poy_vector.x = pulse["poynting_vector"][0];
+        poy_vector.y = pulse["poynting_vector"][1];
+        poy_vector.z = pulse["poynting_vector"][2];
+        poy_vector = normal(poy_vector);
 
         // specify wavelength (nm) or energy (au)
+        if (pulse.contains("ellipticity"))
+            ellipticity = pulse["ellipticity"].get<double>();
         if (pulse.contains("wavelength"))
             frequency = LnmToEnergy/pulse["wavelength"].get<double>();   // not sure why "get..." is needed here
         if (pulse.contains("energy"))
@@ -125,7 +136,12 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
 
 
         if (pulse["envelope"] == "sin2")
-            tdse->AddPulse(Pulse::Create(Pulse::Sin2, cycles_delay, intensity, frequency, num_cycles, pol_vector));
+            tdse->AddPulse(Pulse::Create(
+                Pulse::Sin2, 
+                cycles_delay, intensity, 
+                frequency, num_cycles, 
+                ellipticity, 
+                pol_vector, poy_vector));
     }
     
     // setup initial state
@@ -183,7 +199,7 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
                     seq);
     
     // setup observables
-    Log::info("Building observables.");
+    LOG_INFO("Building observables.");
 
     auto& observables_json = input["observables"];
     for (auto& obs_pair : observables_json.items()) {

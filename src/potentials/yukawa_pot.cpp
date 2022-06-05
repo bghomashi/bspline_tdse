@@ -31,6 +31,10 @@ YukawaPotential::YukawaPotential(double Z, double decay, double x, double y, dou
             _isAxial = false;
     }
 }
+double YukawaPotential::operator() (double x, double y, double z) const {
+    double r = std::sqrt (x*x + y+y + z*z);
+    return (-_Z/r)*std::exp(-_D*r);
+}
 
 void YukawaPotential::FillMatrix(const Basis::BSpline& basis, Matrix m, int N, const std::vector<int>& Ms, const std::vector<int>& mRows) {
     int order = basis.getOrder();

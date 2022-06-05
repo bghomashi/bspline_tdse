@@ -32,9 +32,8 @@ int main(int argc, char **args) {
         if (!ValidateTISEInputFile(argc, args, "input.json", matLib, tise))
             return -1;
 
-        Log::info("Starting up TISE");
+        LOG_INFO("Starting up TISE");
         tise->Solve();
-        tise->Store();
         tise->Finish();
         Profile::Pop("Total TISE time");
     } else {
@@ -42,12 +41,12 @@ int main(int argc, char **args) {
         if (!ValidateTDSEInputFile(argc, args, "input.json", matLib, tdse))
             return -1;
         
-        Log::info("Starting up TDSE");
+        LOG_INFO("Starting up TDSE");
         tdse->Initialize();
         tdse->Propagate();
         Profile::Pop("Total TDSE time");
     }
-    Log::info("Shutting down.");
+    LOG_INFO("Shutting down.\n------------------------------------------------\n\n");
     Profile::PrintTo("profile.txt");
     
     matLib->Shutdown();

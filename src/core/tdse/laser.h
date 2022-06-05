@@ -3,6 +3,7 @@
 #include <vector>
 #include <memory>
 #include "maths/maths.h"
+#include "utility/vec3.h"
 
 struct Sin2Pulse;
 
@@ -12,12 +13,13 @@ struct Pulse {
     const int numCycles;
     const double E0, frequency, intensity;
     const double period, duration, delay;
-    const std::vector<double> polarization_vector;
-
-    virtual double operator() (double t) = 0;
+    const double ellipticity;
+    const Vec3 polarization_vector;
+    const Vec3 poynting_vector;
+    const Vec3 minor_polarization_vector;
 
     Pulse();
-    Pulse(double delay_cycles, double intensity, double frequency, int numCycles, const std::vector<double>& polarization);
+    Pulse(double delay_cycles, double intensity, double frequency, int numCycles, double ellipticity, const Vec3& polarization, const Vec3& poynting_vector);
 
     enum Envelope {
         Gaussian,
@@ -27,15 +29,21 @@ struct Pulse {
         NumTypes
     };
 
-    static Ptr_t Create(Envelope env, double delay_cycles, double intensity, double frequency, int numCycles, const std::vector<double>& polarization);
+    virtual Vec3 operator() (double t) = 0;
+
+    static Ptr_t Create(Envelope env, double delay_cycles, double intensity, double frequency, int numCycles, double ellipticity, const Vec3& polarization, const Vec3& poynting_vector);
 };
 
 struct Sin2Pulse : public Pulse {
     // probably add phase, time shift, etc.
 
-    Sin2Pulse(double delay_cycles, double intensity, double frequency, int numCycles, const std::vector<double>& polarization) : 
-        Pulse(delay_cycles, intensity, frequency, numCycles, polarization) {}
+    Sin2Pulse(double delay_cycles, double intensity, 
+             double frequency, int numCycles, 
+             double ellipticity,
+             const Vec3& polarization,
+             const Vec3& poynting_vector) :
+        Pulse(delay_cycles, intensity, frequency, numCycles, ellipticity, polarization, poynting_vector) {}
 
-    double operator() (double t);
+    Vec3 operator() (double t);
 
 };

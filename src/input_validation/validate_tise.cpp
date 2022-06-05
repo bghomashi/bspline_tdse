@@ -49,9 +49,18 @@ bool ValidateTISEInputFile(int argc, char **args, const std::string& filename, M
     if (eigen_state.contains("tol"))
         tise->SetTolerance(eigen_state["tol"]);            // optional
     tise->SetNMax(eigen_state["nmax"]);
+    if (eigen_state.contains("lmax"))
+        tise->SetLMax(eigen_state["lmax"]);
+    else
+        tise->SetLMax(eigen_state["nmax"].get<int>()-1);
+    if (eigen_state.contains("lmin"))
+        tise->SetLMin(eigen_state["lmin"]);
+    if (eigen_state.contains("expanding"))
+        tise->SetExpanding(eigen_state["expanding"]);
     tise->SetFilename(eigen_state["filename"]);
+    
     // setup basis
-    Log::info("Setting up basis.");
+    LOG_INFO("Setting up basis.");
 
     auto& basis = input["basis"];
     int order = basis["order"];
@@ -65,8 +74,8 @@ bool ValidateTISEInputFile(int argc, char **args, const std::string& filename, M
     Basis::BSpline::Sequence seq = Basis::BSpline::Linear;  // default to linear
 
     // optional - ecs parameters
-    if (basis.contains("ecs_r0")) ecs_r0 = basis["ecs_r0"];
-    if (basis.contains("ecs_theta")) ecs_theta = basis["ecs_theta"];
+    // if (basis.contains("ecs_r0")) ecs_r0 = basis["ecs_r0"];
+    // if (basis.contains("ecs_theta")) ecs_theta = basis["ecs_theta"];
     
     if (ToLower(basis["node_sequence"]) == "linear")
         seq = Basis::BSpline::Linear;

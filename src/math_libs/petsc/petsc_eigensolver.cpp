@@ -1,4 +1,5 @@
 #include "math_libs/petsc/petsc_lib.h"
+#include "utility/logger.h"
 
 
 void Petsc::Eigen(  const Matrix A, const Matrix S, 
@@ -65,8 +66,8 @@ void Petsc::Eigen(  const Matrix A, const Matrix S,
     
         vectors.push_back(Vector(temp));
         
-        if (_rank == 0)
-            PetscPrintf(PETSC_COMM_SELF, "energy %d: (%f, %f)\n", j, std::real(values[j]), std::imag(values[j]));
+        //if (_rank == 0)
+            // PetscPrintf(PETSC_COMM_SELF, "energy %d: (%f, %f)\n", j, std::real(values[j]), std::imag(values[j]));
             // PetscPrintf(PETSC_COMM_SELF, "energy %d: (%f, %f) and norm: %f\n", j, std::real(values[j]), std::imag(values[j]), std::real(norm));
     }
 

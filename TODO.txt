@@ -1,1 +1,5 @@
-1) Checkpointing
+3) test photoionization
+
+
+add "propagate: true/false" to input for TDSE
+Recompute observables from initial/final wavefunction

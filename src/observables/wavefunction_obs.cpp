@@ -9,7 +9,7 @@ void WavefunctionObservable::SetNumGrid(int numGrid) {
 }
 
 #include <iostream>
-void WavefunctionObservable::Startup() {
+void WavefunctionObservable::Startup(int start_it) {
     _psi = _tdse.Psi();
     _psi_grid = _MathLib.CreateVector(_numGrid);
     _grid.resize(_numGrid);

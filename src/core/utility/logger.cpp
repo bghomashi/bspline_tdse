@@ -7,30 +7,30 @@ static std::ofstream s_logger_file;
 
 void Logger::info(const std::string& text) {
     if (s_logger_file && s_logger_file.good())
-        s_logger_file << "INFO: " << text << "\n";
+        s_logger_file << "INFO: " << text << std::endl;
     else
-        std::cout << "INFO: " << text << "\n";
+        std::cout << "INFO: " << text << std::endl;
 }
 void Logger::warn(const std::string& text) {
     if (s_logger_file && s_logger_file.good())
-        s_logger_file << "WARN: " << text << "\n";
+        s_logger_file << "WARN: " << text << std::endl;
     else
-        std::cout << "WARN: " << text << "\n";
+        std::cout << "WARN: " << text << std::endl;
 }
 void Logger::critical(const std::string& text) {
     if (s_logger_file && s_logger_file.good())
-        s_logger_file << "CRITICAL: " << text << "\n";
+        s_logger_file << "CRITICAL: " << text << std::endl;
     else
-        std::cout << "CRITICAL: " << text << "\n";
+        std::cout << "CRITICAL: " << text << std::endl;
 }
 void Logger::debug(const std::string& text) {
     if (s_logger_file && s_logger_file.good())
-        s_logger_file << "DEBUG: " <<  text << "\n";
+        s_logger_file << "DEBUG: " <<  text << std::endl;
     else
-        std::cout << "DEBUG: " << text << "\n";
+        std::cout << "DEBUG: " << text << std::endl;
 }
 void Logger::set_logger_file(const std::string& log_file) {
-    s_logger_file = std::ofstream(log_file);
+    s_logger_file = std::ofstream(log_file, std::ostream::app);
 }
 
 // these are the static defined functions

@@ -86,42 +86,42 @@ void CrankNicolsonTDSE::Initialize() {
     // ---------------------------------------------------------------
     // Load initial state 
     // TODO: possibly move this to base class. All propagators need an initial state
-    Log::info("Loading initial state...");
-    Vector temp = _MathLib.CreateVector(_N);        // vector from hdf5 file
-    std::vector<Vector> vecs(_dof/_N);             // these will all be concatenated
-    for (auto& v : vecs) {
-        v = _MathLib.CreateVector(_N); 
-        v->Zero();
-    }
+    // Log::info("Loading initial state...");
+    // Vector temp = _MathLib.CreateVector(_N);        // vector from hdf5 file
+    // std::vector<Vector> vecs(_dof/_N);             // these will all be concatenated
+    // for (auto& v : vecs) {
+    //     v = _MathLib.CreateVector(_N); 
+    //     v->Zero();
+    // }
 
     
-    auto hdf5 = _MathLib.OpenHDF5(_initial_state_filename, 'r');
-    hdf5->PushGroup("vectors");
+    // auto hdf5 = _MathLib.OpenHDF5(_initial_state_filename, 'r');
+    // hdf5->PushGroup("vectors");
 
-    // compute norm from amplitudes
-    double norm = 0;
-    for (auto& state : _initial_state)
-        norm += state.amplitude*state.amplitude;
+    // // compute norm from amplitudes
+    // double norm = 0;
+    // for (auto& state : _initial_state)
+    //     norm += state.amplitude*state.amplitude;
 
-    // merge the initial eigenstates into 'vecs'
-    std::stringstream name_ss;
-    for (auto& state : _initial_state) {
-        name_ss.str("");                                         // clear string stream
-        name_ss << "(" << state.n << ", " << state.l << ")";     // name of state
+    // // merge the initial eigenstates into 'vecs'
+    // std::stringstream name_ss;
+    // for (auto& state : _initial_state) {
+    //     name_ss.str("");                                         // clear string stream
+    //     name_ss << "(" << state.n << ", " << state.l << ")";     // name of state
 
-        int mBlock = RowFrom(state.m, _Ms, _mRows)/_N;
-        int lBlock = mBlock + (state.l-std::abs(state.m));
-        hdf5->ReadVector(name_ss.str().c_str(), temp);                  // read in the state
-        temp->Scale(state.amplitude*std::exp(1.i*state.phase));         // scale by norm, amplitude and phase
-        _MathLib.AXPY(vecs[lBlock], 1., temp);                          // sum with other similar l's
-    }
+    //     int mBlock = RowFrom(state.m, _Ms, _mRows)/_N;
+    //     int lBlock = mBlock + (state.l-std::abs(state.m));
+    //     hdf5->ReadVector(name_ss.str().c_str(), temp);                  // read in the state
+    //     temp->Scale(state.amplitude*std::exp(1.i*state.phase));         // scale by norm, amplitude and phase
+    //     _MathLib.AXPY(vecs[lBlock], 1., temp);                          // sum with other similar l's
+    // }
     
-    hdf5->PopGroup();
+    // hdf5->PopGroup();
 
-    // concatenate into "_psi"
-    _psi = _MathLib.CreateVector(_dof);             // _dof needs to be the sum of all the vectors in 'vecs'
-    _psi->Concatenate(vecs);                        // append all the initial vectors together
-    _psi->Scale(1./sqrt(norm));                     // and normalize
+    // // concatenate into "_psi"
+    // _psi = _MathLib.CreateVector(_dof);             // _dof needs to be the sum of all the vectors in 'vecs'
+    // _psi->Concatenate(vecs);                        // append all the initial vectors together
+    // _psi->Scale(1./sqrt(norm));                     // and normalize
     _psi_temp = _MathLib.CreateVector(_dof);        // storage used to hold intermediate psi during propagation
     //-----------------------------------------------
     // Create solver

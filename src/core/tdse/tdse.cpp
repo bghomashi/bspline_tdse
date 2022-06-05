@@ -3,12 +3,22 @@
 #include <fstream>
 #include <iomanip>
 #include <algorithm>
+#include <cmath>
+#include <complex>
 #include "utility/index_manip.h"
 #include "utility/logger.h"
 #include "utility/profiler.h"
+#include "utility/file_exists.h"
 
-TDSE::TDSE(MathLib& lib) : _MathLib(lib), _cylindricalSymmetry(true), _checkpoints(0) {
+#include "math_libs/petsc/petsc_lib.h"
+
+using namespace std::complex_literals;
+
+
+TDSE::TDSE(MathLib& lib) : _MathLib(lib), _restarting(false), _cylindricalSymmetry(true), _checkpoints(0) {
     _pol[X] = _pol[Y] = _pol[Z] = false;
+    _ecs_r0 = 0;
+    _ecs_theta = 0;
 }
 void TDSE::SetupBasis(double xmin, double xmax, 
                     int order, int nodes, 
@@ -34,9 +44,9 @@ void TDSE::SetupBasis(double xmin, double xmax,
     // - we *could* rotate any one axis to the z-axis to preserve symmetry
     // - this assumes the potential is at least cylindrically symmetric also
     for (const auto& p : _pulses) {
-        if (p->polarization_vector[X]) _pol[X] = true;
-        if (p->polarization_vector[Y]) _pol[Y] = true;
-        if (p->polarization_vector[Z]) _pol[Z] = true;
+        if (p->polarization_vector.x || p->minor_polarization_vector.x) _pol[X] = true;
+        if (p->polarization_vector.y || p->minor_polarization_vector.y) _pol[Y] = true;
+        if (p->polarization_vector.z || p->minor_polarization_vector.z) _pol[Z] = true;
     }
     // if there is any polarization in the x/y direction
     if (_pol[X] || _pol[Y])
@@ -102,6 +112,15 @@ double TDSE::Xmin() const {
 double TDSE::Xmax() const {
     return _xmax;
 }
+double TDSE::Tmin() const {
+    return _tmin;
+}
+double TDSE::Tmax() const {
+    return _tmax;
+}
+double TDSE::Timestep() const {
+    return _dt;
+}
 const std::vector<int>& TDSE::Ms() const {
     return _Ms;
 }
@@ -111,7 +130,13 @@ const std::vector<int>& TDSE::MRows() const {
 const bool* TDSE::Polarization() const {
     return _pol;
 }
+const std::vector<double>& TDSE::GetField(int dim_index) const {
+    return _field[dim_index];
+}
 
+int TDSE::NumTimeSteps() const {
+    return _NT;
+}
 
 void TDSE::AddPulse(Pulse::Ptr_t p) {
     _pulses.push_back(p);
@@ -137,6 +162,13 @@ const std::string& TDSE::GetInitialStateFile() const {
 int TDSE::GetInitialStateNmax() const {
     return _eigen_state_nmax;
 }
+void TDSE::SetRestart(bool flag) {
+    _restarting = flag;
+}
+void TDSE::SetECS(double ecs_r0, double ecs_theta) {
+    _ecs_r0 = ecs_r0;
+    _ecs_theta = ecs_theta;
+}
 void TDSE::SetTimestep(double dt) {
     _dt = dt;
 }
@@ -148,79 +180,258 @@ const std::vector<Potential::Ptr_t>& TDSE::Potentials() const {
 }
 
 void TDSE::Propagate() {
-    Log::info("Beginning propagation...");
-
     double t = 0;
-    int NT;
+    int start_iteration = 0;
+
     // find total length of simulation by finding the latest nonzero pulse.
     _tmin = _tmax = 0; 
     for (auto& p : _pulses)
         _tmax = std::max(_tmax, p->delay + p->duration);
-    NT =  (_tmax - _tmin)/ _dt + 1;
+    _NT =  (_tmax - _tmin)/ _dt + 1;
 
-    Log::info("Calculating cummulative field...");
+    _psi = _MathLib.CreateVector(_dof);
+
+    // are we restarting?
+    if (_restarting)
+        _restarting = file_exists("TDSE.h5");
+    
+    _tdse_out = _MathLib.OpenHDF5("TDSE.h5", (_restarting ? 'a' : 'w'));
+
+    if (_restarting) {
+        if (!CompareTDSEH5wInput())
+            exit(-1);           // failure
+    } else 
+        WriteParametersToTDSE();
+
+
+    if (!_restarting || !LoadLastCheckpoint(start_iteration)) {
+        LoadInitialState();
+        WriteInitialState();
+    }
+
+
+    LOG_INFO("Beginning propagation...");
+
+
     // calculate the field for each timestep in advance
-    for (auto& p : _pulses) {
-        if (p->polarization_vector[X] != 0.)
-            _field[X].resize(NT);
-        if (p->polarization_vector[Y] != 0.)
-            _field[Y].resize(NT);
-        if (p->polarization_vector[Z] != 0.)
-            _field[Z].resize(NT);
-    }
+    LOG_INFO("Calculating cummulative field...");
+    ComputeFields();
 
-    //std::ofstream file("data/x_field.txt");
-    //file << std::setprecision(8) << std::scientific;
-    if (_field[X].size() > 0) {
-        for (int it = 0; it < NT; it++) {
-            for (auto& p : _pulses)
-                _field[X][it] += (*p)(it*_dt)*p->polarization_vector[X];
-            //file << _field[X][it] << std::endl;
-        }
-    }
-    if (_field[Y].size() > 0) {
-        for (int it = 0; it < NT; it++)
-            for (auto& p : _pulses)
-                _field[Y][it] += (*p)(it*_dt)*p->polarization_vector[Y];
-    }
-
-    if (_field[Z].size() > 0) {
-        for (int it = 0; it < NT; it++)
-            for (auto& p : _pulses)
-                _field[Z][it] += (*p)(it*_dt)*p->polarization_vector[Z];
-
-    }
-    //exit(0);
-
+    // allow observables to initialize
     for (auto& obs : _observables)
-        obs->Startup();
+        obs->Startup(start_iteration);
 
-    Log::info("Propagation for " + std::to_string(NT) + " timesteps...");
+    // begin
+    LOG_INFO("Propagation for " + std::to_string(_NT) + " timesteps...");
     Profile::Push("Total time stepping");
     
     // do simulation
-    for (int it = 0; it < NT; it++) {
+    for (int it = start_iteration; it < _NT; it++) {
         t = it*_dt;
         if (!DoStep(it, t, _dt)) break;
-        DoCheckpoint(it, NT);
+        DoCheckpoint(it);
         DoObservables(it, t, _dt);
     }
     
     Profile::Pop("Total time stepping");
 
+    WriteFinalState();
+
+    _tdse_out = nullptr;
+
+    // allow observables to complete
     for (auto& obs : _observables)
         obs->Shutdown();
 
+    // finish up
     Finish();
 }
-void TDSE::DoCheckpoint(int it, int NT) {
+void TDSE::DoCheckpoint(int it) {
     if ((_checkpoints != 0) && (it % _checkpoints == 0)) {
-        Log::info("iteration: " + std::to_string(it) + "/" + std::to_string(NT));
+        LOG_INFO("iteration: " + std::to_string(it) + "/" + std::to_string(_NT));
         for (auto& obs : _observables)
-            obs->Flush();
+            obs->Flush();                           // dumb all the observables
+
+        // dump psi to file
+        _tdse_out->PushGroup("checkpoints");
+        _tdse_out->WriteVector(std::to_string(it), _psi);
+        _tdse_out->PopGroup();
+
+        // write last checkpoint iteration
+        _tdse_out->PushGroup("parameters");
+        _tdse_out->WriteAttribute("last_checkpoint", it);           // should update
+        _tdse_out->PopGroup();
     }
 }
 void TDSE::DoObservables(int it, double t, double dt) {
     for (auto& obs : _observables)
         obs->DoObservable(it, t, dt);
+}
+
+void TDSE::ComputeFields() {
+    for (auto& p : _pulses) {
+        if (p->polarization_vector.x != 0. || p->minor_polarization_vector.x != 0.)
+            _field[X].resize(_NT);
+        if (p->polarization_vector.y != 0. || p->minor_polarization_vector.y != 0.)
+            _field[Y].resize(_NT);
+        if (p->polarization_vector.z != 0. || p->minor_polarization_vector.z != 0.)
+            _field[Z].resize(_NT);
+    }
+
+    if (_field[X].size() > 0) {
+        for (int it = 0; it < _NT; it++) {
+            for (auto& p : _pulses)
+                _field[X][it] += (*p)(it*_dt).x;
+        }
+    }
+    if (_field[Y].size() > 0) {
+        for (int it = 0; it < _NT; it++)
+            for (auto& p : _pulses)
+                _field[Y][it] += (*p)(it*_dt).y;
+    }
+    if (_field[Z].size() > 0) {
+        for (int it = 0; it < _NT; it++)
+            for (auto& p : _pulses)
+                _field[Z][it] += (*p)(it*_dt).z;
+    }
+}
+
+
+
+void TDSE::LoadInitialState() {
+    LOG_INFO("Loading initial state...");
+    if (!file_exists(_initial_state_filename)) {
+        LOG_CRITICAL("eigenstate file does not exists: " + _initial_state_filename);
+        exit(-1);
+    }
+
+    Vector temp = _MathLib.CreateVector(_N);        // vector from hdf5 file
+    std::vector<Vector> vecs(_dof/_N);             // these will all be concatenated
+    for (auto& v : vecs) {
+        v = _MathLib.CreateVector(_N); 
+        v->Zero();
+    }
+    auto hdf5 = _MathLib.OpenHDF5(_initial_state_filename, 'r');
+    hdf5->PushGroup("vectors");
+
+    // compute norm from amplitudes
+    double norm = 0;
+    for (auto& state : _initial_state)
+        norm += state.amplitude*state.amplitude;
+
+    // merge the initial eigenstates into 'vecs'
+    std::stringstream name_ss;
+    for (auto& state : _initial_state) {
+        name_ss.str("");                                         // clear string stream
+        name_ss << "(" << state.n << ", " << state.l << ")";     // name of state
+
+        int mBlock = RowFrom(state.m, _Ms, _mRows)/_N;
+        int lBlock = mBlock + (state.l-std::abs(state.m));
+        hdf5->ReadVector(name_ss.str().c_str(), temp);                  // read in the state
+        temp->Scale(state.amplitude*std::exp(1.i*state.phase));         // scale by norm, amplitude and phase
+        _MathLib.AXPY(vecs[lBlock], 1., temp);                          // sum with other similar l's
+    }
+    hdf5->PopGroup();
+
+    // concatenate into "_psi"
+    _psi->Concatenate(vecs);                        // append all the initial vectors together
+    _psi->Scale(1./sqrt(norm));                     // and normalize
+}
+bool TDSE::LoadLastCheckpoint(int& start_iteration) {
+    int it;
+    LOG_INFO("Loading last checkpoint...");
+    // what was the last successful checkpoint?
+    _tdse_out->PushGroup("parameters");
+    _tdse_out->ReadAttribute("last_checkpoint", &it);
+    _tdse_out->PopGroup();
+
+    if (it == -1) {             // ran but never had a checkpoint
+        LOG_INFO("No checkpoints found...");
+        return false;
+    }
+    start_iteration = it;
+    // load that checkpoint
+    _tdse_out->PushGroup("checkpoints");
+    _tdse_out->ReadVector(std::to_string(start_iteration), _psi);
+    _tdse_out->PopGroup();
+
+    return true;
+}
+
+void TDSE::WriteInitialState() const {
+    _tdse_out->PushGroup("initial_state");
+    _tdse_out->WriteVector("wavefunction", _psi);
+    _tdse_out->PopGroup();
+}
+void TDSE::WriteFinalState() const {
+    _tdse_out->PushGroup("final_state");
+    _tdse_out->WriteVector("wavefunction", _psi);
+    _tdse_out->PopGroup();
+}
+
+
+
+void TDSE::WriteParametersToTDSE() const {
+    _tdse_out->PushGroup("parameters");
+    _tdse_out->WriteAttribute("time_step", _dt);
+    _tdse_out->WriteAttribute("time_min", _tmin);
+    _tdse_out->WriteAttribute("time_max", _tmax);
+    _tdse_out->WriteAttribute("num_timesteps", _NT);
+    _tdse_out->WriteAttribute("x_min", _xmin);
+    _tdse_out->WriteAttribute("x_max", _xmax);
+    _tdse_out->WriteAttribute("nodes", _nodes);
+    _tdse_out->WriteAttribute("order", _order);
+    _tdse_out->WriteAttribute("l_max", _lmax);
+    _tdse_out->WriteAttribute("m_max", _mmax);
+    _tdse_out->WriteAttribute("ecs_r0", _ecs_r0);
+    _tdse_out->WriteAttribute("ecs_theta", _ecs_theta);
+    _tdse_out->WriteAttribute("last_checkpoint", -1);        // for later
+    _tdse_out->PopGroup();
+}
+
+
+#define COMPARE_PARAM(x,y) if (x != y) { \
+        LOG_CRITICAL("input "#x" does not match TDSE.h5. Expected " + std::to_string(x)); \
+        return false; \
+    }
+
+bool TDSE::CompareTDSEH5wInput() const {
+    // read parameters and compare to input file
+    double ecs_r0, ecs_theta;
+    int order, nodes;
+    int lmax, mmax;
+    double xmax, xmin;
+    double dt, tmin, tmax;
+    int NT;
+
+    _tdse_out->PushGroup("parameters");
+    _tdse_out->ReadAttribute("time_step", &dt);
+    _tdse_out->ReadAttribute("time_min", &tmin);
+    _tdse_out->ReadAttribute("time_max", &tmax);
+    _tdse_out->ReadAttribute("num_timesteps", &NT);
+    _tdse_out->ReadAttribute("x_min", &xmin);
+    _tdse_out->ReadAttribute("x_max", &xmax);
+    _tdse_out->ReadAttribute("nodes", &nodes);
+    _tdse_out->ReadAttribute("order", &order);
+    _tdse_out->ReadAttribute("l_max", &lmax);
+    _tdse_out->ReadAttribute("m_max", &mmax);
+    _tdse_out->ReadAttribute("ecs_r0", &ecs_r0);
+    _tdse_out->ReadAttribute("ecs_theta", &ecs_theta);
+    _tdse_out->PopGroup();
+
+    // make sure everything matches
+    COMPARE_PARAM(dt,_dt);
+    COMPARE_PARAM(tmin,_tmin);
+    COMPARE_PARAM(tmax,_tmax);
+    COMPARE_PARAM(NT,_NT);
+    COMPARE_PARAM(xmin,_xmin);
+    COMPARE_PARAM(xmax,_xmax);
+    COMPARE_PARAM(nodes,_nodes);
+    COMPARE_PARAM(order,_order);
+    COMPARE_PARAM(lmax,_lmax);
+    COMPARE_PARAM(mmax,_mmax);
+    COMPARE_PARAM(ecs_r0,_ecs_r0);
+    COMPARE_PARAM(ecs_theta,_ecs_theta);
+    
+    return true;
 }

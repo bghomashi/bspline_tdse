@@ -4,12 +4,13 @@
 #include <sstream>
 #include <string>
 #include "utility/logger.h"
+#include "utility/file_exists.h"
 
 #include "math_libs/petsc/petsc_lib.h"
 
 DipoleAccObservable::DipoleAccObservable(TDSE& tdse) : Observable(tdse) {
 }
-void DipoleAccObservable::Startup() {
+void DipoleAccObservable::Startup(int start_it) {
     // Build GradPotential Matrix
     auto& basis = _tdse.Basis();
     int Nmax = basis.getNumBSplines();
@@ -62,7 +63,31 @@ void DipoleAccObservable::Startup() {
             _MathLib.AXPY(_gradPot[Z], -1., temp);                   // add potential to H0
         }
     }
-    _txt_file = _MathLib.OpenASCII(_output_filename, 'w');
+    
+    // here we want to clear any extra entrees
+    if (start_it > 0 && file_exists(_output_filename)) {
+        std::vector<double> t((start_it+1)/_compute_period_in_iterations), x((start_it+1)/_compute_period_in_iterations), y((start_it+1)/_compute_period_in_iterations), z((start_it+1)/_compute_period_in_iterations);
+        std::stringstream line;
+        // first read all the values back that we want to keep
+        _txt_file = _MathLib.OpenASCII(_output_filename, 'r');
+        for (int i = 0; i < t.size(); i++) {
+            line.str(_txt_file->ReadLine());
+            line >> t[i] >> x[i] >> y[i] >> z[i];
+        }
+
+        // now clear the file and write them all back
+        _txt_file = _MathLib.OpenASCII(_output_filename, 'w');
+        for (int i = 0; i < t.size(); i++) {
+            line.str("");
+            line << t[i] << "\t" 
+                << x[i] << "\t"
+                << y[i] << "\t"
+                << z[i] << std::endl;
+            _txt_file->Write(line.str().c_str());
+        }
+    } else {
+        _txt_file = _MathLib.OpenASCII(_output_filename, 'w');
+    }
 }
 
 void DipoleAccObservable::Shutdown() {
@@ -91,13 +116,7 @@ void DipoleAccObservable::Compute(int it, double t, double dt) {
         _MathLib.Mult(_gradPot[Z], _psi, _psi_temp);
         _MathLib.Dot(_psi, _psi_temp, dipole[Z]);
     }
-
-    // MatView(std::dynamic_pointer_cast<PetscMatrix>(_gradPotential)->_petsc_mat, 0);
-    // exit(0);
-    // VecView(std::dynamic_pointer_cast<PetscVector>(_psi)->_petsc_vec, 0);
-    // exit(0);
-    // VecView(std::dynamic_pointer_cast<PetscVector>(_psi_temp)->_petsc_vec, 0);
-    //exit(0);
+    
     ss << std::setprecision(8) << std::scientific;
     ss  << t << "\t" 
         << std::real(dipole[X]) << "\t"

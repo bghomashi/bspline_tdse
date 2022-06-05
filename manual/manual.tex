@@ -1,0 +1,118 @@
+%% Overleaf			
+%% Software Manual and Technical Document Template	
+%% 									
+%% This provides an example of a software manual created in Overleaf.
+
+\documentclass{memoir}
+
+% Packages used in this example
+\usepackage{graphicx}  % for including images
+\usepackage{microtype} % for typographical enhancements
+\usepackage{listings}    % for code listings
+\usepackage{amsmath}   % for equations and mathematics
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\usepackage{hyperref}  % for hyperlinks
+\usepackage[a4paper,top=4.2cm,bottom=4.2cm,left=3.5cm,right=3.5cm]{geometry} % for setting page size and margins
+
+\lstset{upquote=true}
+% Custom macros used in this example document
+\newcommand{\doclink}[2]{\href{#1}{#2}\footnote{\url{#1}}}
+
+% Frontmatter data; appears on title page
+\title{User manual}
+\author{Bejan Ghomashi}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction}
+
+\cite{AbramowitzStegun}
+
+\section{The input file}
+The base parameters. What kind of propagator would you like to use? Only supports Crank Nicolson for now
+\begin{lstlisting}
+    "propagator": "crank_nicolson"
+\end{lstlisting}.
+The math library to do the propagation. Hopefully a native threaded version coming soon. Only suuports PETsc right now.
+\begin{lstlisting}
+    "math_library": "PETsc"
+\end{lstlisting}.
+Time step for propagation:
+\begin{lstlisting}
+    "time_step": 0.1
+\end{lstlisting}.
+
+
+The next object in the input json file is the basis. This specifies parameters for the bspline basis in both the eigen state calculation and for the TDSE
+
+\begin{lstlisting}
+"basis": {
+    "order": 8,
+    "node_sequence": "parabolic",
+    "num_nodes": 500,
+    "x_min": 0.0,
+    "x_max": 300.0,
+    "lmax": 30,
+    "mmax": 0,
+    "ecs_r0": 0.9,
+    "ecs_theta": 0.3
+}
+\end{lstlisting}.
+
+
+.
+.
+.
+.
+.
+
+Eigen state solver,
+\begin{lstlisting}
+"eigen_state": {
+    "solver": "SLEPC",                  // only solver that is supported
+    "nmax": 4,                          // how many n-states (minus 1 for each L)
+    "lmax": 3,                          // optional, nmax-1 by default, final L
+    "lmin": 0,                          // optional, 0 by default, starting L
+    "tol": 1e-10,                       // optional, ? by default
+    "filename": "Ar.h5",                // basis filename
+    "expanding": true                   // optionalexpand the basis in *filename*?
+}
+\end{lstlisting}.
+
+
+\section{Some further examples to get started}
+
+
+
+\bibliographystyle{apalike}
+\bibliography{biblio}
+
+
+\end{document}

@@ -10,6 +10,8 @@ protected:
 
     int _N, _order, _nodes;
     int _lmax, _mmax;
+    int _lmin;
+    bool _expanding;
 
     double _xmax, _xmin;
 
@@ -34,7 +36,10 @@ public:
 
     void SetTolerance(double tolerance);
     void SetNMax(int nmax);
+    void SetLMax(int lmax);
+    void SetLMin(int lmin);
     void SetFilename(const std::string& filename);
+    void SetExpanding(bool flag);
     
     virtual void Store() const = 0;
     virtual void Finish() = 0;

@@ -29,6 +29,10 @@ ExponentialPotential::ExponentialPotential(double Z, double decay, double x, dou
     }
 }
 
+double ExponentialPotential::operator() (double x, double y, double z) const {
+    double r = std::sqrt (x*x + y+y + z*z);
+    return -_Z*std::exp(-_D*r);
+}
 void ExponentialPotential::FillMatrix(const Basis::BSpline& basis, Matrix m, int N, const std::vector<int>& Ms, const std::vector<int>& mRows) {
     int order = basis.getOrder();
 

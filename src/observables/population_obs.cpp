@@ -10,7 +10,7 @@
 
 PopulationObservable::PopulationObservable(TDSE& tdse) : Observable(tdse) {
 }
-void PopulationObservable::Startup() {
+void PopulationObservable::Startup(int start_it) {
     auto& basis = _tdse.Basis();
     int order = basis.getOrder();
     _N = basis.getNumBSplines();
@@ -61,6 +61,9 @@ void PopulationObservable::Startup() {
 
         return overlapStore[i + j*_N];
     });
+
+
+
 
     if (_output_filename.length() > 0) {
         _file = ASCII(_MathLib.OpenASCII(_output_filename, 'w'));

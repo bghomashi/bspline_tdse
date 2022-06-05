@@ -10,6 +10,8 @@ public:
     CoulombPotential(double Z);
     CoulombPotential(double Z, double x, double y, double z);
 
+
+    double operator() (double x, double y, double z) const;
     // FIX: maybe this way of thinking about it is not very efficient
     void FillMatrix(const Basis::BSpline& basis, Matrix m, int N, const std::vector<int>& Ms = {0}, const std::vector<int>& mRows = {0});
     void FillMatrixGradX(const Basis::BSpline& basis, Matrix m, int N, int lmax, const std::vector<int>& Ms = {0}, const std::vector<int>& mRows = {0});

@@ -131,15 +131,26 @@ public:
 
     void PushGroup(const std::string& group_name);
     void PopGroup();
+    bool HasGroup(const std::string& group_name) const;
 
+    void ReadAttribute(const std::string& attr_name, complex* value);
+    void ReadAttribute(const std::string& attr_name, double* value);
+    void ReadAttribute(const std::string& attr_name, int* value);
+    void ReadAttribute(const Vector object, const std::string& attr_name, complex* value);
+    void ReadAttribute(const Vector object, const std::string& attr_name, double* value);
+    void ReadAttribute(const Vector object, const std::string& attr_name, int* value);
     void WriteAttribute(const Vector object, const std::string& attr_name, const complex value);
     void WriteAttribute(const Vector object, const std::string& attr_name, const double value);
     void WriteAttribute(const Vector object, const std::string& attr_name, const int value);
     void WriteAttribute(const std::string& attr_name, const complex value);
     void WriteAttribute(const std::string& attr_name, const double value);
     void WriteAttribute(const std::string& attr_name, const int value);
+    void ReadAttribute(const std::string& attr_name, const int value);
+    bool HasAttribute(const std::string& attr_name) const;
+    
     void WriteVector(const std::string& obj_name, const Vector value);
     void ReadVector(const std::string& obj_name, Vector value);
+    bool HasVector(const std::string& obj_name) const;
 };
 
 class PetscSolver : public IGMRESSolver {
