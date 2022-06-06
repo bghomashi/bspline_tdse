@@ -27,12 +27,13 @@ void CrankNicolsonTDSE::Initialize() {
     memory *= _dof;
     memory = memory*16/1024./1024./1024.;
 
-    Log::info("Initialize TDSE");
+    LOG_INFO("Initialize TDSE");
     // ---------------------------------------------------------------
     // initialize field free, overlap, and interaction matrices
-    Log::info("Building Hamiltonian and overlap matrix...");
-    Log::info("Estimated memory required: " + std::to_string(memory) + " GB.");
-    Log::info("Allocating space...");
+    LOG_INFO("Building Hamiltonian and overlap matrix...");
+    LOG_INFO("Estimated memory required: " + std::to_string(memory) + " GB.");
+    Log::flush();
+    LOG_INFO("Allocating space...");
     Matrix H0 = _MathLib.CreateMatrix(_dof, _dof, 2*_order-1);
     Matrix S = _MathLib.CreateMatrix(_dof, _dof, 2*_order-1);
     

@@ -23,6 +23,7 @@ public:
     virtual void critical(const std::string& text);
     virtual void debug(const std::string& text);
     virtual void set_logger_file(const std::string& log_file);
+    virtual void flush();
 };
 
 namespace Log {
@@ -32,6 +33,7 @@ namespace Log {
     void debug(const std::string& text);
     void set_logger_file(const std::string& log_file);
     void set_logger(Logger* logger);
+    void flush();
 }
 
 #if LOG_LEVEL >= LOG_LEVEL_INFO

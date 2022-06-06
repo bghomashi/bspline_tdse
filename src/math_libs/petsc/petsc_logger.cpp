@@ -31,3 +31,9 @@ void PetscLogger::set_logger_file(const std::string& log_file) {
     if (rank == 0)
         Logger::set_logger_file(log_file);
 }
+void PetscLogger::flush() {
+    PetscMPIInt rank;
+    PetscErrorCode ierr = MPI_Comm_rank(PETSC_COMM_WORLD, &rank);PETSCASSERT(ierr);
+    if (rank == 0)
+        Logger::flush();
+}

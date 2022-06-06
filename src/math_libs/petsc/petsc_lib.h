@@ -174,6 +174,7 @@ public:
     void critical(const std::string& text);
     void debug(const std::string& text);
     void set_logger_file(const std::string& log_file);
+    void flush();
 };
 
 class PetscProfiler : public Profiler {

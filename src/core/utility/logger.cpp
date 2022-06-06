@@ -32,6 +32,12 @@ void Logger::debug(const std::string& text) {
 void Logger::set_logger_file(const std::string& log_file) {
     s_logger_file = std::ofstream(log_file, std::ostream::app);
 }
+void Logger::flush() {
+    if (s_logger_file && s_logger_file.good())
+        s_logger_file << std::flush;
+    else
+        std::cout << std::flush;
+}
 
 // these are the static defined functions
 namespace Log {
@@ -52,5 +58,8 @@ namespace Log {
     }
     void set_logger(Logger* logger) {
         s_logger.reset(logger);
+    }
+    void flush() {
+        s_logger->flush();
     }
 }

@@ -22,5 +22,6 @@ bool PetscProfiler::PrintTo(const std::string& filename) {
     PetscMPIInt rank;
     PetscErrorCode ierr = MPI_Comm_rank(PETSC_COMM_WORLD, &rank);PETSCASSERT(ierr);
     if (rank == 0)
-        Profiler::PrintTo(filename);
+        return Profiler::PrintTo(filename);
+    return false;
 }
