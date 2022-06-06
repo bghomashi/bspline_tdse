@@ -56,7 +56,6 @@ void ExponentialPotential::FillMatrixGradX(const Basis::BSpline& basis, Matrix m
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradY");
         // the same for each L-M block so cache it
         std::vector<complex> expR(N*N);
         BuildExpR(basis, N, _Z, _D, expR);
@@ -95,7 +94,6 @@ void ExponentialPotential::FillMatrixGradY(const Basis::BSpline& basis, Matrix m
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradY");
         // the same for each L-M block so cache it
         std::vector<complex> expR(N*N);
         BuildExpR(basis, N, _Z, _D, expR);
@@ -134,7 +132,6 @@ void ExponentialPotential::FillMatrixGradZ(const Basis::BSpline& basis, Matrix m
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradZ");
         // the same for each L-M block so cache it
         std::vector<complex> expR(N*N);
         BuildExpR(basis, N, _Z, _D, expR);

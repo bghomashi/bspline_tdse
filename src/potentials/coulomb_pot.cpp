@@ -77,7 +77,6 @@ void CoulombPotential::FillMatrixGradX(const Basis::BSpline& basis, Matrix m, in
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradX");
         // the same for each L-M block so cache it
         std::vector<complex> invRR(N*N);
         BuildInvRR(basis, N, _Z, invRR);
@@ -180,7 +179,6 @@ void CoulombPotential::FillMatrixGradY(const Basis::BSpline& basis, Matrix m, in
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradY");
         // the same for each L-M block so cache it
         std::vector<complex> invRR(N*N);
         BuildInvRR(basis, N, _Z, invRR);
@@ -215,7 +213,6 @@ void CoulombPotential::FillMatrixGradZ(const Basis::BSpline& basis, Matrix m, in
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradZ");
         // the same for each L-M block so cache it
         std::vector<complex> invRR(N*N);
         BuildInvRR(basis, N, _Z, invRR);

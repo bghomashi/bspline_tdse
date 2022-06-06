@@ -59,7 +59,6 @@ void YukawaPotential::FillMatrixGradX(const Basis::BSpline& basis, Matrix m, int
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradX");
         // the same for each L-M block so cache it
         std::vector<complex> invR(N*N), invRR(N*N);
         BuildExpInvRR(basis, N, _Z, _D, invR);
@@ -99,7 +98,6 @@ void YukawaPotential::FillMatrixGradY(const Basis::BSpline& basis, Matrix m, int
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradY");
         // the same for each L-M block so cache it
         std::vector<complex> invR(N*N), invRR(N*N);
         BuildExpInvRR(basis, N, _Z, _D, invR);
@@ -139,7 +137,6 @@ void YukawaPotential::FillMatrixGradZ(const Basis::BSpline& basis, Matrix m, int
     int mmax = Ms.back();
 
     if (_isCentral) {
-        Log::info("FillMatrixGradZ");
         // the same for each L-M block so cache it
         std::vector<complex> invR(N*N), invRR(N*N);
         BuildExpInvR(basis, N, _Z, _D, invR);
