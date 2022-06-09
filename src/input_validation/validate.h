@@ -10,7 +10,7 @@
 #include "tdse/potential.h"
 
 inline void MustContain(const std::string& entry, const std::string& type = "", const std::string& location = "input file") {
-    Log::critical(location + " must contain " + type + " entry: " + entry);
+    LOG_CRITICAL(location + " must contain " + type + " entry: " + entry);
 }
 
 inline std::string ToLower(std::string data) {

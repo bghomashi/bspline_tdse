@@ -64,7 +64,8 @@ public:
                     int order, int nodes, 
                     int lmax, int mmax, 
                     double ecs_r0, double ecs_theta,
-                    Basis::BSpline::Sequence seq);
+                    Basis::BSpline::Sequence seq,
+                    double seq_parameter);
     void Propagate();
     void AddPulse(Pulse::Ptr_t p);
     void AddPotential(Potential::Ptr_t pot);

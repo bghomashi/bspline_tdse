@@ -7,7 +7,7 @@ using namespace std::complex_literals;
 
 namespace Basis {
 
-	int BSpline::Initialize(int order, int nodes, double xmin, double xmax, Sequence seq, const ECS& ecs) {
+	int BSpline::Initialize(int order, int nodes, double xmin, double xmax, Sequence seq, const ECS& ecs, double param) {
 		_nodes = nodes;
 		_order = order;
 		_numBSplines = (nodes-1) + (order-1);
@@ -22,11 +22,13 @@ namespace Basis {
 			for (int i = 0; i < nodes; i++)
 				_grid[i] = xmin + ((xmax - xmin) * (double)i) / double(nodes - 1.);
 		} else if (seq == Exponential) {
-			double g = 6.;											// parameter
+			double g = param;											// parameter
 			for (int i = 0; i < nodes; i++)
 				_grid[i] = xmin + (xmax - xmin)*(exp(g*i/(nodes-1)) - 1.)/(exp(g) - 1.);
 		} else if (seq == ParabolicLinear) {
-			double i0 = std::min(30, nodes);						// parameter
+			double x0 = param;
+			double i0 = std::floor(2.*(nodes-1) / (1.+(xmax - xmin)/(x0 - xmin)));
+			// double i0 = std::min(30, nodes);						// parameter
 			double a0 = xmax / i0 /(2.*(nodes-1) - i0);
 			double a1 = 2.*xmax /(2.*(nodes-1) - i0);
 			double a2 = -xmax*i0 /(2.*(nodes-1) - i0);
@@ -39,7 +41,7 @@ namespace Basis {
 			}
 		} else if (seq == Sinlike) {
 			// not tested
-			double a = 0.1;											// parameter
+			double a = param;											// parameter
 			for (int i = 0; i < nodes; i++)
 				_grid[i] = xmin + xmax*sin(M_PI/2. * pow(double(i)/double(nodes-1), a));
 		// std::ofstream file("data/grid_sinlike.dat");

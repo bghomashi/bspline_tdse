@@ -7,13 +7,34 @@ bool ValidateBasis(const nlohmann::json& input) {
     } else {
         auto& basis = input["basis"];
         if (!(basis.contains("order") && basis["order"].is_number())) {
-            MustContain("order", "number");
+            MustContain("order", "number", "basis");
             return false;
         }
         if (!(basis.contains("node_sequence") && basis["node_sequence"].is_string())) {
-            MustContain("node_sequence", "string");
+            MustContain("node_sequence", "string", "basis");
             return false;
         } 
+        if (ToLower(basis["node_sequence"]) == "linear") {
+            // fine
+        } else if (ToLower(basis["node_sequence"]) == "exponential") {
+            if (!(basis.contains("parameter") && basis["parameter"].is_number())) {
+                MustContain("parameter", "number", "basis");
+                return false;
+            }
+        } else if (ToLower(basis["node_sequence"]) == "sinlike") {
+            if (!(basis.contains("parameter") && basis["parameter"].is_number())) {
+                MustContain("parameter", "number", "basis");
+                return false;
+            }
+        } else if (ToLower(basis["node_sequence"]) == "parabolic") {
+            if (!(basis.contains("parameter") && basis["parameter"].is_number())) {
+                MustContain("parameter", "number", "basis");
+                return false;
+            }
+        } else {
+            LOG_CRITICAL("node_sequence not supported!");
+            return false;
+        }
         // CHECK SEQUENCES
         if (!(basis.contains("num_nodes") && basis["num_nodes"].is_number())) {
             MustContain("num_nodes", "number");

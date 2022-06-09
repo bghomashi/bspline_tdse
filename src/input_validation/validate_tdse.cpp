@@ -177,6 +177,7 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
     int mmax = basis["mmax"];
     double ecs_r0 = 0.9;
     double ecs_theta = Pi/4.;
+    double seq_parameter = 0.;              // does nothing for Linear
     Basis::BSpline::Sequence seq = Basis::BSpline::Linear;
 
 
@@ -185,18 +186,24 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
     
     if (ToLower(basis["node_sequence"]) == "linear")
         seq = Basis::BSpline::Linear;
-    else if (ToLower(basis["node_sequence"]) == "exponential")
+    else if (ToLower(basis["node_sequence"]) == "exponential") {
         seq = Basis::BSpline::Exponential;
-    else if (ToLower(basis["node_sequence"]) == "sinlike")
+        seq_parameter = basis["parameter"].get<double>();
+    }
+    else if (ToLower(basis["node_sequence"]) == "sinlike") {
         seq = Basis::BSpline::Sinlike;
-    else if (ToLower(basis["node_sequence"]) == "parabolic")
+        seq_parameter = basis["parameter"].get<double>();
+    }
+    else if (ToLower(basis["node_sequence"]) == "parabolic") {
         seq = Basis::BSpline::ParabolicLinear;
+        seq_parameter = basis["parameter"].get<double>();
+    }
 
     tdse->SetupBasis(x_min, x_max, 
                     order, num_nodes, 
                     lmax, mmax,
                     ecs_r0, ecs_theta,
-                    seq);
+                    seq, seq_parameter);
     
     // setup observables
     LOG_INFO("Building observables.");

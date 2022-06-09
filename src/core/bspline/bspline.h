@@ -86,7 +86,7 @@ namespace Basis {
 		void InitializeBSplineOfOrder(const std::vector<complex>& knots, int order, CoeffMatrix& coeff);
 		void PropagateCoeffients(const std::vector<complex>& knots, int tbs, int order, CoeffMatrix& coeff);
     public:
-		int Initialize(int order, int nodes, double xmin, double xmax, Sequence seq = Linear, const ECS& ecs = {0.9, Pi/4.});
+		int Initialize(int order, int nodes, double xmin, double xmax, Sequence seq = Linear, const ECS& ecs = {0.9, Pi/4.}, double param = 0.);
 
 		// get the bs'th Bspline (derivative dn)
 		complex bspline(double x, int bs, int dn = 0) const;                // x-before ecs rotation
