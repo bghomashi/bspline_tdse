@@ -5,11 +5,13 @@
 class BasisObservable : public Observable {
 protected:
     ASCII _txt_file;
-    int _numGrid;
+    int _numGrid, _to, _from;
     std::vector<double> _grid;
 public:
     BasisObservable(TDSE& tdse);
     
+    void SetFrom(int from);  
+    void SetTo(int to);  
     void SetNumGrid(int numGrid);  
     
     void Flush();

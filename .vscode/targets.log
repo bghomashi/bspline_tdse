@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Jun 11 11:48:27 2022
+# Make data base, printed on Sat Jun 11 12:26:16 2022
 
 # Variables
 
@@ -95,7 +95,7 @@ ODIR = obj/
 # environment
 XDG_SESSION_DESKTOP = xfce
 # makefile (from 'dep/input_validation/validate_tise.d', line 1)
-MAKEFILE_LIST := /home/bghomashi/Documents/projects/tdse_more_organized/Makefile dep/main.d dep/core/maths/iascii.d dep/core/bspline/bspline_coeff_matrix.d dep/core/bspline/bspline_evaluate.d dep/core/bspline/bspline_helper.d dep/core/bspline/bspline_initialize.d dep/core/bspline/bspline_integrate.d dep/core/bspline/bspline_node_dist.d dep/core/bspline/guass_quad.d dep/core/tdse/laser.d dep/core/tdse/observable.d dep/core/tdse/tdse.d dep/core/tise/tise.d dep/core/utility/index_manip.d dep/core/utility/logger.d dep/core/utility/profiler.d dep/core/utility/spherical_harmonics.d dep/core/utility/timer.d dep/eigen_solvers/gen_eigen_tise.d dep/math_libs/petsc/petsc_ASCII.d dep/math_libs/petsc/petsc_eigensolver.d dep/math_libs/petsc/petsc_hdf5.d dep/math_libs/petsc/petsc_lib.d dep/math_libs/petsc/petsc_logger.d dep/math_libs/petsc/petsc_matrix.d dep/math_libs/petsc/petsc_profiler.d dep/math_libs/petsc/petsc_solver.d dep/math_libs/petsc/petsc_vector.d dep/tdse_propagators/cranknicolson.d dep/tdse_propagators/cranknicolson_fill_FF.d dep/tdse_propagators/cranknicolson_fill_HI_x.d dep/tdse_propagators/cranknicolson_fill_HI_y.d dep/tdse_propagators/cranknicolson_fill_HI_z.d dep/tdse_propagators/cranknicolson_fill_S.d dep/tdse_propagators/cranknicolson_fill_U0.d dep/observables/dipole_acc_obs.d dep/observables/norm_obs.d dep/observables/population_obs.d dep/observables/potential_obs.d dep/observables/pulse_obs.d dep/observables/wavefunction_obs.d dep/potentials/coulomb_pot.d dep/potentials/exponential_pot.d dep/potentials/yukawa_pot.d dep/input_validation/build_observables.d dep/input_validation/build_potentials.d dep/input_validation/validate_basis.d dep/input_validation/validate_eigen_state_calc.d dep/input_validation/validate_initial_state.d dep/input_validation/validate_lasers.d dep/input_validation/validate_mathlib.d dep/input_validation/validate_observables.d dep/input_validation/validate_potential.d dep/input_validation/validate_propagator.d dep/input_validation/validate_tdse.d dep/input_validation/validate_tise.d
+MAKEFILE_LIST := /home/bghomashi/Documents/projects/tdse_more_organized/Makefile dep/main.d dep/core/maths/iascii.d dep/core/bspline/bspline_coeff_matrix.d dep/core/bspline/bspline_evaluate.d dep/core/bspline/bspline_helper.d dep/core/bspline/bspline_initialize.d dep/core/bspline/bspline_integrate.d dep/core/bspline/bspline_node_dist.d dep/core/bspline/guass_quad.d dep/core/tdse/laser.d dep/core/tdse/observable.d dep/core/tdse/tdse.d dep/core/tise/tise.d dep/core/utility/index_manip.d dep/core/utility/logger.d dep/core/utility/profiler.d dep/core/utility/spherical_harmonics.d dep/core/utility/timer.d dep/eigen_solvers/gen_eigen_tise.d dep/math_libs/petsc/petsc_ASCII.d dep/math_libs/petsc/petsc_eigensolver.d dep/math_libs/petsc/petsc_hdf5.d dep/math_libs/petsc/petsc_lib.d dep/math_libs/petsc/petsc_logger.d dep/math_libs/petsc/petsc_matrix.d dep/math_libs/petsc/petsc_profiler.d dep/math_libs/petsc/petsc_solver.d dep/math_libs/petsc/petsc_vector.d dep/tdse_propagators/cranknicolson.d dep/tdse_propagators/cranknicolson_fill_FF.d dep/tdse_propagators/cranknicolson_fill_HI_x.d dep/tdse_propagators/cranknicolson_fill_HI_y.d dep/tdse_propagators/cranknicolson_fill_HI_z.d dep/tdse_propagators/cranknicolson_fill_S.d dep/tdse_propagators/cranknicolson_fill_U0.d dep/observables/basis_obs.d dep/observables/dipole_acc_obs.d dep/observables/norm_obs.d dep/observables/population_obs.d dep/observables/potential_obs.d dep/observables/pulse_obs.d dep/observables/wavefunction_obs.d dep/potentials/coulomb_pot.d dep/potentials/exponential_pot.d dep/potentials/yukawa_pot.d dep/input_validation/build_observables.d dep/input_validation/build_potentials.d dep/input_validation/validate_basis.d dep/input_validation/validate_eigen_state_calc.d dep/input_validation/validate_initial_state.d dep/input_validation/validate_lasers.d dep/input_validation/validate_mathlib.d dep/input_validation/validate_observables.d dep/input_validation/validate_potential.d dep/input_validation/validate_propagator.d dep/input_validation/validate_tdse.d dep/input_validation/validate_tise.d
 # automatic
 @F = $(notdir $@)
 # environment
@@ -145,7 +145,7 @@ PATH = /home/bghomashi/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/
 # default
 MAKEFILES := 
 # makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 28)
-EXTRAFLAGS = -O0
+EXTRAFLAGS = -g -O0 
 # environment
 LC_MONETARY = en_US.UTF-8
 # environment
@@ -188,7 +188,6 @@ CPPFLAGS = -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_CPP -Dlapack_complex_float="s
 XDG_VTNR = 7
 # makefile
 .DEFAULT_GOAL := bspline_tdse.out
- 
 # environment
 EDITOR = /usr/bin/nano
 # environment
@@ -256,7 +255,7 @@ GDMSESSION = xfce
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=121/1024=12%, Rehash=0, Collisions=7/287=2%
+# Load=121/1024=12%, Rehash=0, Collisions=7/289=2%
 
 # Pattern-specific Variable Values
 
@@ -268,7 +267,7 @@ LC_IDENTIFICATION = en_US.UTF-8
 # src/eigen_solvers (device 2066, inode 5113987): 4 files, no impossibilities.
 # dep (device 2066, inode 5113732): 15 files, no impossibilities.
 # src/math_libs (device 2066, inode 5113787): 4 files, no impossibilities.
-# src/observables (device 2066, inode 5114251): 14 files, no impossibilities.
+# src/observables (device 2066, inode 5114251): 16 files, no impossibilities.
 # dep/core/bspline (device 2066, inode 5113744): 9 files, no impossibilities.
 # dep/core/tise (device 2066, inode 5113758): No files, no impossibilities so far.
 # dep/potentials (device 2066, inode 5113817): No files, no impossibilities so far.
@@ -292,7 +291,7 @@ LC_IDENTIFICATION = en_US.UTF-8
 # src/tests: could not be stat'd.
 # dep/observables (device 2066, inode 5113811): No files, no impossibilities so far.
 
-# 151 files, no impossibilities in 27 directories.
+# 153 files, no impossibilities in 27 directories.
 
 # Implicit Rules
 
@@ -319,10 +318,22 @@ obj/%.o: src/%.cpp | $(dir $@)
 # 5 implicit rules, 0 (0.0%) terminal.
 # Files
 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Ipublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDros3.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/input_validation/validate_potential.d: src/input_validation/validate_potential.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_potential'
-#  Last modified 2022-06-11 11:48:25.812230004
+#  Last modified 2022-06-11 12:25:17.851482136
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -342,13 +353,13 @@ dep/input_validation/validate_potential.d: src/input_validation/validate_potenti
 # automatic
 # | := 
 # variable set hash-table stats:
- 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/tdse_propagators/cranknicolson_fill_U0.o: src/tdse_propagators/cranknicolson_fill_U0.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h
 #  Implicit rule search has not been done.
+ 
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -367,7 +378,37 @@ obj/observables/pulse_obs.o: src/observables/pulse_obs.cpp src/core/tdse/tdse.h 
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petsctao.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDmpio.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/input_validation/validate_propagator.o: src/input_validation/validate_propagator.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscmat.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscpf.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -378,17 +419,29 @@ src/eigen_solvers/gen_eigen_tise.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-bspline_tdse.out: obj/main.o obj/core/maths/iascii.o obj/core/bspline/bspline_coeff_matrix.o obj/core/bspline/bspline_evaluate.o obj/core/bspline/bspline_helper.o obj/core/bspline/bspline_initialize.o obj/core/bspline/bspline_integrate.o obj/core/bspline/bspline_node_dist.o obj/core/bspline/guass_quad.o obj/core/tdse/laser.o obj/core/tdse/observable.o obj/core/tdse/tdse.o obj/core/tise/tise.o obj/core/utility/index_manip.o obj/core/utility/logger.o obj/core/utility/profiler.o obj/core/utility/spherical_harmonics.o obj/core/utility/timer.o obj/eigen_solvers/gen_eigen_tise.o obj/math_libs/petsc/petsc_ASCII.o obj/math_libs/petsc/petsc_eigensolver.o obj/math_libs/petsc/petsc_hdf5.o obj/math_libs/petsc/petsc_lib.o obj/math_libs/petsc/petsc_logger.o obj/math_libs/petsc/petsc_matrix.o obj/math_libs/petsc/petsc_profiler.o obj/math_libs/petsc/petsc_solver.o obj/math_libs/petsc/petsc_vector.o obj/tdse_propagators/cranknicolson.o obj/tdse_propagators/cranknicolson_fill_FF.o obj/tdse_propagators/cranknicolson_fill_HI_x.o obj/tdse_propagators/cranknicolson_fill_HI_y.o obj/tdse_propagators/cranknicolson_fill_HI_z.o obj/tdse_propagators/cranknicolson_fill_S.o obj/tdse_propagators/cranknicolson_fill_U0.o obj/observables/dipole_acc_obs.o obj/observables/norm_obs.o obj/observables/population_obs.o obj/observables/potential_obs.o obj/observables/pulse_obs.o obj/observables/wavefunction_obs.o obj/potentials/coulomb_pot.o obj/potentials/exponential_pot.o obj/potentials/yukawa_pot.o obj/input_validation/build_observables.o obj/input_validation/build_potentials.o obj/input_validation/validate_basis.o obj/input_validation/validate_eigen_state_calc.o obj/input_validation/validate_initial_state.o obj/input_validation/validate_lasers.o obj/input_validation/validate_mathlib.o obj/input_validation/validate_observables.o obj/input_validation/validate_potential.o obj/input_validation/validate_propagator.o obj/input_validation/validate_tdse.o obj/input_validation/validate_tise.o
+# Not a target:
+/home/bghomashi/petsc/include/petscpartitioner.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bspline_tdse.out: obj/main.o obj/core/maths/iascii.o obj/core/bspline/bspline_coeff_matrix.o obj/core/bspline/bspline_evaluate.o obj/core/bspline/bspline_helper.o obj/core/bspline/bspline_initialize.o obj/core/bspline/bspline_integrate.o obj/core/bspline/bspline_node_dist.o obj/core/bspline/guass_quad.o obj/core/tdse/laser.o obj/core/tdse/observable.o obj/core/tdse/tdse.o obj/core/tise/tise.o obj/core/utility/index_manip.o obj/core/utility/logger.o obj/core/utility/profiler.o obj/core/utility/spherical_harmonics.o obj/core/utility/timer.o obj/eigen_solvers/gen_eigen_tise.o obj/math_libs/petsc/petsc_ASCII.o obj/math_libs/petsc/petsc_eigensolver.o obj/math_libs/petsc/petsc_hdf5.o obj/math_libs/petsc/petsc_lib.o obj/math_libs/petsc/petsc_logger.o obj/math_libs/petsc/petsc_matrix.o obj/math_libs/petsc/petsc_profiler.o obj/math_libs/petsc/petsc_solver.o obj/math_libs/petsc/petsc_vector.o obj/tdse_propagators/cranknicolson.o obj/tdse_propagators/cranknicolson_fill_FF.o obj/tdse_propagators/cranknicolson_fill_HI_x.o obj/tdse_propagators/cranknicolson_fill_HI_y.o obj/tdse_propagators/cranknicolson_fill_HI_z.o obj/tdse_propagators/cranknicolson_fill_S.o obj/tdse_propagators/cranknicolson_fill_U0.o obj/observables/basis_obs.o obj/observables/dipole_acc_obs.o obj/observables/norm_obs.o obj/observables/population_obs.o obj/observables/potential_obs.o obj/observables/pulse_obs.o obj/observables/wavefunction_obs.o obj/potentials/coulomb_pot.o obj/potentials/exponential_pot.o obj/potentials/yukawa_pot.o obj/input_validation/build_observables.o obj/input_validation/build_potentials.o obj/input_validation/validate_basis.o obj/input_validation/validate_eigen_state_calc.o obj/input_validation/validate_initial_state.o obj/input_validation/validate_lasers.o obj/input_validation/validate_mathlib.o obj/input_validation/validate_observables.o obj/input_validation/validate_potential.o obj/input_validation/validate_propagator.o obj/input_validation/validate_tdse.o obj/input_validation/validate_tise.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 49):
 	$(CXX) $(EXTRAFLAGS) -o $@ $^ $(LDLIBS)
 
+# Not a target:
+/home/bghomashi/petsc/include/petsccharacteristic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/bspline/bspline_evaluate.d: src/core/bspline/bspline_evaluate.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_evaluate'
-#  Last modified 2022-06-11 11:48:27.672230064
+#  Last modified 2022-06-11 12:25:20.508229831
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -425,10 +478,16 @@ src/input_validation/validate_lasers.cpp:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Gpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/math_libs/petsc/petsc_eigensolver.d: src/math_libs/petsc/petsc_eigensolver.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_eigensolver'
-#  Last modified 2022-06-11 11:48:27.165563381
+#  Last modified 2022-06-11 12:25:19.738206363
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -452,7 +511,19 @@ dep/math_libs/petsc/petsc_eigensolver.d: src/math_libs/petsc/petsc_eigensolver.c
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
-obj/core/tdse/tdse.o: src/core/tdse/tdse.cpp src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h src/core/utility/file_exists.h src/math_libs/petsc/petsc_lib.h
+obj/core/tdse/tdse.o: src/core/tdse/tdse.cpp src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h src/core/utility/file_exists.h src/math_libs/petsc/petsc_lib.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDmulti.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscao.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -468,9 +539,14 @@ obj/input_validation/validate_observables.o: src/input_validation/validate_obser
 #  File has not been updated.
 
 # Not a target:
+/home/bghomashi/petsc/include/petscts.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/input_validation/validate_initial_state.cpp:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-05-09 14:47:55.613776841
 #  File has been updated.
 #  Successfully updated.
@@ -485,10 +561,16 @@ obj/core/utility/timer.o: src/core/utility/timer.cpp
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petscfetypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/potentials/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/potentials'
-#  Last modified 2022-05-31 21:20:08.662995023
+#  Last modified 2022-06-11 12:25:18.448167015
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
@@ -497,7 +579,7 @@ dep/potentials/:
 dep/input_validation/validate_lasers.d: src/input_validation/validate_lasers.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_lasers'
-#  Last modified 2022-06-11 11:48:25.965563342
+#  Last modified 2022-06-11 12:25:18.041487939
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -517,6 +599,7 @@ dep/input_validation/validate_lasers.d: src/input_validation/validate_lasers.cpp
 # automatic
 # | := 
 # variable set hash-table stats:
+ 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
@@ -524,7 +607,7 @@ dep/input_validation/validate_lasers.d: src/input_validation/validate_lasers.cpp
 dep/math_libs/petsc/petsc_profiler.d: src/math_libs/petsc/petsc_profiler.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_profiler'
-#  Last modified 2022-06-11 11:48:26.975563375
+#  Last modified 2022-06-11 12:25:19.398195997
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -555,7 +638,7 @@ src/observables/population_obs.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-obj/math_libs/petsc/petsc_ASCII.o: src/math_libs/petsc/petsc_ASCII.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/math_libs/petsc/petsc_ASCII.o: src/math_libs/petsc/petsc_ASCII.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -568,22 +651,46 @@ src/tdse_propagators/cranknicolson_fill_U0.cpp:
 #  Successfully updated.
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDmirror.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmda.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/tdse_propagators/cranknicolson_fill_HI_z.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-09 14:47:55.617110208
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcnep.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscconvest.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/tdse/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/core/tdse'
-#  Last modified 2022-05-31 21:20:10.219697542
+#  Last modified 2022-06-11 12:25:20.20155382
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
 	@mkdir -p $@
 
-obj/observables/population_obs.o: src/observables/population_obs.cpp src/observables/population_obs.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h src/core/utility/index_manip.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/observables/population_obs.o: src/observables/population_obs.cpp src/observables/population_obs.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h src/core/utility/index_manip.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -598,12 +705,29 @@ src/potentials/coulomb_pot.cpp:
 # Not a target:
 src/core/tdse/laser.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-11 00:08:25.593611061
+#  Last modified 2022-06-11 11:54:54.226822466
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
- 
+/home/bghomashi/slepc-3.16.2/include/slepcmat.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5ESpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5public.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/utility/spherical_harmonics.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -615,7 +739,7 @@ src/observables/pulse_obs.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/math_libs/petsc/petsc_logger.o: src/math_libs/petsc/petsc_logger.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/math_libs/petsc/petsc_logger.o: src/math_libs/petsc/petsc_logger.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -623,13 +747,14 @@ obj/math_libs/petsc/petsc_logger.o: src/math_libs/petsc/petsc_logger.cpp src/mat
 dep/math_libs/petsc/petsc_lib.d: src/math_libs/petsc/petsc_lib.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_lib'
-#  Last modified 2022-06-11 11:48:27.092230045
+#  Last modified 2022-06-11 12:25:19.58820179
 #  File has been updated.
 #  Successfully updated.
 # automatic
 # @ := dep/math_libs/petsc/petsc_lib.d
 # automatic
 # * := math_libs/petsc/petsc_lib
+ 
 # automatic
 # < := 
 # automatic
@@ -654,7 +779,31 @@ src/core/utility/logger.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-obj/main.o: src/main.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/eigen_solvers/gen_eigen_tise.h src/core/tise/tise.h src/math_libs/petsc/petsc_lib.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h inc/json.hpp src/input_validation/validate.h src/core/utility/logger.h
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5VLnative.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdm.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5VLpassthru.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/main.o: src/main.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/eigen_solvers/gen_eigen_tise.h src/core/tise/tise.h src/math_libs/petsc/petsc_lib.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h inc/json.hpp src/input_validation/validate.h src/core/utility/logger.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmswarm.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -662,14 +811,14 @@ obj/main.o: src/main.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse
 # Not a target:
 src/input_validation/validate_tdse.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-11 00:04:22.282620611
+#  Last modified 2022-06-11 11:51:41.69611835
 #  File has been updated.
 #  Successfully updated.
 
 dep/core/bspline/bspline_initialize.d: src/core/bspline/bspline_initialize.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_initialize'
-#  Last modified 2022-06-11 11:48:27.608896729
+#  Last modified 2022-06-11 12:25:20.418227087
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -696,7 +845,7 @@ dep/core/bspline/bspline_initialize.d: src/core/bspline/bspline_initialize.cpp |
 dep/observables/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/observables'
-#  Last modified 2022-06-02 13:46:06.636165885
+#  Last modified 2022-06-11 12:25:18.814844872
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
@@ -714,6 +863,12 @@ src/core/tdse/tdse.h:
 #  File has not been updated.
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Cpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/bspline/bspline_initialize.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-07 14:38:42.850582797
@@ -723,13 +878,30 @@ src/core/bspline/bspline_initialize.cpp:
 # Not a target:
 /home/bghomashi/Documents/projects/tdse_more_organized/Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-10 16:09:01.9657974
+#  Last modified 2022-06-11 12:25:12.344646961
 #  File has been updated.
 #  Successfully updated.
- 
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcpep.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/core/tdse/observable.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscbt.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscsftypes.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -748,7 +920,20 @@ src/core/utility/timer.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-obj/math_libs/petsc/petsc_matrix.o: src/math_libs/petsc/petsc_matrix.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+ 
+obj/math_libs/petsc/petsc_matrix.o: src/math_libs/petsc/petsc_matrix.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscpctypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcfn.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -767,7 +952,7 @@ obj/tdse_propagators/cranknicolson_fill_HI_y.o: src/tdse_propagators/cranknicols
 dep/tdse_propagators/cranknicolson_fill_FF.d: src/tdse_propagators/cranknicolson_fill_FF.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_FF'
-#  Last modified 2022-06-11 11:48:26.822230034
+#  Last modified 2022-06-11 12:25:19.158188679
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -794,7 +979,7 @@ dep/tdse_propagators/cranknicolson_fill_FF.d: src/tdse_propagators/cranknicolson
 dep/potentials/coulomb_pot.d: src/potentials/coulomb_pot.cpp | dep/potentials/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'potentials/coulomb_pot'
-#  Last modified 2022-06-11 11:48:26.372230022
+#  Last modified 2022-06-11 12:25:18.491501672
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -821,7 +1006,7 @@ dep/potentials/coulomb_pot.d: src/potentials/coulomb_pot.cpp | dep/potentials/
 dep/observables/wavefunction_obs.d: src/observables/wavefunction_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/wavefunction_obs'
-#  Last modified 2022-06-11 11:48:26.405563356
+#  Last modified 2022-06-11 12:25:18.541503197
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -846,14 +1031,50 @@ dep/observables/wavefunction_obs.d: src/observables/wavefunction_obs.cpp | dep/o
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDmpi.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscsf.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/tdse/potential.h:
 #  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Lpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDcore.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
  
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petsclog.h:
+#  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 src/potentials/exponential_pot.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5VLconnector_passthru.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -867,7 +1088,7 @@ inc/json.hpp:
 dep/math_libs/petsc/petsc_solver.d: src/math_libs/petsc/petsc_solver.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_solver'
-#  Last modified 2022-06-11 11:48:26.935563373
+#  Last modified 2022-06-11 12:25:19.334860732
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -891,7 +1112,31 @@ dep/math_libs/petsc/petsc_solver.d: src/math_libs/petsc/petsc_solver.cpp | dep/m
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
-obj/input_validation/validate_tdse.o: src/input_validation/validate_tdse.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h src/tdse_propagators/cranknicolson.h src/observables/norm_obs.h src/observables/dipole_acc_obs.h
+# Not a target:
+/home/bghomashi/petsc/include/petscdmshell.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmplextypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmplex.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/input_validation/validate_tdse.o: src/input_validation/validate_tdse.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h src/tdse_propagators/cranknicolson.h src/observables/norm_obs.h src/observables/dipole_acc_obs.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDsec2.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -899,11 +1144,17 @@ obj/input_validation/validate_tdse.o: src/input_validation/validate_tdse.cpp src
 dep/eigen_solvers/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/eigen_solvers'
-#  Last modified 2022-05-31 21:20:09.849689021
+#  Last modified 2022-06-11 12:25:19.804875064
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
 	@mkdir -p $@
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Spublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/input_validation/validate_propagator.cpp:
@@ -922,7 +1173,7 @@ src/tdse_propagators/cranknicolson.cpp:
 dep/core/utility/logger.d: src/core/utility/logger.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/logger'
-#  Last modified 2022-06-11 11:48:27.335563384
+#  Last modified 2022-06-11 12:25:20.011548032
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -946,10 +1197,17 @@ dep/core/utility/logger.d: src/core/utility/logger.cpp | dep/core/utility/
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/hdf5.h:
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/tdse_propagators/cranknicolson_fill_HI_z.d: src/tdse_propagators/cranknicolson_fill_HI_z.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_HI_z'
-#  Last modified 2022-06-11 11:48:26.722230034
+#  Last modified 2022-06-11 12:25:19.014850975
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -976,7 +1234,6 @@ dep/tdse_propagators/cranknicolson_fill_HI_z.d: src/tdse_propagators/cranknicols
 # Not a target:
 src/main.cpp:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-06-01 13:34:14.524097405
 #  File has been updated.
 #  Successfully updated.
@@ -997,7 +1254,7 @@ src/core/utility/logger.h:
 dep/math_libs/petsc/petsc_logger.d: src/math_libs/petsc/petsc_logger.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_logger'
-#  Last modified 2022-06-11 11:48:27.052230044
+#  Last modified 2022-06-11 12:25:19.524866525
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1021,7 +1278,46 @@ dep/math_libs/petsc/petsc_logger.d: src/math_libs/petsc/petsc_logger.cpp | dep/m
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+dep/observables/basis_obs.d: src/observables/basis_obs.cpp | dep/observables/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'observables/basis_obs'
+#  Last modified 2022-06-11 12:25:18.858179527
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := dep/observables/basis_obs.d
+# automatic
+# * := observables/basis_obs
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
+	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
+
 obj/core/bspline/bspline_evaluate.o: src/core/bspline/bspline_evaluate.cpp src/core/bspline/bspline.h src/core/maths/maths.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5VLconnector.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1029,8 +1325,9 @@ obj/core/bspline/bspline_evaluate.o: src/core/bspline/bspline_evaluate.cpp src/c
 dep/observables/population_obs.d: src/observables/population_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/population_obs'
-#  Last modified 2022-06-11 11:48:26.518896693
+#  Last modified 2022-06-11 12:25:18.70150808
 #  File has been updated.
+ 
 #  Successfully updated.
 # automatic
 # @ := dep/observables/population_obs.d
@@ -1063,6 +1360,18 @@ clean:
 	rm -f $(DEP)
 
 # Not a target:
+/home/bghomashi/petsc/include/petscpc.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/potentials/yukawa_pot.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1074,6 +1383,12 @@ src/math_libs/petsc/petsc_matrix.cpp:
 #  Last modified 2022-05-09 14:47:55.613776841
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdrawtypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/tdse_propagators/cranknicolson_fill_HI_x.cpp:
@@ -1095,12 +1410,13 @@ src/math_libs/petsc/petsc_lib.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/math_libs/petsc/petsc_solver.o: src/math_libs/petsc/petsc_solver.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/math_libs/petsc/petsc_solver.o: src/math_libs/petsc/petsc_solver.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/observables/dipole_acc_obs.o: src/observables/dipole_acc_obs.cpp src/observables/dipole_acc_obs.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h src/core/utility/file_exists.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h
+ 
+obj/observables/dipole_acc_obs.o: src/observables/dipole_acc_obs.cpp src/observables/dipole_acc_obs.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h src/core/utility/file_exists.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1108,7 +1424,12 @@ obj/observables/dipole_acc_obs.o: src/observables/dipole_acc_obs.cpp src/observa
 # Not a target:
 src/core/utility/vec3.h:
 #  Implicit rule search has not been done.
- 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcsys.h:
+#  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
@@ -1119,7 +1440,31 @@ src/core/tdse/observable.cpp:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petscmath.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/core/bspline/bspline_coeff_matrix.o: src/core/bspline/bspline_coeff_matrix.cpp src/core/bspline/bspline.h src/core/maths/maths.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmredundant.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscfe.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petsccxxcomplexfix.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1127,7 +1472,7 @@ obj/core/bspline/bspline_coeff_matrix.o: src/core/bspline/bspline_coeff_matrix.c
 dep/core/tdse/observable.d: src/core/tdse/observable.cpp | dep/core/tdse/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/tdse/observable'
-#  Last modified 2022-06-11 11:48:27.455563388
+#  Last modified 2022-06-11 12:25:20.198220386
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1151,7 +1496,25 @@ dep/core/tdse/observable.d: src/core/tdse/observable.cpp | dep/core/tdse/
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
-obj/input_validation/validate_tise.o: src/input_validation/validate_tise.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/core/utility/profiler.h src/core/utility/timer.h src/math_libs/petsc/petsc_lib.h src/eigen_solvers/gen_eigen_tise.h
+obj/input_validation/validate_tise.o: src/input_validation/validate_tise.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/core/utility/profiler.h src/core/utility/timer.h src/math_libs/petsc/petsc_lib.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h src/eigen_solvers/gen_eigen_tise.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepceps.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscsys.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1159,11 +1522,18 @@ obj/input_validation/validate_tise.o: src/input_validation/validate_tise.cpp src
 dep/core/utility/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/core/utility'
-#  Last modified 2022-05-31 21:20:10.049693626
+#  Last modified 2022-06-11 12:25:20.014881466
+ 
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
 	@mkdir -p $@
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmdatypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/core/maths/iascii.cpp:
@@ -1172,7 +1542,7 @@ src/core/maths/iascii.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-obj/math_libs/petsc/petsc_vector.o: src/math_libs/petsc/petsc_vector.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/math_libs/petsc/petsc_vector.o: src/math_libs/petsc/petsc_vector.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1187,7 +1557,7 @@ src/potentials/exponential_pot.cpp:
 dep/observables/pulse_obs.d: src/observables/pulse_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/pulse_obs'
-#  Last modified 2022-06-11 11:48:26.445563358
+#  Last modified 2022-06-11 12:25:18.588171288
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1217,14 +1587,43 @@ obj/eigen_solvers/gen_eigen_tise.o: src/eigen_solvers/gen_eigen_tise.cpp src/eig
 #  File has not been updated.
 
 # Not a target:
+/home/bghomashi/petsc/include/petscsectiontypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdraw.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/utility/spherical_harmonics.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-09 14:47:55.613776841
 #  File has been updated.
- 
 #  Successfully updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petscctable.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Tpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/core/bspline/bspline_helper.o: src/core/bspline/bspline_helper.cpp src/core/bspline/bspline.h src/core/maths/maths.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscis.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1237,7 +1636,7 @@ obj/core/tise/tise.o: src/core/tise/tise.cpp src/core/tise/tise.h src/core/maths
 dep/tdse_propagators/cranknicolson_fill_S.d: src/tdse_propagators/cranknicolson_fill_S.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_S'
-#  Last modified 2022-06-11 11:48:26.685563365
+#  Last modified 2022-06-11 12:25:18.951515709
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1261,6 +1660,13 @@ dep/tdse_propagators/cranknicolson_fill_S.d: src/tdse_propagators/cranknicolson_
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcrg.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
 obj/core/bspline/bspline_integrate.o: src/core/bspline/bspline_integrate.cpp src/core/bspline/bspline.h src/core/maths/maths.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1269,7 +1675,7 @@ obj/core/bspline/bspline_integrate.o: src/core/bspline/bspline_integrate.cpp src
 dep/main.d: src/main.cpp | dep/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-11 11:48:27.788896734
+#  Last modified 2022-06-11 12:25:20.678235009
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1294,6 +1700,12 @@ dep/main.d: src/main.cpp | dep/
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Fpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/utility/index_manip.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1304,19 +1716,37 @@ obj/potentials/coulomb_pot.o: src/potentials/coulomb_pot.cpp src/potentials/coul
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDfamily.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/tise/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/core/tise'
-#  Last modified 2022-05-31 21:20:10.079694317
+#  Last modified 2022-06-11 12:25:20.044882381
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
 	@mkdir -p $@
 
+# Not a target:
+/home/bghomashi/petsc/include/petsctime.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcmath.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/input_validation/validate_propagator.d: src/input_validation/validate_propagator.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_propagator'
-#  Last modified 2022-06-11 11:48:25.762230001
+#  Last modified 2022-06-11 12:25:17.788146868
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1350,7 +1780,6 @@ src/tdse_propagators/cranknicolson_fill_S.cpp:
 # Not a target:
 src/observables/wavefunction_obs.cpp:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-06-01 14:22:37.822514156
 #  File has been updated.
 #  Successfully updated.
@@ -1362,7 +1791,7 @@ src/input_validation/validate_potential.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-obj/tdse_propagators/cranknicolson_fill_HI_z.o: src/tdse_propagators/cranknicolson_fill_HI_z.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h src/core/utility/logger.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/tdse_propagators/cranknicolson_fill_HI_z.o: src/tdse_propagators/cranknicolson_fill_HI_z.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h src/core/utility/logger.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -1376,8 +1805,9 @@ src/core/bspline/bspline_helper.cpp:
 
 dep/math_libs/petsc/petsc_hdf5.d: src/math_libs/petsc/petsc_hdf5.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
+ 
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_hdf5'
-#  Last modified 2022-06-11 11:48:27.128896713
+#  Last modified 2022-06-11 12:25:19.66820423
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1404,7 +1834,7 @@ dep/math_libs/petsc/petsc_hdf5.d: src/math_libs/petsc/petsc_hdf5.cpp | dep/math_
 dep/core/utility/spherical_harmonics.d: src/core/utility/spherical_harmonics.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/spherical_harmonics'
-#  Last modified 2022-06-11 11:48:27.275563384
+#  Last modified 2022-06-11 12:25:19.924878722
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1431,7 +1861,7 @@ dep/core/utility/spherical_harmonics.d: src/core/utility/spherical_harmonics.cpp
 dep/math_libs/petsc/petsc_matrix.d: src/math_libs/petsc/petsc_matrix.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_matrix'
-#  Last modified 2022-06-11 11:48:27.008896709
+#  Last modified 2022-06-11 12:25:19.461531262
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1465,7 +1895,6 @@ src/math_libs/petsc/petsc_solver.cpp:
 # Not a target:
 src/observables/pulse_obs.cpp:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-06-02 14:01:43.571059328
 #  File has been updated.
 #  Successfully updated.
@@ -1475,10 +1904,16 @@ obj/core/utility/logger.o: src/core/utility/logger.cpp src/core/utility/logger.h
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petscsystypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/input_validation/build_observables.d: src/input_validation/build_observables.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/build_observables'
-#  Last modified 2022-06-11 11:48:26.242230017
+#  Last modified 2022-06-11 12:25:18.354830835
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1506,13 +1941,20 @@ dep/input_validation/build_observables.d: src/input_validation/build_observables
 src/core/utility/profiler.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-10 16:16:08.157290637
+ 
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscfv.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 dep/tdse_propagators/cranknicolson_fill_U0.d: src/tdse_propagators/cranknicolson_fill_U0.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_U0'
-#  Last modified 2022-06-11 11:48:26.64223003
+#  Last modified 2022-06-11 12:25:18.904847618
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1539,7 +1981,7 @@ dep/tdse_propagators/cranknicolson_fill_U0.d: src/tdse_propagators/cranknicolson
 dep/math_libs/petsc/petsc_vector.d: src/math_libs/petsc/petsc_vector.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_vector'
-#  Last modified 2022-06-11 11:48:26.898896706
+#  Last modified 2022-06-11 12:25:19.271525467
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1573,7 +2015,6 @@ src/core/utility/index_manip.cpp:
 # Not a target:
 src/tdse_propagators/cranknicolson_fill_FF.cpp:
 #  Implicit rule search has been done.
- 
 #  Last modified 2022-05-09 14:47:55.617110208
 #  File has been updated.
 #  Successfully updated.
@@ -1586,7 +2027,7 @@ obj/core/maths/iascii.o: src/core/maths/iascii.cpp src/core/maths/maths.h
 dep/core/bspline/guass_quad.d: src/core/bspline/guass_quad.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/guass_quad'
-#  Last modified 2022-06-11 11:48:27.522230059
+#  Last modified 2022-06-11 12:25:20.291556562
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1603,6 +2044,7 @@ dep/core/bspline/guass_quad.d: src/core/bspline/guass_quad.cpp | dep/core/bsplin
 # ^ := 
 # automatic
 # ? := 
+ 
 # automatic
 # | := 
 # variable set hash-table stats:
@@ -1616,6 +2058,12 @@ src/eigen_solvers/gen_eigen_tise.cpp:
 #  Last modified 2022-06-01 00:45:26.030822842
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcst.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -1639,7 +2087,7 @@ src/observables/potential_obs.h:
 dep/observables/dipole_acc_obs.d: src/observables/dipole_acc_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/dipole_acc_obs'
-#  Last modified 2022-06-11 11:48:26.598896695
+#  Last modified 2022-06-11 12:25:18.811511436
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1666,14 +2114,20 @@ dep/observables/dipole_acc_obs.d: src/observables/dipole_acc_obs.cpp | dep/obser
 # Not a target:
 src/input_validation/build_observables.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-02 13:49:25.850745793
+#  Last modified 2022-06-11 11:51:41.692784993
 #  File has been updated.
 #  Successfully updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscfvtypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 dep/core/bspline/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/core/bspline'
-#  Last modified 2022-05-31 21:20:10.536371503
+#  Last modified 2022-06-11 12:25:20.511563265
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
@@ -1693,15 +2147,15 @@ all:
 #  File has not been updated.
 
 dep/core/bspline/bspline_node_dist.d: src/core/bspline/bspline_node_dist.cpp | dep/core/bspline/
- 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_node_dist'
-#  Last modified 2022-06-11 11:48:27.548896727
+#  Last modified 2022-06-11 12:25:20.328224345
 #  File has been updated.
 #  Successfully updated.
 # automatic
 # @ := dep/core/bspline/bspline_node_dist.d
 # automatic
+ 
 # * := core/bspline/bspline_node_dist
 # automatic
 # < := 
@@ -1721,6 +2175,30 @@ dep/core/bspline/bspline_node_dist.d: src/core/bspline/bspline_node_dist.cpp | d
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscversion.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Apublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Rpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/bspline/bspline_node_dist.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-09 14:47:55.613776841
@@ -1733,10 +2211,22 @@ src/input_validation/validate.h:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcsvd.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdevicetypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/tdse/tdse.d: src/core/tdse/tdse.cpp | dep/core/tdse/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/tdse/tdse'
-#  Last modified 2022-06-11 11:48:27.422230055
+#  Last modified 2022-06-11 12:25:20.154885732
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1760,10 +2250,35 @@ dep/core/tdse/tdse.d: src/core/tdse/tdse.cpp | dep/core/tdse/
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5MMpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscksp.h:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmproduct.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Epublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/potentials/yukawa_pot.d: src/potentials/yukawa_pot.cpp | dep/potentials/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'potentials/yukawa_pot'
-#  Last modified 2022-06-11 11:48:26.285563352
+#  Last modified 2022-06-11 12:25:18.39816549
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1788,6 +2303,24 @@ dep/potentials/yukawa_pot.d: src/potentials/yukawa_pot.cpp | dep/potentials/
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
+/home/bghomashi/petsc/include/petscvec.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Mpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscmatlab.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/input_validation/validate_eigen_state_calc.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-29 12:53:52.227608477
@@ -1801,11 +2334,15 @@ src/core/bspline/bspline_integrate.cpp:
 #  File has been updated.
 #  Successfully updated.
 
- 
+obj/observables/basis_obs.o: src/observables/basis_obs.cpp src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/observables/basis_obs.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/bspline/bspline_helper.d: src/core/bspline/bspline_helper.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_helper'
-#  Last modified 2022-06-11 11:48:27.642230063
+#  Last modified 2022-06-11 12:25:20.461561741
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1827,12 +2364,13 @@ dep/core/bspline/bspline_helper.d: src/core/bspline/bspline_helper.cpp | dep/cor
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
+ 
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/core/tise/tise.d: src/core/tise/tise.cpp | dep/core/tise/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/tise/tise'
-#  Last modified 2022-06-11 11:48:27.382230055
+#  Last modified 2022-06-11 12:25:20.088217035
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1864,6 +2402,12 @@ src/observables/potential_obs.cpp:
 #  Successfully updated.
 
 # Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcmfn.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/tise/tise.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1882,7 +2426,7 @@ obj/observables/wavefunction_obs.o: src/observables/wavefunction_obs.cpp src/obs
 dep/input_validation/validate_tise.d: src/input_validation/validate_tise.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_tise'
-#  Last modified 2022-06-11 11:48:25.648896663
+#  Last modified 2022-06-11 12:25:17.644809158
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1906,20 +2450,32 @@ dep/input_validation/validate_tise.d: src/input_validation/validate_tise.cpp | d
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
+# Not a target:
+/home/bghomashi/petsc/include/petsctaolinesearch.h:
+#  Implicit rule search has not been done.
+ 
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/math_libs/petsc/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/math_libs/petsc'
- 
-#  Last modified 2022-05-31 21:20:09.786354229
+#  Last modified 2022-06-11 12:25:19.741539799
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
 	@mkdir -p $@
 
+# Not a target:
+/home/bghomashi/petsc/include/petscviewer.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/utility/timer.d: src/core/utility/timer.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/timer'
-#  Last modified 2022-06-11 11:48:27.24223005
+#  Last modified 2022-06-11 12:25:19.871543763
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1960,16 +2516,34 @@ obj/core/tdse/laser.o: src/core/tdse/laser.cpp src/core/tdse/laser.h src/core/ma
 #  File has not been updated.
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5VLpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/observables/dipole_acc_obs.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-01 14:46:58.109128086
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcvec.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscsnes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/utility/profiler.d: src/core/utility/profiler.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/profiler'
-#  Last modified 2022-06-11 11:48:27.308896719
+#  Last modified 2022-06-11 12:25:19.971546811
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1990,6 +2564,7 @@ dep/core/utility/profiler.d: src/core/utility/profiler.cpp | dep/core/utility/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+ 
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
@@ -2000,7 +2575,7 @@ src/math_libs/petsc/petsc_hdf5.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-obj/math_libs/petsc/petsc_lib.o: src/math_libs/petsc/petsc_lib.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/math_libs/petsc/petsc_lib.o: src/math_libs/petsc/petsc_lib.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2008,12 +2583,11 @@ obj/math_libs/petsc/petsc_lib.o: src/math_libs/petsc/petsc_lib.cpp src/math_libs
 dep/observables/norm_obs.d: src/observables/norm_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/norm_obs'
-#  Last modified 2022-06-11 11:48:26.558896692
+#  Last modified 2022-06-11 12:25:18.748176171
 #  File has been updated.
 #  Successfully updated.
 # automatic
 # @ := dep/observables/norm_obs.d
- 
 # automatic
 # * := observables/norm_obs
 # automatic
@@ -2036,7 +2610,7 @@ dep/observables/norm_obs.d: src/observables/norm_obs.cpp | dep/observables/
 dep/tdse_propagators/cranknicolson.d: src/tdse_propagators/cranknicolson.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson'
-#  Last modified 2022-06-11 11:48:26.858896704
+#  Last modified 2022-06-11 12:25:19.208190202
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2063,9 +2637,10 @@ dep/tdse_propagators/cranknicolson.d: src/tdse_propagators/cranknicolson.cpp | d
 dep/input_validation/build_potentials.d: src/input_validation/build_potentials.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/build_potentials'
-#  Last modified 2022-06-11 11:48:26.188896682
+#  Last modified 2022-06-11 12:25:18.291495568
 #  File has been updated.
 #  Successfully updated.
+ 
 # automatic
 # @ := dep/input_validation/build_potentials.d
 # automatic
@@ -2090,16 +2665,22 @@ dep/input_validation/build_potentials.d: src/input_validation/build_potentials.c
 dep/tdse_propagators/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/tdse_propagators'
-#  Last modified 2022-05-31 21:20:09.22300792
+#  Last modified 2022-06-11 12:25:19.158188679
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
 	@mkdir -p $@
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5version.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/tdse/tdse.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-11 00:13:38.03491889
+#  Last modified 2022-06-11 12:17:56.224418295
 #  File has been updated.
 #  Successfully updated.
 
@@ -2124,8 +2705,7 @@ obj/input_validation/validate_potential.o: src/input_validation/validate_potenti
 dep/tdse_propagators/cranknicolson_fill_HI_y.d: src/tdse_propagators/cranknicolson_fill_HI_y.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_HI_y'
- 
-#  Last modified 2022-06-11 11:48:26.755563368
+#  Last modified 2022-06-11 12:25:19.064852499
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2152,7 +2732,7 @@ dep/tdse_propagators/cranknicolson_fill_HI_y.d: src/tdse_propagators/cranknicols
 # Not a target:
 src/input_validation/validate_observables.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-02 13:52:28.271603615
+#  Last modified 2022-06-11 11:51:41.692784993
 #  File has been updated.
 #  Successfully updated.
 
@@ -2162,7 +2742,13 @@ src/core/maths/maths.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/input_validation/build_observables.o: src/input_validation/build_observables.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/observables/norm_obs.h src/observables/dipole_acc_obs.h src/observables/wavefunction_obs.h src/observables/population_obs.h src/observables/pulse_obs.h src/observables/potential_obs.h
+obj/input_validation/build_observables.o: src/input_validation/build_observables.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/observables/norm_obs.h src/observables/dipole_acc_obs.h src/observables/wavefunction_obs.h src/observables/population_obs.h src/observables/pulse_obs.h src/observables/potential_obs.h src/observables/basis_obs.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepclme.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2171,13 +2757,14 @@ obj/input_validation/build_observables.o: src/input_validation/build_observables
 src/core/bspline/bspline_coeff_matrix.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-09 14:47:55.613776841
+ 
 #  File has been updated.
 #  Successfully updated.
 
 dep/eigen_solvers/gen_eigen_tise.d: src/eigen_solvers/gen_eigen_tise.cpp | dep/eigen_solvers/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'eigen_solvers/gen_eigen_tise'
-#  Last modified 2022-06-11 11:48:27.235563384
+#  Last modified 2022-06-11 12:25:19.851543154
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2213,12 +2800,67 @@ obj/input_validation/build_potentials.o: src/input_validation/build_potentials.c
 #  File has not been updated.
 
 # Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepc.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDlog.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/utility/profiler.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/observables/basis_obs.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmpatch.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscviewerhdf5.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/observables/basis_obs.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-11 12:23:39.241675117
+#  File has been updated.
+#  Successfully updated.
+
 obj/potentials/exponential_pot.o: src/potentials/exponential_pot.cpp src/potentials/exponential_pot.h src/core/tdse/potential.h src/core/maths/maths.h src/core/bspline/bspline.h src/core/utility/index_manip.h src/core/utility/logger.h src/core/utility/spherical_harmonics.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdt.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5pubconf.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2226,7 +2868,7 @@ obj/potentials/exponential_pot.o: src/potentials/exponential_pot.cpp src/potenti
 dep/input_validation/validate_tdse.d: src/input_validation/validate_tdse.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_tdse'
-#  Last modified 2022-06-11 11:48:25.71223
+#  Last modified 2022-06-11 12:25:17.728145037
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2238,12 +2880,12 @@ dep/input_validation/validate_tdse.d: src/input_validation/validate_tdse.cpp | d
 # automatic
 # + := 
 # automatic
+ 
 # % := 
 # automatic
 # ^ := 
 # automatic
 # ? := 
- 
 # automatic
 # | := 
 # variable set hash-table stats:
@@ -2276,10 +2918,40 @@ obj/tdse_propagators/cranknicolson_fill_HI_x.o: src/tdse_propagators/cranknicols
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petsc.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscds.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcsc.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmlabel.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscistypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/math_libs/petsc/petsc_ASCII.d: src/math_libs/petsc/petsc_ASCII.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_ASCII'
-#  Last modified 2022-06-11 11:48:27.198896715
+#  Last modified 2022-06-11 12:25:19.801541628
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2315,10 +2987,17 @@ obj/observables/norm_obs.o: src/observables/norm_obs.cpp src/observables/norm_ob
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
+# Not a target:
+/home/bghomashi/petsc/include/petscbag.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/tdse_propagators/cranknicolson_fill_HI_x.d: src/tdse_propagators/cranknicolson_fill_HI_x.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_HI_x'
-#  Last modified 2022-06-11 11:48:26.788896702
+#  Last modified 2022-06-11 12:25:19.111520589
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2345,16 +3024,22 @@ dep/tdse_propagators/cranknicolson_fill_HI_x.d: src/tdse_propagators/cranknicols
 dep/input_validation/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/input_validation'
-#  Last modified 2022-05-31 21:20:08.509658157
+#  Last modified 2022-06-11 12:25:18.294829003
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
 	@mkdir -p $@
 
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/bspline/bspline_integrate.d: src/core/bspline/bspline_integrate.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_integrate'
-#  Last modified 2022-06-11 11:48:27.578896728
+#  Last modified 2022-06-11 12:25:20.374892435
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2372,7 +3057,6 @@ dep/core/bspline/bspline_integrate.d: src/core/bspline/bspline_integrate.cpp | d
 # automatic
 # ? := 
 # automatic
- 
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
@@ -2382,7 +3066,7 @@ dep/core/bspline/bspline_integrate.d: src/core/bspline/bspline_integrate.cpp | d
 dep/input_validation/validate_initial_state.d: src/input_validation/validate_initial_state.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_initial_state'
-#  Last modified 2022-06-11 11:48:26.015563341
+#  Last modified 2022-06-11 12:25:18.10148977
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2408,6 +3092,7 @@ dep/input_validation/validate_initial_state.d: src/input_validation/validate_ini
 
 # Not a target:
 src/math_libs/petsc/petsc_eigensolver.cpp:
+ 
 #  Implicit rule search has been done.
 #  Last modified 2022-06-01 00:46:37.725770716
 #  File has been updated.
@@ -2416,7 +3101,7 @@ src/math_libs/petsc/petsc_eigensolver.cpp:
 dep/input_validation/validate_mathlib.d: src/input_validation/validate_mathlib.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_mathlib'
-#  Last modified 2022-06-11 11:48:25.915563341
+#  Last modified 2022-06-11 12:25:17.978152671
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2440,7 +3125,19 @@ dep/input_validation/validate_mathlib.d: src/input_validation/validate_mathlib.c
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Opublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 .SECONDEXPANSION:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscviewertypes.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2448,7 +3145,7 @@ dep/input_validation/validate_mathlib.d: src/input_validation/validate_mathlib.c
 dep/core/maths/iascii.d: src/core/maths/iascii.cpp | dep/core/maths/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/maths/iascii'
-#  Last modified 2022-06-11 11:48:27.738896733
+#  Last modified 2022-06-11 12:25:20.601566007
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2479,7 +3176,26 @@ src/math_libs/petsc/petsc_logger.cpp:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcversion.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/observables/potential_obs.o: src/observables/potential_obs.cpp src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/observables/potential_obs.h
+ 
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdstypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmsliced.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2490,19 +3206,24 @@ obj/core/tdse/observable.o: src/core/tdse/observable.cpp src/core/tdse/observabl
 #  File has not been updated.
 
 dep/:
- 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep'
-#  Last modified 2022-05-31 21:20:10.626373575
+#  Last modified 2022-06-11 12:25:20.601566007
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
 	@mkdir -p $@
 
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcds.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/input_validation/validate_basis.d: src/input_validation/validate_basis.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_basis'
-#  Last modified 2022-06-11 11:48:26.118896678
+#  Last modified 2022-06-11 12:25:18.228160302
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2540,15 +3261,40 @@ src/input_validation/validate_mathlib.cpp:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petscerror.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/core/bspline/bspline_initialize.o: src/core/bspline/bspline_initialize.cpp src/core/bspline/bspline.h src/core/maths/maths.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petscsection.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmcomposite.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Epubgen.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+ 
 dep/observables/potential_obs.d: src/observables/potential_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/potential_obs'
-#  Last modified 2022-06-11 11:48:26.478896692
+#  Last modified 2022-06-11 12:25:18.634839379
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2572,6 +3318,12 @@ dep/observables/potential_obs.d: src/observables/potential_obs.cpp | dep/observa
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
+# Not a target:
+/home/bghomashi/petsc/include/petscdmstag.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/tdse_propagators/cranknicolson_fill_FF.o: src/tdse_propagators/cranknicolson_fill_FF.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -2580,7 +3332,7 @@ obj/tdse_propagators/cranknicolson_fill_FF.o: src/tdse_propagators/cranknicolson
 dep/core/bspline/bspline_coeff_matrix.d: src/core/bspline/bspline_coeff_matrix.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_coeff_matrix'
-#  Last modified 2022-06-11 11:48:27.705563399
+#  Last modified 2022-06-11 12:25:20.554897919
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2611,7 +3363,6 @@ src/observables/norm_obs.cpp:
 #  File has been updated.
 #  Successfully updated.
 
- 
 obj/input_validation/validate_basis.o: src/input_validation/validate_basis.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -2620,7 +3371,7 @@ obj/input_validation/validate_basis.o: src/input_validation/validate_basis.cpp s
 dep/input_validation/validate_eigen_state_calc.d: src/input_validation/validate_eigen_state_calc.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_eigen_state_calc'
-#  Last modified 2022-06-11 11:48:26.065563345
+#  Last modified 2022-06-11 12:25:18.164825036
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2628,6 +3379,7 @@ dep/input_validation/validate_eigen_state_calc.d: src/input_validation/validate_
 # automatic
 # * := input_validation/validate_eigen_state_calc
 # automatic
+ 
 # < := 
 # automatic
 # + := 
@@ -2645,6 +3397,12 @@ dep/input_validation/validate_eigen_state_calc.d: src/input_validation/validate_
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5ACpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/bspline/guass_quad.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-09 14:47:55.613776841
@@ -2656,12 +3414,18 @@ src/core/bspline/guass_quad.cpp:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/math_libs/petsc/petsc_eigensolver.o: src/math_libs/petsc/petsc_eigensolver.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+# Not a target:
+/home/bghomashi/petsc/include/petscoptions.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/math_libs/petsc/petsc_hdf5.o: src/math_libs/petsc/petsc_hdf5.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/math_libs/petsc/petsc_eigensolver.o: src/math_libs/petsc/petsc_eigensolver.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/math_libs/petsc/petsc_hdf5.o: src/math_libs/petsc/petsc_hdf5.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h /home/bghomashi/petsc/include/petscviewerhdf5.h /home/bghomashi/petsc/arch-linux-c-opt/include/hdf5.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5public.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5pubconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5version.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5api_adpt.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Apublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Ipublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Opublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Lpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Tpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5ACpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Cpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Dpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Epublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Epubgen.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Fpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Gpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Mpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5MMpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Ppublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Zpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5PLpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Rpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5Spublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5VLpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5VLconnector.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5ESpublic.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5VLconnector_passthru.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5VLnative.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDcore.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDdirect.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDfamily.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDhdfs.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDlog.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDmirror.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDmpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDmpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDmulti.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDros3.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDsec2.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDsplitter.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5FDstdio.h /home/bghomashi/petsc/arch-linux-c-opt/include/H5VLpassthru.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2671,10 +3435,16 @@ obj/potentials/yukawa_pot.o: src/potentials/yukawa_pot.cpp src/potentials/yukawa
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+/home/bghomashi/petsc/include/petscdmtypes.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/maths/:
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'dep/core/maths'
-#  Last modified 2022-05-31 21:20:10.583039244
+#  Last modified 2022-06-11 12:25:20.558231353
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 60):
@@ -2686,11 +3456,12 @@ src/core/tise/tise.cpp:
 #  Last modified 2022-05-31 17:38:01.184953118
 #  File has been updated.
 #  Successfully updated.
+ 
 
 dep/potentials/exponential_pot.d: src/potentials/exponential_pot.cpp | dep/potentials/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'potentials/exponential_pot'
-#  Last modified 2022-06-11 11:48:26.325563354
+#  Last modified 2022-06-11 12:25:18.444833581
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2715,10 +3486,27 @@ dep/potentials/exponential_pot.d: src/potentials/exponential_pot.cpp | dep/poten
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5api_adpt.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/core/utility/file_exists.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDhdfs.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
@@ -2728,7 +3516,31 @@ src/input_validation/build_potentials.cpp:
 #  File has been updated.
 #  Successfully updated.
 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDsplitter.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Dpublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/tdse_propagators/cranknicolson.o: src/tdse_propagators/cranknicolson.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/include/petscdmfield.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDstdio.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2736,7 +3548,7 @@ obj/tdse_propagators/cranknicolson.o: src/tdse_propagators/cranknicolson.cpp src
 dep/core/utility/index_manip.d: src/core/utility/index_manip.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/index_manip'
-#  Last modified 2022-06-11 11:48:27.352230051
+#  Last modified 2022-06-11 12:25:20.041548945
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2760,7 +3572,13 @@ dep/core/utility/index_manip.d: src/core/utility/index_manip.cpp | dep/core/util
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
-obj/math_libs/petsc/petsc_profiler.o: src/math_libs/petsc/petsc_profiler.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/math_libs/petsc/petsc_profiler.o: src/math_libs/petsc/petsc_profiler.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h /home/bghomashi/petsc/include/petsc.h /home/bghomashi/petsc/include/petscbag.h /home/bghomashi/petsc/include/petscsys.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscconf_poison.h /home/bghomashi/petsc/arch-linux-c-opt/include/petscfix.h /home/bghomashi/petsc/include/petscsystypes.h /home/bghomashi/petsc/include/petsccxxcomplexfix.h /home/bghomashi/petsc/include/petscversion.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpio.h /home/bghomashi/petsc/arch-linux-c-opt/include/mpi.h /home/bghomashi/petsc/include/petscmath.h /home/bghomashi/petsc/include/petscerror.h /home/bghomashi/petsc/include/petscviewertypes.h /home/bghomashi/petsc/include/petscoptions.h /home/bghomashi/petsc/include/petsclog.h /home/bghomashi/petsc/include/petsctime.h /home/bghomashi/petsc/include/petscbt.h /home/bghomashi/petsc/include/petscviewer.h /home/bghomashi/petsc/include/petscdrawtypes.h /home/bghomashi/petsc/include/petscctable.h /home/bghomashi/petsc/include/petscmatlab.h /home/bghomashi/petsc/include/petscdraw.h /home/bghomashi/petsc/include/petscsf.h /home/bghomashi/petsc/include/petscsftypes.h /home/bghomashi/petsc/include/petscvec.h /home/bghomashi/petsc/include/petscis.h /home/bghomashi/petsc/include/petscsectiontypes.h /home/bghomashi/petsc/include/petscistypes.h /home/bghomashi/petsc/include/petscdevicetypes.h /home/bghomashi/petsc/include/petscsection.h /home/bghomashi/petsc/include/petscdmda.h /home/bghomashi/petsc/include/petscdm.h /home/bghomashi/petsc/include/petscmat.h /home/bghomashi/petsc/include/petscdmtypes.h /home/bghomashi/petsc/include/petscfetypes.h /home/bghomashi/petsc/include/petscdstypes.h /home/bghomashi/petsc/include/petscdmlabel.h /home/bghomashi/petsc/include/petscdmdatypes.h /home/bghomashi/petsc/include/petscpf.h /home/bghomashi/petsc/include/petscao.h /home/bghomashi/petsc/include/petscfe.h /home/bghomashi/petsc/include/petscdt.h /home/bghomashi/petsc/include/petscdmcomposite.h /home/bghomashi/petsc/include/petscdmpatch.h /home/bghomashi/petsc/include/petscdmplex.h /home/bghomashi/petsc/include/petscpartitioner.h /home/bghomashi/petsc/include/petscdmplextypes.h /home/bghomashi/petsc/include/petscfv.h /home/bghomashi/petsc/include/petscfvtypes.h /home/bghomashi/petsc/include/petscdmfield.h /home/bghomashi/petsc/include/petscdmredundant.h /home/bghomashi/petsc/include/petscdmshell.h /home/bghomashi/petsc/include/petscdmsliced.h /home/bghomashi/petsc/include/petscdmswarm.h /home/bghomashi/petsc/include/petscdmstag.h /home/bghomashi/petsc/include/petscdmproduct.h /home/bghomashi/petsc/include/petscds.h /home/bghomashi/petsc/include/petsccharacteristic.h /home/bghomashi/petsc/include/petscts.h /home/bghomashi/petsc/include/petscsnes.h /home/bghomashi/petsc/include/petscksp.h /home/bghomashi/petsc/include/petscpc.h /home/bghomashi/petsc/include/petscpctypes.h /home/bghomashi/petsc/include/petscconvest.h /home/bghomashi/petsc/include/petsctao.h /home/bghomashi/petsc/include/petsctaolinesearch.h /home/bghomashi/slepc-3.16.2/include/slepc.h /home/bghomashi/slepc-3.16.2/include/slepcsvd.h /home/bghomashi/slepc-3.16.2/include/slepceps.h /home/bghomashi/slepc-3.16.2/include/slepcst.h /home/bghomashi/slepc-3.16.2/include/slepcsys.h /home/bghomashi/slepc-3.16.2/arch-linux-c-opt/include/slepcconf.h /home/bghomashi/slepc-3.16.2/include/slepcversion.h /home/bghomashi/slepc-3.16.2/include/slepcmath.h /home/bghomashi/slepc-3.16.2/include/slepcsc.h /home/bghomashi/slepc-3.16.2/include/slepcrgtypes.h /home/bghomashi/slepc-3.16.2/include/slepcmat.h /home/bghomashi/slepc-3.16.2/include/slepcvec.h /home/bghomashi/slepc-3.16.2/include/slepcbv.h /home/bghomashi/slepc-3.16.2/include/slepcds.h /home/bghomashi/slepc-3.16.2/include/slepcfn.h /home/bghomashi/slepc-3.16.2/include/slepcrg.h /home/bghomashi/slepc-3.16.2/include/slepclme.h /home/bghomashi/slepc-3.16.2/include/slepcpep.h /home/bghomashi/slepc-3.16.2/include/slepcnep.h /home/bghomashi/slepc-3.16.2/include/slepcmfn.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5PLpublic.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2773,7 +3591,7 @@ obj/input_validation/validate_lasers.o: src/input_validation/validate_lasers.cpp
 dep/core/tdse/laser.d: src/core/tdse/laser.cpp | dep/core/tdse/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/tdse/laser'
-#  Last modified 2022-06-11 11:48:27.488896725
+#  Last modified 2022-06-11 12:25:20.244888474
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2797,6 +3615,7 @@ dep/core/tdse/laser.d: src/core/tdse/laser.cpp | dep/core/tdse/
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
+ 
 obj/input_validation/validate_mathlib.o: src/input_validation/validate_mathlib.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -2809,7 +3628,25 @@ src/observables/dipole_acc_obs.h:
 #  File has not been updated.
 
 # Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5FDdirect.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/tdse_propagators/cranknicolson.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/slepc-3.16.2/include/slepcbv.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Zpublic.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2817,7 +3654,7 @@ src/tdse_propagators/cranknicolson.h:
 dep/input_validation/validate_observables.d: src/input_validation/validate_observables.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_observables'
-#  Last modified 2022-06-11 11:48:25.865563338
+#  Last modified 2022-06-11 12:25:17.914817404
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2841,28 +3678,33 @@ dep/input_validation/validate_observables.d: src/input_validation/validate_obser
 #  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 64):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
- 
+# Not a target:
+/home/bghomashi/petsc/arch-linux-c-opt/include/H5Ppublic.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 obj/core/utility/index_manip.o: src/core/utility/index_manip.cpp src/core/utility/index_manip.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=216/1024=21%, Rehash=0, Collisions=134/1169=11%
+# Load=352/1024=34%, Rehash=0, Collisions=513/2776=18%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 2 (1) / strings = 414 / storage = 10963 B / avg = 26 B
-# current buf: size = 8162 B / used = 2822 B / count = 115 / avg = 24 B
-# other used: total = 8141 B / count = 299 / avg = 27 B
-# other free: total = 21 B / max = 21 B / min = 21 B / avg = 21 B
+# strcache buffers: 3 (2) / strings = 553 / storage = 17785 B / avg = 32 B
+# current buf: size = 8162 B / used = 1492 B / count = 70 / avg = 21 B
+# other used: total = 16293 B / count = 483 / avg = 33 B
+# other free: total = 31 B / max = 18 B / min = 13 B / avg = 15 B
 
-# strcache performance: lookups = 1253 / hit rate = 66%
+# strcache performance: lookups = 2728 / hit rate = 79%
 # hash-table stats:
-# Load=414/8192=5%, Rehash=0, Collisions=29/1253=2%
-# Finished Make data base on Sat Jun 11 11:48:27 2022
+# Load=553/8192=7%, Rehash=0, Collisions=99/2728=4%
+# Finished Make data base on Sat Jun 11 12:26:16 2022
 
  

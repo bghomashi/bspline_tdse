@@ -68,6 +68,14 @@ bool ValidateObservables(const nlohmann::json& input) {
                 MustContain("grid_points", "number", "basis observable");
                 return false;
             }
+            if (obs_pair.value().contains("from") && !obs_pair.value()["from"].is_number()) {
+                MustContain("from", "number", "basis observable");
+                return false;
+            }
+            if (obs_pair.value().contains("to") && !obs_pair.value()["to"].is_number()) {
+                MustContain("to", "number", "basis observable");
+                return false;
+            }
             // an output file is required
             if (!obs_pair.value().contains("filename")) {
                 MustContain("filename", "string", "basis observable");

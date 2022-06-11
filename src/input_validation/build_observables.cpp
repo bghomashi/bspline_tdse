@@ -67,6 +67,10 @@ Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& 
         basis_obs->SetComputePeriod(compute_period);
         basis_obs->SetNumGrid(obs_item["grid_points"]);
         basis_obs->SetFilename(filename);
+        if (obs_item.contains("from"))
+            basis_obs->SetFrom(obs_item["from"]);
+        if (obs_item.contains("to"))
+            basis_obs->SetTo(obs_item["to"]);
 
         return Observable::Ptr_t(basis_obs);
     }

@@ -50,6 +50,10 @@ void TDSE::SetupBasis(double xmin, double xmax,
         if (p->polarization_vector.y || p->minor_polarization_vector.y) _pol[Y] = true;
         if (p->polarization_vector.z || p->minor_polarization_vector.z) _pol[Z] = true;
     }
+    // if (_pol[X] || _pol[Y]) {
+    //     LOG_CRITICAL("DOING 3D calculation");
+    //     exit(-1);
+    // }
     // if there is any polarization in the x/y direction
     if (_pol[X] || _pol[Y])
         _cylindricalSymmetry = false;
@@ -227,6 +231,13 @@ void TDSE::Propagate() {
         obs->Startup(start_iteration);
 
     if (!_do_propagate) {
+        _tdse_out = nullptr;
+
+        // allow observables to complete
+        for (auto& obs : _observables)
+            obs->Shutdown();
+        _tdse_out = nullptr;
+
         Finish();
         return;
     }
@@ -287,6 +298,11 @@ void TDSE::ComputeFields() {
         if (p->polarization_vector.z != 0. || p->minor_polarization_vector.z != 0.)
             _field[Z].resize(_NT);
     }
+
+    // if (_field[X].size() > 0 || _field[Y].size() > 0) {
+    //     LOG_CRITICAL("DOING 3D calculation");
+    //     exit(-1);
+    // }
 
     if (_field[X].size() > 0) {
         for (int it = 0; it < _NT; it++) {

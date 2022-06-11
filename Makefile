@@ -25,7 +25,7 @@ DEP =	$(subst $(ODIR), $(DDIR), $(OBJ:.o=.d))
 
 
 #preprocessor flags
-EXTRAFLAGS = -O0
+EXTRAFLAGS = -g -O0 
 #CPPFLAGS =  -DGLEW_STATIC -Iinc -IGL -I../freetype2 -I/usr/local/include/freetype2
 CPPFLAGS =      -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_CPP \
  				-Dlapack_complex_float="std::complex<float>" \
