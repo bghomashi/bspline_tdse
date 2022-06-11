@@ -55,12 +55,22 @@ bool ValidateObservables(const nlohmann::json& input) {
             }
         } else if (obs_pair.key() == "potential") {
             if (!(obs_pair.value().contains("grid_points") && obs_pair.value()["grid_points"].is_number())) {
-                MustContain("grid_points", "number", "wavefunction observable");
+                MustContain("grid_points", "number", "potential observable");
                 return false;
             }
             // an output file is required
             if (!obs_pair.value().contains("filename")) {
-                MustContain("filename", "string", "populations observable");
+                MustContain("filename", "string", "potential observable");
+                return false;
+            }
+        } else if (obs_pair.key() == "basis") {
+            if (!(obs_pair.value().contains("grid_points") && obs_pair.value()["grid_points"].is_number())) {
+                MustContain("grid_points", "number", "basis observable");
+                return false;
+            }
+            // an output file is required
+            if (!obs_pair.value().contains("filename")) {
+                MustContain("filename", "string", "basis observable");
                 return false;
             }
         }

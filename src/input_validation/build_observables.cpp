@@ -5,6 +5,7 @@
 #include "observables/population_obs.h"
 #include "observables/pulse_obs.h"
 #include "observables/potential_obs.h"
+#include "observables/basis_obs.h"
 
 Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& obs_item, TDSE::Ptr_t tdse) {
     // grab the compute period if provided
@@ -60,6 +61,14 @@ Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& 
         pot_obs->SetFilename(filename);
 
         return Observable::Ptr_t(pot_obs);
+    } else if (key == "basis") {
+        BasisObservable* basis_obs = new BasisObservable(*tdse);
+
+        basis_obs->SetComputePeriod(compute_period);
+        basis_obs->SetNumGrid(obs_item["grid_points"]);
+        basis_obs->SetFilename(filename);
+
+        return Observable::Ptr_t(basis_obs);
     }
     return nullptr;
 }
