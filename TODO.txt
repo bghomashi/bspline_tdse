@@ -1,3 +1,8 @@
+1) ecs seems to fail in 3d case (maybe all cases?)
+- even when forced to run in 3d mode - everything works when aligned with the z-access.
+- the only thing we really changed was the circular pulses?
+- and vector arithmetic but this seems fine.
+
 3) test photoionization
 
 
