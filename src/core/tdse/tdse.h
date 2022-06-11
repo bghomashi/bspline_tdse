@@ -54,7 +54,7 @@ protected:
     int _checkpoints;
 
     // TDSE simulation output file
-    bool _restarting;
+    bool _restarting, _do_propagate;
     HDF5 _tdse_out;
 public:
     typedef std::shared_ptr<TDSE> Ptr_t;
@@ -73,6 +73,7 @@ public:
     void SetTimestep(double dt);
     void SetCheckpoints(int checkpoint);
     void SetRestart(bool flag);
+    void SetDoPropagate(bool flag);
     void SetECS(double ecs_r0, double ecs_theta);
     void SetInitialStateFile(const std::string& filename);
     void SetEigenStateNmax(int nmax);

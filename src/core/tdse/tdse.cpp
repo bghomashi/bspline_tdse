@@ -167,6 +167,9 @@ int TDSE::GetInitialStateNmax() const {
 void TDSE::SetRestart(bool flag) {
     _restarting = flag;
 }
+void TDSE::SetDoPropagate(bool flag) {
+    _do_propagate = flag;
+}
 void TDSE::SetECS(double ecs_r0, double ecs_theta) {
     _ecs_r0 = ecs_r0;
     _ecs_theta = ecs_theta;
@@ -222,6 +225,11 @@ void TDSE::Propagate() {
     // allow observables to initialize
     for (auto& obs : _observables)
         obs->Startup(start_iteration);
+
+    if (!_do_propagate) {
+        Finish();
+        return;
+    }
 
     // begin
     LOG_INFO("Propagation for " + std::to_string(_NT) + " timesteps...");
