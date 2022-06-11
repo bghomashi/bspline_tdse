@@ -54,8 +54,12 @@ namespace Basis {
 
         // initialize ecs
 		assert((ecs.r0 > 0. && ecs.r0 <= 1.) && "ecs must be between 0 and 1.");
-		_ecs.theta = ecs.theta;
-		_ecs.r0 = _grid[whichInterval(ecs.r0*(xmax-xmin)+xmin)];	// clamp ecs to a knot
+		if (ecs.r0 == 1.) {
+			_ecs.theta = 0.0;				// no ecs
+		} else {
+			_ecs.theta = ecs.theta;
+			_ecs.r0 = _grid[whichInterval(ecs.r0*(xmax-xmin)+xmin)];	// clamp ecs to a knot
+		}
 
 		for (int i = 0; i < _grid.size(); i++)
 			_ecs_grid[i] = _ecs.R(_grid[i]);
