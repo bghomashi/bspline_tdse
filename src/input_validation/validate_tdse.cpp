@@ -40,32 +40,32 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
     matlib->Startup(argc, args);
 
 
-    Log::info("Validating TDSE input file.");
+    LOG_INFO("Validating TDSE input file.");
 
-    Log::info("...");
+    LOG_INFO("...");
     
     if (!ValidatePropagator(input))
         return false;
-    Log::info("...");
+    LOG_INFO("...");
 
     if (!ValidateBasis(input))
         return false;
-    Log::info("...");
+    LOG_INFO("...");
 
     if (!ValidateLasers(input))
         return false;
-    Log::info("...");
+    LOG_INFO("...");
 
     if (!ValidateInitialState(input))
         return false;
-    Log::info("...");
+    LOG_INFO("...");
 
     if (!ValidateObservables(input))
         return false;
-    Log::info("...");
+    LOG_INFO("...");
     if (!ValidatePotentials(input))
         return false;
-    Log::info("...");
+    LOG_INFO("...");
         
 
     // only need the "filename" entry from eigenstate calculation
@@ -86,9 +86,9 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
         MustContain("checkpoint", "number");
         return false;
     }
-    Log::info("...");
+    LOG_INFO("...");
 
-    Log::info("Input file validated. Initializing TDSE.");
+    LOG_INFO("Input file validated. Initializing TDSE.");
     // we made it! begin loading data from input file
     // ORDER MATTERS - basis needs to know about lasers and initial states to 
     // take advatage of symmetry
@@ -100,6 +100,8 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
     tdse->SetCheckpoints(input["checkpoint"]);
     if (input.contains("restart") && input["restart"].is_boolean())
         tdse->SetRestart(input["restart"]);
+    if (input.contains("do_propagate") && input["do_propagate"].is_boolean())
+        tdse->SetDoPropagate(input["do_propagate"]);
     tdse->SetCheckpoints(input["checkpoint"]);
 
     // set up lasers

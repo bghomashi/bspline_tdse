@@ -1,6 +1,7 @@
 
 #include "tdse/laser.h"
-
+#include "core/utility/logger.h"
+#include <sstream>
 
 Pulse::Pulse() : period(0), delay(0), numCycles(0), E0(0), duration(0), frequency(0), intensity(0), ellipticity(0), 
 polarization_vector(), poynting_vector(), minor_polarization_vector()
@@ -20,7 +21,15 @@ Pulse::Pulse(double delay_cycles, double intensity,
     polarization_vector(normal(polarization)/std::sqrt(1.+ellipticity*ellipticity)),
     poynting_vector(normal(poynting_vector)),
     minor_polarization_vector(normal(cross(polarization, poynting_vector))*(ellipticity/std::sqrt(1.+ellipticity*ellipticity)))
-    { }
+    { 
+        std::stringstream ss;
+
+        ss << "Polarization = " << polarization_vector.x << ", " << polarization_vector.y << ", " << polarization_vector.z << std::endl;
+        ss << "Poynting = " << poynting_vector.x << ", " << poynting_vector.y << ", " << poynting_vector.z << std::endl;
+        ss << "MinorPolarization = " << minor_polarization_vector.x << ", " << minor_polarization_vector.y << ", " << minor_polarization_vector.z << std::endl;
+
+        LOG_INFO(ss.str());
+    }
     
 Pulse::Ptr_t Pulse::Create(Envelope env, 
                            double delay_cycles, double intensity, 
