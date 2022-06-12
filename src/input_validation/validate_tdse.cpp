@@ -98,10 +98,13 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
         tdse = TDSE::Ptr_t(new CrankNicolsonTDSE(*matlib));
     tdse->SetTimestep(input["time_step"]);
     tdse->SetCheckpoints(input["checkpoint"]);
+
     if (input.contains("restart") && input["restart"].is_boolean())
         tdse->SetRestart(input["restart"]);
+
     if (input.contains("do_propagate") && input["do_propagate"].is_boolean())
         tdse->SetDoPropagate(input["do_propagate"]);
+        
     tdse->SetCheckpoints(input["checkpoint"]);
 
     // set up lasers

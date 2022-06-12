@@ -15,7 +15,7 @@
 using namespace std::complex_literals;
 
 
-TDSE::TDSE(MathLib& lib) : _MathLib(lib), _restarting(false), _cylindricalSymmetry(true), _checkpoints(0) {
+TDSE::TDSE(MathLib& lib) : _MathLib(lib), _do_propagate(true), _restarting(false), _cylindricalSymmetry(true), _checkpoints(0) {
     _pol[X] = _pol[Y] = _pol[Z] = false;
     _ecs_r0 = 0;
     _ecs_theta = 0;
