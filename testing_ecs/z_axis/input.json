@@ -73,6 +73,7 @@
             "filename" : "basis.txt"
         },
         "debug_wavefunction": {
+            "compute_period": 1000,
             "grid_points" : 500,
             "filename" : "wavefunction.txt"
         }

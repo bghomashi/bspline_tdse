@@ -18,7 +18,7 @@ void DebugWavefunctionObservable::Startup(int start_it) {
 
 }
 void DebugWavefunctionObservable::Shutdown() {
-    _txt_file = _MathLib.OpenASCII(_output_filename, 'w');
+    _txt_file = _MathLib.OpenASCII("wavefunction_final.txt", 'w');
 
     std::vector<complex> psi(_tdse.DOF()), n_block_coeff;
     std::vector<complex> out(_grid.size(), 0), temp(_grid.size());
@@ -48,5 +48,33 @@ void DebugWavefunctionObservable::Shutdown() {
     _txt_file = nullptr;
 }
 void DebugWavefunctionObservable::Compute(int it, double t, double dt) {
+    _txt_file = _MathLib.OpenASCII("wavefunction_"+std::to_string(it)+".txt", 'w');
+
+    std::vector<complex> psi(_tdse.DOF()), n_block_coeff;
+    std::vector<complex> out(_grid.size(), 0), temp(_grid.size());
+    std::stringstream ss;
+    auto& basis = _tdse.Basis();
+    
+    _tdse.Psi()->CopyTo(psi);
+
+    int N = basis.getNumBSplines();
+
+    for (int i = 0; i < _tdse.DOF(); i += N) {
+        n_block_coeff = std::vector<complex>(psi.begin() + i, psi.begin() + (i+N));             // copy n_block coeffs
+        temp = basis.FunctionEvaluate(_grid, n_block_coeff);                                        // evaluate on grid
+        
+        for (int i = 0; i < _grid.size(); i++)                                                      // sum the square at all the grid points                  
+            out[i] += std::abs(temp[i])*std::abs(temp[i]);
+    }
+
+    for (int i = 0; i < _numGrid; i++) {            // n-quantum number
+        ss.str("");
+        ss << _grid[i] << "\t" 
+           << std::real(out[i]) << "\n";
+        _txt_file->Write(ss.str());
+    }
+
+
+    _txt_file = nullptr;
 }
 
