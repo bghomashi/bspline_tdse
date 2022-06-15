@@ -12,6 +12,10 @@
 #include "utility/profiler.h"
 
 
+
+#include "math_libs/petsc/petsc_lib.h"
+
+
 using namespace std::complex_literals;
 
 CrankNicolsonTDSE::CrankNicolsonTDSE(MathLib& lib) : TDSE(lib) {
@@ -82,6 +86,10 @@ void CrankNicolsonTDSE::Initialize() {
     _MathLib.AXPY(_U0p, 0.5i*_dt, H0);
     _MathLib.AXPY(_U0m, -0.5i*_dt, H0);
 
+    // std::cout << "M=" << _initial_state[0].m << std::endl;
+    // MatView(std::dynamic_pointer_cast<PetscMatrix>(_U0p)->_petsc_mat, 0);
+    // exit(0);
+
     _Up->Duplicate(_U0p);
     _Um->Duplicate(_U0m);
     
@@ -119,8 +127,8 @@ bool CrankNicolsonTDSE::DoStep(int it, double t, double dt) {
     for (int xn = X; xn <= Z; xn++) {
         if (_HI[xn]) {
             
-            _MathLib.AXPY(_Up, 0.5i*dt*(-1.i*_field[xn][it]), _HI[xn]);
-            _MathLib.AXPY(_Um, -0.5i*dt*(-1.i*_field[xn][it]), _HI[xn]);
+            // _MathLib.AXPY(_Up, 0.5i*dt*(-1.i*_field[xn][it]), _HI[xn]);
+            // _MathLib.AXPY(_Um, -0.5i*dt*(-1.i*_field[xn][it]), _HI[xn]);
         }
     }
     

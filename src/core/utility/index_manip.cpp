@@ -1,6 +1,7 @@
 #include "index_manip.h"
 #include <limits>
 #include <cmath>
+#include <iostream>
 
 // ----------------- index manipulations ----------------
 int RowFrom(int i, int l, int m, int Nmax, const std::vector<int>& Ms, const std::vector<int>& mRows){
@@ -11,8 +12,8 @@ int RowFrom(int i, int l, int m, int Nmax, const std::vector<int>& Ms, const std
 void ILMFrom(int row, int& i, int& l, int& m, int Nmax, const std::vector<int>& Ms, const std::vector<int>& mRows) {
     int mRow;
     i = row % Nmax;               
-    m = MFrom(row, Ms, mRows);
-    mRow = RowFrom(m, Ms, mRows);
+    m = MFrom(row, Ms, mRows);              // which m-block does this row sit in
+    mRow = RowFrom(m, Ms, mRows);           // what is the first row of this m-block
 
     row -= mRow;      // subtract off all the rows before this block
     row /= Nmax;      // get ride of i and _N factor (this is the total l-blocks behind row)
@@ -23,7 +24,7 @@ int MFrom(int row, const std::vector<int>&  Ms, const std::vector<int>& mRows) {
     for (int i = 0; i < Ms.size()-1; i++)
         if (row < mRows[i+1])
             return Ms[i];
-    return 0; 
+    return Ms[0]; 
 }
 int RowFrom(int m, const std::vector<int>&  Ms, const std::vector<int>& mRows) {
     for (int i = 0; i < Ms.size(); i++)

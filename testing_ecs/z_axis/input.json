@@ -7,12 +7,12 @@
     "do_propagate" : true,
     
     "basis": {
-        "order": 8,
+        "order": 4,
         "node_sequence": "linear",
-        "num_nodes": 300,
+        "num_nodes": 20,
         "x_min": 0.0,
-        "x_max": 150.0,
-        "lmax": 2,
+        "x_max": 20.0,
+        "lmax": 1,
         "mmax": 0,
         "ecs_r0": 0.9
     },
@@ -73,7 +73,7 @@
             "filename" : "basis.txt"
         },
         "debug_wavefunction": {
-            "compute_period": 1000,
+            "compute_period": 150,
             "grid_points" : 500,
             "filename" : "wavefunction.txt"
         }
