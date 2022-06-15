@@ -126,9 +126,8 @@ bool CrankNicolsonTDSE::DoStep(int it, double t, double dt) {
 
     for (int xn = X; xn <= Z; xn++) {
         if (_HI[xn]) {
-            
-            // _MathLib.AXPY(_Up, 0.5i*dt*(-1.i*_field[xn][it]), _HI[xn]);
-            // _MathLib.AXPY(_Um, -0.5i*dt*(-1.i*_field[xn][it]), _HI[xn]);
+            _MathLib.AXPY(_Up, 0.5i*dt*(-1.i*_field[xn][it]), _HI[xn]);
+            _MathLib.AXPY(_Um, -0.5i*dt*(-1.i*_field[xn][it]), _HI[xn]);
         }
     }
     

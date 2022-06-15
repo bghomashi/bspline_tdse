@@ -62,8 +62,8 @@ Vec3 Sin2Pulse::operator() (double t) {
     // also need to add CEP
     double T = t-delay;
     double Env = E0*sin(Pi*T/duration)*sin(Pi*T/duration)/frequency;
-    // Vec3 p = cos(frequency*T)*polarization_vector - sin(frequency*T)*minor_polarization_vector;
+    Vec3 p = cos(frequency*T)*polarization_vector - sin(frequency*T)*minor_polarization_vector;
     // Vec3 p = sin(frequency*T)*polarization_vector - cos(frequency*T)*minor_polarization_vector;      // try this next
-    Vec3 p = sin(frequency*T)*polarization_vector;
+    // Vec3 p = sin(frequency*T)*polarization_vector;
     return Env*p;
 }

@@ -2,8 +2,6 @@
 #include "tdse_propagators/cranknicolson.h"
 #include "utility/index_manip.h"
 
-#include "math_libs/petsc/petsc_lib.h"
-
 void CrankNicolsonTDSE::FillFieldFree(Matrix& H0) {
     // int nl = _lmax + 2*_lmax*_mmax - _mmax*(_mmax+1); ?
 
@@ -31,10 +29,6 @@ void CrankNicolsonTDSE::FillFieldFree(Matrix& H0) {
         // kinetic energy and centrifugal term
         return kinBlockStore[i + j*_N] + 0.5*l1*(l1+1.)*r2BlockStore[i + j*_N];
     }); //, _N, _lmax, _mmax);
-
-    // std::cout << "M=" << _initial_state[0].m << std::endl;
-    // MatView(std::dynamic_pointer_cast<PetscMatrix>(H0)->_petsc_mat, 0);
-    // exit(0);
 
     for (auto& p : _potentials) {
         p->FillMatrix(_basis, temp, _N, _Ms, _mRows);    // get potential matrix
