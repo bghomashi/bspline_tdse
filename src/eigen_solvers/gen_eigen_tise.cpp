@@ -13,6 +13,7 @@ GeneralizeEigenvalueTISE::GeneralizeEigenvalueTISE(MathLib& mathlib) :
     _MathLib(mathlib) {
 }
 void GeneralizeEigenvalueTISE::Solve() {
+    /*
     // dump the whole field into a text file
     {
         int numGrid = 500;
@@ -47,7 +48,7 @@ void GeneralizeEigenvalueTISE::Solve() {
         // done
         txt_file = nullptr;
     }
-
+    */
     ProfilerPush();
 
     double memory = 3.*(2*_order-1)*_N + 2.;
