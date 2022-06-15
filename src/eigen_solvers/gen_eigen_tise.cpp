@@ -7,11 +7,47 @@
 #include <string>
 #include <sstream>
 #include <complex>
+#include <iomanip>
 
 GeneralizeEigenvalueTISE::GeneralizeEigenvalueTISE(MathLib& mathlib) : 
     _MathLib(mathlib) {
 }
 void GeneralizeEigenvalueTISE::Solve() {
+    // dump the whole field into a text file
+    {
+        int numGrid = 500;
+        ASCII txt_file = ASCII(_MathLib.OpenASCII("tise_basis.txt", 'w'));
+        int num_bsplines = _basis.getNumBSplines();
+        std::vector<double> grid(numGrid);
+        std::vector<std::vector<complex>> splines(num_bsplines);
+
+        double dx = 30.0/(numGrid - 1);
+        for (int i = 0; i < numGrid; i++)
+            grid[i] = i*dx;
+            
+        for (int bs = 0; bs < splines.size(); bs++)
+            splines[bs] = _basis.getBSpline(grid, bs+1);
+
+        // set up stringstream for formating and grab some shortcut to values we need
+        std::stringstream ss;
+        ss << std::setprecision(8) << std::scientific;
+        
+        // loop though the entire pulse
+        for (int i = 0; i < numGrid; i++) {
+            ss.str("");
+            ss << grid[i];
+            for (auto& bs : splines) {
+                ss << "\t" << std::real(bs[i]);
+                ss << "\t" << std::imag(bs[i]);
+            }
+            ss << "\n";
+            txt_file->Write(ss.str());
+        }
+
+        // done
+        txt_file = nullptr;
+    }
+
     ProfilerPush();
 
     double memory = 3.*(2*_order-1)*_N + 2.;
@@ -82,7 +118,6 @@ void GeneralizeEigenvalueTISE::Solve() {
         return _basis.Integrate(i+1, j+1);
     });
 
-
     _values.resize(_nmax);
     _vectors.resize(_nmax);
     
@@ -110,6 +145,7 @@ void GeneralizeEigenvalueTISE::Solve() {
             // kinetic energy and centrifugal term
             return kinBlockStore[i + j*_N] + 0.5*l*(l+1.)*r2BlockStore[i + j*_N];
         });
+
 
         // now add all the potential terms`1
         for (auto& p : _potentials) {

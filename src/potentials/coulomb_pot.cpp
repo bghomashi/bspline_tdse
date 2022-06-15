@@ -31,7 +31,7 @@ CoulombPotential::CoulombPotential(double Z, double x, double y, double z) :
 
 double CoulombPotential::operator() (double x, double y, double z) const {
     double r = std::sqrt(x*x + y*y + z*z);
-    return 1./r;
+    return -_Z/r;
 }
 // FIX: maybe this way of thinking about it is not very efficient
 void CoulombPotential::FillMatrix(const Basis::BSpline& basis, Matrix m, int N, const std::vector<int>& Ms, const std::vector<int>& mRows) {

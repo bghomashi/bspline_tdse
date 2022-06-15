@@ -354,7 +354,7 @@ void TDSE::LoadInitialState() {
         int mBlock = RowFrom(state.m, _Ms, _mRows)/_N;
         int lBlock = mBlock + (state.l-std::abs(state.m));
         hdf5->ReadVector(name_ss.str().c_str(), temp);                  // read in the state
-        temp->Scale(state.amplitude*std::exp(1.i*state.phase));         // scale by norm, amplitude and phase
+        temp->Scale(state.amplitude*std::exp(1.i*state.phase));         // scale by amplitude and phase
         _MathLib.AXPY(vecs[lBlock], 1., temp);                          // sum with other similar l's
     }
     hdf5->PopGroup();

@@ -1,11 +1,12 @@
 #include "bspline.h"
 #include <iostream>
+#include <cmath>
 
 namespace Basis {
 	complex BSpline::Integrate(int bs1, int bs2, int dn1, int dn2) const {
-		return std::real(Integrate(bs1, bs2, [](complex r) -> complex {
+		return Integrate(bs1, bs2, [](complex r) -> complex {
 				return 1.;
-			}, dn1, dn2));
+			}, dn1, dn2);
 	}
 	complex BSpline::Integrate(int bs1, int bs2, std::function<complex(complex)> f, int dn1, int dn2) const {
 		double xmin = _grid.front(), xmax = _grid.back();
@@ -59,9 +60,7 @@ function KahanSum(input)
 			t = total + y;
 			c = (t - total) - y;
 			total = t;
-
 		}
-
 		return total;
 	}
 }

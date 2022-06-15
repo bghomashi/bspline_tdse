@@ -32,12 +32,17 @@ void CrankNicolsonTDSE::FillInteractionZ(Matrix& HI) {
                 l2 = l1+1;
                 blockRow = m1Block + (l1-std::abs(m1));
                 blockCol = m2Block + (l2-std::abs(m2));
+                // std::cout << "m1 = " << m1;
+                // std::cout << " m2 = " << m1;
+                // std::cout << " l1 = " << l1;
+                // std::cout << " l2 = " << l2;
+                // std::cout << " a = " << sqrt((l2+m2) * (l2-m2) / (2.*l2 + 1.) / (2.*l2 - 1.)) << std::endl;;
 
                 HI->FillBandedBlock(_order-1, _N, blockRow, blockCol, 
                 [=,&ddr,&invR](int row, int col) {
                     int i = row % _N, j = col % _N;
                     
-                    // m1=m2+1, l1=l2-1
+                    // m1=m2, l1=l2-1
                     double a = sqrt((l2+m2) * (l2-m2) / (2.*l2 + 1.) / (2.*l2 - 1.));
 
                     return (ddr[i + j*_N] + double(l2)*invR[i + j*_N])*a;
@@ -48,6 +53,12 @@ void CrankNicolsonTDSE::FillInteractionZ(Matrix& HI) {
                 l2 = l1-1;
                 blockRow = m1Block + (l1-std::abs(m1));
                 blockCol = m2Block + (l2-std::abs(m2));
+
+                // std::cout << "m1 = " << m1;
+                // std::cout << " m2 = " << m1;
+                // std::cout << " l1 = " << l1;
+                // std::cout << " l2 = " << l2;
+                // std::cout << " a = " << sqrt((l2+m2+1.)*(l2 - m2 + 1.) / (2.*l2 + 1.) / (2.*l2 + 3.)) << std::endl;
 
                 HI->FillBandedBlock(_order-1, _N, blockRow, blockCol, 
                 [=,&ddr,&invR](int row, int col) {
@@ -60,8 +71,6 @@ void CrankNicolsonTDSE::FillInteractionZ(Matrix& HI) {
             }
         }
     }
-
-
     // Fill L1 = l2 - 1 blocks
     // HI->FillBandedBlock(_order-1, _N, 1, [&](int row, int col) {
     //     int i, j, l1, l2, m1, m2;
@@ -84,6 +93,10 @@ void CrankNicolsonTDSE::FillInteractionZ(Matrix& HI) {
     // });
     HI->AssembleBegin();
     HI->AssembleEnd();
+
+
+    // MatView(std::dynamic_pointer_cast<PetscMatrix>(HI)->_petsc_mat, 0);
+    // exit(0);
 
 
 }

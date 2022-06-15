@@ -81,6 +81,16 @@ bool ValidateObservables(const nlohmann::json& input) {
                 MustContain("filename", "string", "basis observable");
                 return false;
             }
+        } else if (obs_pair.key() == "debug_wavefunction") {
+            if (!(obs_pair.value().contains("grid_points") && obs_pair.value()["grid_points"].is_number())) {
+                MustContain("grid_points", "number", "debug_wavefunction observable");
+                return false;
+            }
+            // an output file is required
+            if (!obs_pair.value().contains("filename")) {
+                MustContain("filename", "string", "debug_wavefunction observable");
+                return false;
+            }
         }
     }
     return true;

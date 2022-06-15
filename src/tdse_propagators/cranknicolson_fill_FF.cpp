@@ -3,7 +3,7 @@
 #include "utility/index_manip.h"
 
 void CrankNicolsonTDSE::FillFieldFree(Matrix& H0) {
-    int nl = _lmax + 2*_lmax*_mmax - _mmax*(_mmax+1);
+    // int nl = _lmax + 2*_lmax*_mmax - _mmax*(_mmax+1); ?
 
     // TODO: decide on banded structure in non-central case
     // - for now assuming central

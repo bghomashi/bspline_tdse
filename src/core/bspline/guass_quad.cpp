@@ -51,6 +51,8 @@ namespace Basis {
 			c = (t-sum) - y;
 			sum = t;
 		}
+
+
 		return sum*width;
 	}
 }

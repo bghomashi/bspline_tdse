@@ -2,6 +2,7 @@
 #include "observables/norm_obs.h"
 #include "observables/dipole_acc_obs.h"
 #include "observables/wavefunction_obs.h"
+#include "observables/debug_wavefunction_obs.h"
 #include "observables/population_obs.h"
 #include "observables/pulse_obs.h"
 #include "observables/potential_obs.h"
@@ -73,6 +74,16 @@ Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& 
             basis_obs->SetTo(obs_item["to"]);
 
         return Observable::Ptr_t(basis_obs);
+    } else if (key == "debug_wavefunction") {
+        DebugWavefunctionObservable* wf_obs = new DebugWavefunctionObservable(*tdse);
+
+        wf_obs->SetComputePeriod(compute_period);
+        wf_obs->SetFilename(filename);
+        wf_obs->SetNumGrid(obs_item["grid_points"]);
+
+        LOG_INFO("success");
+
+        return Observable::Ptr_t(wf_obs);
     }
     return nullptr;
 }

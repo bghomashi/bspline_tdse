@@ -37,15 +37,18 @@ void NormObservable::Startup(int start_it) {
         // first read all the values back that we want to keep
         _file = _MathLib.OpenASCII(_output_filename, 'r');
         for (int i = 0; i < norm.size(); i++) {
+            double real, imag;
             line.str(_file->ReadLine());
-            line >> norm[i];
+            line >> real;
+            line >> imag;
+            norm[i] = complex(real, imag);
         }
 
         // now clear the file and write them all back
         _file = _MathLib.OpenASCII(_output_filename, 'w');
         for (int i = 0; i < norm.size(); i++) {
             line.str("");
-            line << norm[i] << std::endl;
+            line << std::real(norm[i]) << "\t" << std::imag(norm[i]) << std::endl;
             _file->Write(line.str().c_str());
         }
     } else {
@@ -64,7 +67,7 @@ void NormObservable::Compute(int it, double t, double dt) {
     _MathLib.Dot(_psi, _psi_temp, norm);
     if (_file) {
         std::stringstream ss;
-        ss << norm << "\n";
+        ss << std::real(norm) << "\t" << std::imag(norm) << "\n";
         _file->Write(ss.str().c_str());
     } else {
         std::stringstream ss;

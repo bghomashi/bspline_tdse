@@ -40,7 +40,7 @@ void CrankNicolsonTDSE::FillInteractionX(Matrix& HI) {
 
                     HI->FillBandedBlock(_order-1, _N, blockRow, blockCol, 
                     [=,&ddr,&invR](int row, int col) {
-                        int i = row % _N, j = col % _N;
+                        int i = row % _N, j = col % _N;                     // TODE: change i,j to anything else
                         
                         // m1=m2-1, l1=l2-1
                         //double a = -sqrt((l2+m2) * (l2+m2-1) / (2.*l2 + 1.) / (2.*l2 - 1.));

@@ -92,7 +92,7 @@ void PetscVector::CopyTo(std::vector<complex>& values) {
         complex* ptr;
         ScatterGetArray(&ptr);
 
-        for (int i = 0; i <= _len; i++)
+        for (int i = 0; i < _len; i++)
             values[i] = ptr[i];
 
         ScatterRestoreArray(&ptr);
