@@ -17,3 +17,10 @@ NOT EVEN SURE WHAT THIS HAS TO DO WITH m
 
 add "propagate: true/false" to input for TDSE
 Recompute observables from initial/final wavefunction
+
+
+# FROM BRYNN'S TABLE OF PARAMETERS (confusingly: z = C0)
+#	E	C0	Zc	c	a1	 b1	 a2	 b2	a3	b3
+#He	-0.9453	1	1	2.0329	0.3953	 6.1805
+#Ne	-0.8353	1	9	0.8870	-9.9286	 1.3746	-5.9950	 3.7963
+#Ar	-0.6003	1	17	0.8103	-15.9583 1.2305	-27.7467 4.3946	2.1768	86.7179

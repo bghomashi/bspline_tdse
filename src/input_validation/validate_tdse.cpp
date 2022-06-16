@@ -143,7 +143,7 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
         if (pulse["envelope"] == "sin2")
             tdse->AddPulse(Pulse::Create(
                 Pulse::Sin2, 
-                cycles_delay, intensity, 
+                cycles_delay, cep, intensity, 
                 frequency, num_cycles, 
                 ellipticity, 
                 pol_vector, poy_vector));
