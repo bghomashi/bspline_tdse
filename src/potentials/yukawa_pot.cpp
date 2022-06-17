@@ -61,7 +61,7 @@ void YukawaPotential::FillMatrixGradX(const Basis::BSpline& basis, Matrix m, int
     if (_isCentral) {
         // the same for each L-M block so cache it
         std::vector<complex> invR(N*N), invRR(N*N);
-        BuildExpInvRR(basis, N, _Z, _D, invR);
+        BuildExpInvR(basis, N, _Z, _D, invR);
         for (auto& i : invR) i*=-_D;                 // from product rule
         BuildExpInvRR(basis, N, _Z, _D, invRR);
 
@@ -100,7 +100,7 @@ void YukawaPotential::FillMatrixGradY(const Basis::BSpline& basis, Matrix m, int
     if (_isCentral) {
         // the same for each L-M block so cache it
         std::vector<complex> invR(N*N), invRR(N*N);
-        BuildExpInvRR(basis, N, _Z, _D, invR);
+        BuildExpInvR(basis, N, _Z, _D, invR);
         for (auto& i : invR) i*=-_D;                 // from product rule
         BuildExpInvRR(basis, N, _Z, _D, invRR);
 

@@ -1,9 +1,7 @@
-!!!!!!!!!!!!1
-SOMETHING IS WRONG WITH FREE PROPAGATION STATE FOR M=1!
--
-NOT EVEN SURE WHAT THIS HAS TO DO WITH m
-!!!!!!!!!!!!!!!!!111111
 
+Check Helium derivative in yonas code
+
+Eigenstate file validation??
 
 
 
