@@ -17,18 +17,18 @@ complex YlmXYlm(int l1, int m1, int l2, int m2) {
 
     return 0.;
 }
-complex YlmYYlm(int l1, int m1, int l2, int m2) {
+complex YlmYYlm(int l1, int m1, int l2, int m2) {                   // SIGN FLIP??
     if (m1 == m2 + 1 && l1 == l2 + 1)
-        return -0.5i*sqrt( (l2+m2+1.)*(l2+m2+2.)/(2.*l2+1.)/(2.*l2+3.) );
+        return 0.5i*sqrt( (l2+m2+1.)*(l2+m2+2.)/(2.*l2+1.)/(2.*l2+3.) );
 
     if (m1 == m2 + 1 && l1 == l2 - 1)
-        return 0.5i*sqrt( (l2-m2)*(l2-m2-1.)/(2.*l2-1.)/(2.*l2+1.) );
+        return -0.5i*sqrt( (l2-m2)*(l2-m2-1.)/(2.*l2-1.)/(2.*l2+1.) );
 
     if (m1 == m2 - 1 && l1 == l2 + 1)
-        return -0.5i*sqrt( (l2-m2+1.)*(l2-m2+2.)/(2.*l2+1.)/(2.*l2+3.) );
+        return 0.5i*sqrt( (l2-m2+1.)*(l2-m2+2.)/(2.*l2+1.)/(2.*l2+3.) );
 
     if (m1 == m2 - 1 && l1 == l2 - 1)
-        return 0.5i*sqrt( (l2+m2)*(l2+m2-1.)/(2.*l2-1.)/(2.*l2+1.) );
+        return -0.5i*sqrt( (l2+m2)*(l2+m2-1.)/(2.*l2-1.)/(2.*l2+1.) );
 
     return 0.;
 }
