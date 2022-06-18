@@ -2,12 +2,13 @@
 #include "observables/norm_obs.h"
 #include "observables/dipole_acc_obs.h"
 #include "observables/wavefunction_obs.h"
-#include "observables/debug_wavefunction_obs.h"
 #include "observables/population_obs.h"
 #include "observables/pulse_obs.h"
 #include "observables/potential_obs.h"
 #include "observables/basis_obs.h"
 #include "observables/knot_obs.h"
+#include "observables/debug_wavefunction_obs.h"
+#include "observables/debug_eigenstates.h"
 
 Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& obs_item, TDSE::Ptr_t tdse) {
     // grab the compute period if provided
@@ -88,12 +89,23 @@ Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& 
         DebugWavefunctionObservable* wf_obs = new DebugWavefunctionObservable(*tdse);
 
         wf_obs->SetComputePeriod(compute_period);
-        wf_obs->SetFilename(filename);
+        // wf_obs->SetFilename(filename);
         wf_obs->SetNumGrid(obs_item["grid_points"]);
 
         LOG_INFO("success");
 
         return Observable::Ptr_t(wf_obs);
+    } else if (key == "debug_eigenstates") {
+        DebugEigenstatesObservable* eigen_obs = new DebugEigenstatesObservable(*tdse);
+
+        eigen_obs->SetComputePeriod(compute_period);
+        // eigen_obs->SetFilename(filename);
+        eigen_obs->SetNumGrid(obs_item["grid_points"]);
+        eigen_obs->SetNMax(obs_item["nmax"]);
+
+        LOG_INFO("success");
+
+        return Observable::Ptr_t(eigen_obs);
     }
     return nullptr;
 }

@@ -2,9 +2,9 @@
 
 #include "bspline/bspline.h"
 #include "maths/maths.h"
-#include "potential.h"
-#include "laser.h"
-#include "observable.h"
+#include "tdse/potential.h"
+#include "tdse/laser.h"
+#include "tdse/observable.h"
 
 class TDSE {
 protected:

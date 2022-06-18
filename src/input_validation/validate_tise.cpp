@@ -71,6 +71,7 @@ bool ValidateTISEInputFile(int argc, char **args, const std::string& filename, M
     int mmax = basis["mmax"];
     double ecs_r0 = 1.0;                // default to NO ecs
     double ecs_theta = 0.0;             // default to NO ecs
+    double seq_parameter = 0.;              // does nothing for Linear
     Basis::BSpline::Sequence seq = Basis::BSpline::Linear;  // default to linear
 
     // optional - ecs parameters
@@ -79,17 +80,24 @@ bool ValidateTISEInputFile(int argc, char **args, const std::string& filename, M
     
     if (ToLower(basis["node_sequence"]) == "linear")
         seq = Basis::BSpline::Linear;
-    else if (ToLower(basis["node_sequence"]) == "exponential")
+    else if (ToLower(basis["node_sequence"]) == "exponential") {
         seq = Basis::BSpline::Exponential;
-    else if (ToLower(basis["node_sequence"]) == "sinlike")
+        seq_parameter = basis["parameter"].get<double>();
+    }
+    else if (ToLower(basis["node_sequence"]) == "sinlike") {
         seq = Basis::BSpline::Sinlike;
-    else if (ToLower(basis["node_sequence"]) == "parabolic")
+        seq_parameter = basis["parameter"].get<double>();
+    }
+    else if (ToLower(basis["node_sequence"]) == "parabolic") {
         seq = Basis::BSpline::ParabolicLinear;
+        seq_parameter = basis["parameter"].get<double>();
+    }
 
     tise->SetupBasis(x_min, x_max, 
                     order, num_nodes, 
                     ecs_r0, ecs_theta,
-                    seq);
+                    seq,
+                    seq_parameter);
     
     // setup potentials
     Log::info("Building potentials.");

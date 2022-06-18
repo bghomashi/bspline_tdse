@@ -49,18 +49,7 @@
         {
             "type": "coulomb",
             "Z": 1
-        },
-        {
-            "type": "yukawa",
-            "Z": 1,
-            "decay": 2.0329
-        },
-        {
-            "type": "exponential",
-            "amplitude": 0.3953,
-            "decay": 6.1805
         }
-
     ],
     "observables": {
         "norm": {
@@ -81,18 +70,26 @@
             "filename" : "potential.txt"
         },
         "basis": {
-            "grid_points" : 500,
+            "grid_points" : 3000,
             "filename" : "basis.txt"
         },
         "knots": {
             "filename" : "knots.txt"
+        },
+        "debug_wavefunction" : {
+            "compute_period": 500,
+            "grid_points" : 5000
+        },
+        "debug_eigenstates" : {
+            "nmax" : 4,
+            "grid_points" : 5000
         }
     },
     "eigen_state": {
         "solver": "SLEPC",
         "nmax": 4,
         "tol": 1e-10,
-        "filename": "He.h5"
+        "filename": "H.h5"
     },
     "log_filename": "log.txt"
 }

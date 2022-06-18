@@ -92,11 +92,23 @@ bool ValidateObservables(const nlohmann::json& input) {
                 MustContain("grid_points", "number", "debug_wavefunction observable");
                 return false;
             }
-            // an output file is required
-            if (!obs_pair.value().contains("filename")) {
-                MustContain("filename", "string", "debug_wavefunction observable");
+            // if (!obs_pair.value().contains("filename")) {
+            //     MustContain("filename", "string", "debug_wavefunction observable");
+            //     return false;
+            // }
+        } else if (obs_pair.key() == "debug_eigenstates") {
+            if (!(obs_pair.value().contains("nmax") && obs_pair.value()["nmax"].is_number())) {
+                MustContain("nmax", "number", "debug_eigenstates observable");
                 return false;
             }
+            if (!(obs_pair.value().contains("grid_points") && obs_pair.value()["grid_points"].is_number())) {
+                MustContain("grid_points", "number", "debug_eigenstates observable");
+                return false;
+            }
+            // if (!obs_pair.value().contains("filename")) {
+            //     MustContain("filename", "string", "debug_wavefunction observable");
+            //     return false;
+            // }
         }
     }
     return true;

@@ -29,7 +29,8 @@ public:
     void SetupBasis(double xmin, double xmax, 
                     int order, int nodes,
                     double ecs_r0, double ecs_theta,
-                    Basis::BSpline::Sequence seq);
+                    Basis::BSpline::Sequence seq,
+                    double seq_parameter);
     virtual void Solve() = 0;
 
     void AddPotential(Potential::Ptr_t pot);

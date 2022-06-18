@@ -1,5 +1,6 @@
 #include "observables/debug_wavefunction_obs.h"
 #include "core/utility/logger.h"
+#include <iomanip>
 
 DebugWavefunctionObservable::DebugWavefunctionObservable(TDSE& tdse) : 
     Observable(tdse), _numGrid(0) {}
@@ -36,7 +37,7 @@ void DebugWavefunctionObservable::Shutdown() {
         for (int i = 0; i < _grid.size(); i++)                                                      // sum the square at all the grid points                  
             out[i] += std::abs(temp[i])*std::abs(temp[i]);
     }
-
+    ss << std::setprecision(8) << std::scientific;
     for (int i = 0; i < _numGrid; i++) {            // n-quantum number
         ss.str("");
         ss << _grid[i] << "\t" 

@@ -81,11 +81,16 @@
             "filename" : "potential.txt"
         },
         "basis": {
-            "grid_points" : 500,
+            "grid_points" : 3000,
             "filename" : "basis.txt"
         },
         "knots": {
             "filename" : "knots.txt"
+        },
+        "debug_wavefunction" : {
+            "compute_period": 500,
+            "grid_points" : 5000,
+            "filename" : "wavefunction.txt"
         }
     },
     "eigen_state": {
