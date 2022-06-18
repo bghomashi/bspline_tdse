@@ -100,6 +100,7 @@ public:
     int NumTimeSteps() const;
     const bool* Polarization() const;
     const std::vector<double>& GetField(int dim_index) const;
+    const std::vector<Pulse::Ptr_t>& Pulses() const;
 
 
     void DoCheckpoint(int it);

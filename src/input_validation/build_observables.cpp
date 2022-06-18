@@ -7,6 +7,7 @@
 #include "observables/pulse_obs.h"
 #include "observables/potential_obs.h"
 #include "observables/basis_obs.h"
+#include "observables/knot_obs.h"
 
 Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& obs_item, TDSE::Ptr_t tdse) {
     // grab the compute period if provided
@@ -74,6 +75,15 @@ Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& 
             basis_obs->SetTo(obs_item["to"]);
 
         return Observable::Ptr_t(basis_obs);
+    } else if (key == "knots") {
+        KnotObservable* knot_obs = new KnotObservable(*tdse);
+
+        knot_obs->SetComputePeriod(compute_period);
+        knot_obs->SetFilename(filename);
+
+        LOG_INFO("success");
+
+        return Observable::Ptr_t(knot_obs);
     } else if (key == "debug_wavefunction") {
         DebugWavefunctionObservable* wf_obs = new DebugWavefunctionObservable(*tdse);
 

@@ -29,7 +29,9 @@ struct Pulse {
         NumTypes
     };
 
-    virtual Vec3 operator() (double t) = 0;
+    virtual Vec3 operator() (double t) const = 0;
+    virtual Vec3 A(double t) const = 0;
+    virtual Vec3 E(double t) const = 0;
 
     static Ptr_t Create(Envelope env, double delay_cycles, double cep, double intensity, double frequency, int numCycles, double ellipticity, const Vec3& polarization, const Vec3& poynting_vector);
 };
@@ -44,6 +46,7 @@ struct Sin2Pulse : public Pulse {
              const Vec3& poynting_vector) :
         Pulse(delay_cycles, cep, intensity, frequency, numCycles, ellipticity, polarization, poynting_vector) {}
 
-    Vec3 operator() (double t);
-
+    Vec3 operator() (double t) const;
+    Vec3 A(double t) const;
+    Vec3 E(double t) const;
 };

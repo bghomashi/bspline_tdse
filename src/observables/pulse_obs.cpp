@@ -17,27 +17,49 @@ void PulseObservable::Startup(int it) {
     double dt = _tdse.Timestep();
     double tmin = _tdse.Tmin();
     int NT = _tdse.NumTimeSteps();
-    auto& field_x = _tdse.GetField(DimIndex::X);
-    auto& field_y = _tdse.GetField(DimIndex::Y);
-    auto& field_z = _tdse.GetField(DimIndex::Z);
+    auto& pulses = _tdse.Pulses();
+    // auto& A_field_x = _tdse.GetField(DimIndex::X);
+    // auto& A_field_y = _tdse.GetField(DimIndex::Y);
+    // auto& A_field_z = _tdse.GetField(DimIndex::Z);
     
+    std::vector<Vec3> A_field(NT, {0,0,0});
+    std::vector<Vec3> E_field(NT, {0,0,0});
+
+    for (auto& pulse : pulses) {
+        for (int i = 0; i < NT; i++) {
+            A_field[i] += pulse->A(tmin + dt*i);
+            E_field[i] += pulse->E(tmin + dt*i);
+        }
+    }
+
     // loop though the entire pulse
     for (int i = 0; i < NT; i++) {
 
         ss.str("");
         ss << tmin + dt*i;
+        // A-field
+        /*
         if (_tdse.Polarization()[DimIndex::X])
-            ss << "\t" << field_x[i];
+            ss << "\t" << A_field[i].x;
         else 
             ss << "\t" << 0.0;
         if (_tdse.Polarization()[DimIndex::Y])
-            ss << "\t" << field_y[i];
+            ss << "\t" << A_field[i].y;
         else 
             ss << "\t" << 0.0;
         if (_tdse.Polarization()[DimIndex::Z])
-            ss << "\t" << field_z[i];
+            ss << "\t" << A_field[i].z;
         else 
             ss << "\t" << 0.0;
+        */
+
+        ss << "\t" << A_field[i].x;
+        ss << "\t" << A_field[i].y;
+        ss << "\t" << A_field[i].z;
+        ss << "\t" << E_field[i].x;
+        ss << "\t" << E_field[i].y;
+        ss << "\t" << E_field[i].z;
+
         ss << "\n";
         _txt_file->Write(ss.str());
     }

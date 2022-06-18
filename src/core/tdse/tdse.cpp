@@ -143,6 +143,9 @@ const std::vector<double>& TDSE::GetField(int dim_index) const {
 int TDSE::NumTimeSteps() const {
     return _NT;
 }
+const std::vector<Pulse::Ptr_t>& TDSE::Pulses() const {
+    return _pulses;
+}
 
 void TDSE::AddPulse(Pulse::Ptr_t p) {
     _pulses.push_back(p);

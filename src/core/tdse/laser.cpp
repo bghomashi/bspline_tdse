@@ -25,9 +25,10 @@ Pulse::Pulse(double delay_cycles, double cep, double intensity,
         std::stringstream ss;
 
         ss << "Polarization = " << polarization_vector.x << ", " << polarization_vector.y << ", " << polarization_vector.z << std::endl;
+        LOG_INFO(ss.str()); ss.str("");
         ss << "Poynting = " << poynting_vector.x << ", " << poynting_vector.y << ", " << poynting_vector.z << std::endl;
+        LOG_INFO(ss.str()); ss.str("");
         ss << "MinorPolarization = " << minor_polarization_vector.x << ", " << minor_polarization_vector.y << ", " << minor_polarization_vector.z << std::endl;
-
         LOG_INFO(ss.str());
     }
     
@@ -57,14 +58,29 @@ Pulse::Ptr_t Pulse::Create(Envelope env,
     return nullptr;
 }
 
-Vec3 Sin2Pulse::operator() (double t) {
+Vec3 Sin2Pulse::operator() (double t) const {
+    return A(t);
+}
+Vec3 Sin2Pulse::A(double t) const {     // A(t)
     if (t < delay) return Vec3{0};
 
-    // also need to add CEP
     double T = t-delay+cep;
-    double Env = E0*sin(Pi*T/duration)*sin(Pi*T/duration)/frequency;
-    //Vec3 p = cos(frequency*T)*polarization_vector - sin(frequency*T)*minor_polarization_vector;
-    Vec3 p = sin(frequency*T)*polarization_vector + cos(frequency*T)*minor_polarization_vector;      // try this next
-    // Vec3 p = sin(frequency*T)*polarization_vector;
+    double Env = -E0*sin(Pi*T/duration)*sin(Pi*T/duration)/frequency;
+    Vec3 p = sin(frequency*T)*polarization_vector - cos(frequency*T)*minor_polarization_vector;
     return Env*p;
+}
+
+Vec3 Sin2Pulse::E(double t) const {              // E=-dA/dt
+    if (t < delay) return Vec3{0};
+
+    double T = t-delay+cep;
+    // product rule
+    double Env1 = E0*sin(Pi*T/duration)*sin(Pi*T/duration);                             // dont diff. env
+    double Env2 = 2.*Pi*E0*sin(Pi*T/duration)*cos(Pi*T/duration)/frequency/duration;    // do diff. env
+
+    Vec3 p1 = cos(frequency*T)*polarization_vector + sin(frequency*T)*minor_polarization_vector;       // do diff. carrier wave
+    Vec3 p2 = sin(frequency*T)*polarization_vector - cos(frequency*T)*minor_polarization_vector;                           // dont
+
+    return Env1*p1 + Env2*p2;
+
 }
