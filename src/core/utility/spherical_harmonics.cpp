@@ -1,4 +1,6 @@
 #include "utility/spherical_harmonics.h"
+#include <cmath>
+#include <complex>
 
 using namespace std::complex_literals;
 
@@ -42,4 +44,11 @@ complex YlmZYlm(int l1, int m1, int l2, int m2) {
     
 
     return 0.;
+}
+
+
+
+
+complex Ylm(int l, int m, double theta, double phi) {
+    return std::sph_legendre(l, m, theta)*std::exp(1i*phi*(double)m);
 }

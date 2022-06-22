@@ -30,6 +30,7 @@ EXTRAFLAGS = -g -O0
 CPPFLAGS =      -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_CPP \
  				-Dlapack_complex_float="std::complex<float>" \
  				-Dlapack_complex_double="std::complex<double>" \
+				-D__STDCPP_WANT_MATH_SPEC_FUNCS__ \
 				-I$(PETSC_DIR)/include -I$(PETSC_DIR)/$(PETSC_ARCH)/include \
 				-I$(SLEPC_DIR)/include -I$(SLEPC_DIR)/$(PETSC_ARCH)/include \
 				-Iinc -I/usr/include \
