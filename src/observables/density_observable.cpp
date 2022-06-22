@@ -72,7 +72,8 @@ void DensityObservable::Compute(int it, double t, double dt) {
                 ss << _grid[j] << "\t"; // y
                 ss << _grid[k] << "\t"; // z
                 ss << std::real(out[i]) << "\t";
-                ss << std::imag(out[i]) << "\n";
+                ss << std::imag(out[i]) << "\t";
+                ss << std::abs(out[i])*std::abs(out[i]) << "\n";
                 _txt_file->Write(ss.str());  
             }
         }
