@@ -1,0 +1,90 @@
+{
+    "propagator": "crank_nicolson",
+    "time_step": 0.2,
+    "math_library": "PETsc",
+    "checkpoint": 5000,
+    "restart" : false,
+    "do_propagate" : true,
+    
+    "basis": {
+        "order": 8,
+        "node_sequence": "linear",
+        "num_nodes": 1000,
+        "x_min": 0.0,
+        "x_max": 500.0,
+        "lmax": 4,
+        "mmax": 0,
+        "ecs_r0": 0.9
+    },
+    "lasers": [
+        {
+            "num_cycles": 10.0,
+            "cycles_delay": 0.0,
+            "envelope": "sin2",
+            "intensity": 3e12,
+            "wavelength": 250,
+            "cep": 0,
+            "polarization_vector": [
+               	0.0,
+                0.0,
+                1.0
+            ],
+            "poynting_vector": [
+                1.0,
+                0.0,
+                0.0
+            ]
+        }
+    ],
+    "initial_state": [
+        {
+            "n": 2,
+            "l": 1,
+            "m": 1,
+            "phase": 0
+        }
+    ],
+    "potentials": [
+        {
+            "type": "yukawa",
+            "Z": 5.137,
+            "decay":  1.288
+        },
+        {
+            "type": "yukawa",
+            "Z": 3.863,
+            "decay": 3.545
+        }
+    ],
+    "observables": {
+        "norm": {
+            "compute_period": 1,
+            "filename" : "norm.txt"
+        },
+        "dipole_acc": {
+            "filename" : "dip_acc.txt"
+        },
+        "populations": {
+            "filename" : "populations.txt"
+        },
+        "pulse": {
+            "filename" : "pulse.txt"
+        },
+        "potential": {
+            "grid_points" : 5000,
+            "filename" : "potential.txt"
+        },
+        "knots": {
+            "grid_points" : 5000,
+            "filename" : "knots.txt"
+        }
+    },
+    "eigen_state": {
+        "solver": "SLEPC",
+        "nmax": 100,
+        "lmax": 4, 
+        "tol": 1e-10,
+        "filename": "F-.h5"
+    },
+    "log_filename": "log.txt"
+}
