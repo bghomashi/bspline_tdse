@@ -11,7 +11,7 @@ Pulse::Pulse(double delay_cycles, double cep, double intensity,
              double ellipticity,
              const Vec3& polarization,
              const Vec3& poynting_vector) : 
-    numCycles(numCycles), cep(cep), frequency(frequency), 
+    numCycles(numCycles), cep(cep*2.*Pi), frequency(frequency), 
     intensity(intensity),
     E0(std::sqrt(intensity / 3.51e16)), 
     period(2.*Pi/frequency),
@@ -113,9 +113,9 @@ Vec3 TrapezoidalPulse::A(double t) const {     // A(t)
         return 0.0;
     };
 
-    double T = t-delay+cep;
+    double T = t-delay;
     double Env = -E0*envelope(T)/frequency;
-    Vec3 p = sin(frequency*T)*polarization_vector - cos(frequency*T)*minor_polarization_vector;
+    Vec3 p = sin(frequency*T+cep)*polarization_vector - cos(frequency*T+cep)*minor_polarization_vector;
     return Env*p;
 }
 
@@ -152,13 +152,13 @@ Vec3 TrapezoidalPulse::E(double t) const {              // E=-dA/dt
     };
 
 
-    double T = t-delay+cep;
+    double T = t-delay;
     // product rule
     double Env1 = E0*envelope(T);                             // dont diff. env
     double Env2 = E0*denvelope(T)/frequency;    // do diff. env
 
-    Vec3 p1 = cos(frequency*T)*polarization_vector + sin(frequency*T)*minor_polarization_vector;       // do diff. carrier wave
-    Vec3 p2 = sin(frequency*T)*polarization_vector - cos(frequency*T)*minor_polarization_vector;                           // dont
+    Vec3 p1 = cos(frequency*T+cep)*polarization_vector + sin(frequency*T+cep)*minor_polarization_vector;       // do diff. carrier wave
+    Vec3 p2 = sin(frequency*T+cep)*polarization_vector - cos(frequency*T+cep)*minor_polarization_vector;                           // dont
 
     return Env1*p1 + Env2*p2;
 
