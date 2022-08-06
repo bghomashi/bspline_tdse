@@ -165,11 +165,17 @@ void TDSE::SetInitialStateFile(const std::string& filename) {
 void TDSE::SetEigenStateNmax(int nmax) {
     _eigen_state_nmax = nmax;
 }
+void TDSE::SetEigenStateLmax(int lmax) {
+    _eigen_state_lmax = lmax;
+}
 const std::string& TDSE::GetInitialStateFile() const {
     return _initial_state_filename;
 }
 int TDSE::GetInitialStateNmax() const {
     return _eigen_state_nmax;
+}
+int TDSE::GetInitialStateLmax() const {
+    return _eigen_state_lmax;
 }
 void TDSE::SetRestart(bool flag) {
     _restarting = flag;

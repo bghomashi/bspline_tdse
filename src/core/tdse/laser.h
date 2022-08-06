@@ -25,6 +25,7 @@ struct Pulse {
         Gaussian,
         Sin2,
         Box,
+        Trap,
         
         NumTypes
     };
@@ -45,6 +46,24 @@ struct Sin2Pulse : public Pulse {
              const Vec3& polarization,
              const Vec3& poynting_vector) :
         Pulse(delay_cycles, cep, intensity, frequency, numCycles, ellipticity, polarization, poynting_vector) {}
+
+    Vec3 operator() (double t) const;
+    Vec3 A(double t) const;
+    Vec3 E(double t) const;
+};
+
+struct TrapezoidalPulse : public Pulse {
+    // probably add phase, time shift, etc.
+
+    TrapezoidalPulse(
+             double delay_cycles, double cep, double intensity, 
+             double frequency, int num_cycles, 
+             double ellipticity,
+             const Vec3& polarization,
+             const Vec3& poynting_vector) :
+        Pulse(delay_cycles, cep, intensity, frequency, num_cycles, ellipticity, polarization, poynting_vector) {}
+
+    double cycles_plateau, cycles_up, cycles_down;
 
     Vec3 operator() (double t) const;
     Vec3 A(double t) const;

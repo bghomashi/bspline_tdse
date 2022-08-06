@@ -2,22 +2,9 @@ IDIR =  inc/
 SDIR =  src/
 ODIR =	obj/
 DDIR =	dep/
-csrc =  $(wildcard src/*.c)
 
-ccsrc = $(wildcard src/*.cpp) \
-		$(wildcard src/core/maths/*.cpp) \
-		$(wildcard src/core/bspline/*.cpp) \
-		$(wildcard src/core/tdse/*.cpp) \
-		$(wildcard src/core/tise/*.cpp) \
-		$(wildcard src/core/utility/*.cpp) \
-		$(wildcard src/eigen_solvers/*.cpp) \
-		$(wildcard src/math_libs/*.cpp) \
-		$(wildcard src/math_libs/petsc/*.cpp) \
-		$(wildcard src/tdse_propagators/*.cpp) \
-		$(wildcard src/observables/*.cpp) \
-		$(wildcard src/potentials/*.cpp) \
-		$(wildcard src/input_validation/*.cpp) \
-		$(wildcard src/tests/*.cpp)
+csrc =  $(shell find $(SDIR) -name "*.c")
+ccsrc = $(shell find $(SDIR) -name "*.cpp")
 
 OBJ = 	$(subst $(SDIR), $(ODIR), $(csrc:.c=.o)) \
 		$(subst $(SDIR), $(ODIR), $(ccsrc:.cpp=.o))

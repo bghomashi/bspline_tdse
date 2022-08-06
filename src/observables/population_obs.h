@@ -10,7 +10,7 @@ class PopulationObservable : public Observable {
     Vector _psi_temp;
 
     int _N, _lmax;
-    int _eigen_state_nmax;
+    int _eigen_state_nmax, _eigen_state_lmax;
     std::vector<std::vector<Vector>> _states;       // (l,n)
     
     ASCII _file;

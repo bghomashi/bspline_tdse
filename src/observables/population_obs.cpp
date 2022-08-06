@@ -17,6 +17,7 @@ void PopulationObservable::Startup(int start_it) {
     _lmax = _tdse.Lmax();
     std::string eigen_state_filename = _tdse.GetInitialStateFile();
     _eigen_state_nmax = _tdse.GetInitialStateNmax();
+    _eigen_state_lmax = _tdse.GetInitialStateLmax();
 
     _psi = _tdse.Psi();
     _S = _MathLib.CreateMatrix(_N, _N, 2*order-1);
@@ -24,26 +25,26 @@ void PopulationObservable::Startup(int start_it) {
     _psi_temp = _MathLib.CreateVector(_N);
    
     // storage for eigenstates
-    _states.resize(_eigen_state_nmax);
-    for (int l = 0; l < _eigen_state_nmax; l++)
-        _states[l].resize(_eigen_state_nmax - l);
+    // _states.resize(_eigen_state_nmax);
+    // for (int l = 0; l < _eigen_state_nmax; l++)
+    //     _states[l].resize(_eigen_state_nmax - l);
     
-    for (int l = 0; l < _eigen_state_nmax; l++)
-        for (int n = 0; n < _eigen_state_nmax - l; n++)
-            _states[l][n] = _MathLib.CreateVector(_N);
+    // for (int l = 0; l < _eigen_state_nmax; l++)
+    //     for (int n = 0; n < _eigen_state_nmax - l; n++)
+    //         _states[l][n] = _MathLib.CreateVector(_N);
 
 
     auto hdf5 = _MathLib.OpenHDF5(eigen_state_filename, 'r');
     hdf5->PushGroup("vectors");
 
-    std::stringstream name_ss;
-    for (int l = 0; l < _eigen_state_nmax; l++) {
-        for (int n = l+1; n <= _eigen_state_nmax; n++) {
-            name_ss.str("");                                         // clear string stream
-            name_ss << "(" << n << ", " << l << ")";     // name of state
-            hdf5->ReadVector(name_ss.str().c_str(), _states[l][n-l-1]);     
-        }
-    }
+    // std::stringstream name_ss;
+    // for (int l = 0; l < _eigen_state_nmax; l++) {
+    //     for (int n = l+1; n <= _eigen_state_lmax; n++) {
+    //         name_ss.str("");                                         // clear string stream
+    //         name_ss << "(" << n << ", " << l << ")";     // name of state
+    //         hdf5->ReadVector(name_ss.str().c_str(), _states[l][n-l-1]);     
+    //     }
+    // }
     
     hdf5->PopGroup();
 
@@ -72,29 +73,42 @@ void PopulationObservable::Startup(int start_it) {
 void PopulationObservable::Shutdown() {
     complex pop;
     std::stringstream ss;
+    std::string eigen_state_filename = _tdse.GetInitialStateFile();
+
     ss << std::setprecision(8) << std::scientific;
+    int min_lmax = std::min(_lmax, _eigen_state_lmax);
 
     int i = 0;
     std::vector<int> Ms = _tdse.Ms();
     std::vector<int> mRows = _tdse.MRows();
+
+
+    auto hdf5 = _MathLib.OpenHDF5(eigen_state_filename, 'r');
+    hdf5->PushGroup("vectors");
+
+
+    Vector eigen_state = _MathLib.CreateVector(_N);
 
     if (_file)
         _file->Write("(n, l, m)\n");
     else
         Log::info("\n");
     for (auto m : Ms) {
-        if (std::abs(m) >= _eigen_state_nmax)   // we do not have this state to project on to
+        if (std::abs(m) >= _eigen_state_lmax)   // we do not have this state to project on to
             continue;                       // so skip
-        for (int l = std::abs(m); l <= _lmax; l++) {
-            if (l >= _eigen_state_nmax) // we do not have this state to project on to
-                continue;               // so skip
-
+        for (int l = std::abs(m); l <= min_lmax; l++) {
             // get a subvector
             int start = RowFrom(m, Ms, mRows) + (l-std::abs(m))*_N;
             Vector ml_block = _psi->GetSubVector(start, start+_N);
             
             for (int n = l+1; n <= _eigen_state_nmax; n++) {
-                _MathLib.Mult(_S, _states[l][n-l-1], _psi_temp);
+                // load vector from state file
+                ss.str("");                                         // clear string stream
+                ss << "(" << n << ", " << l << ")";     // name of state
+                hdf5->ReadVector(ss.str().c_str(), eigen_state);    
+
+                // project
+                _MathLib.Mult(_S, eigen_state, _psi_temp);
                 _MathLib.Dot(ml_block, _psi_temp, pop);
                 
                 ss.str("");
@@ -121,13 +135,15 @@ void PopulationObservable::Shutdown() {
             Log::info("\n");
     }
 
+    hdf5->PopGroup();
 
+    // for (auto& l : _states) {
+    //     for (auto& n : l)
+    //         n = 0;
+    // }
 
-    for (auto& l : _states) {
-        for (auto& n : l)
-            n = 0;
-    }
-
+    hdf5 = nullptr;
+    eigen_state = nullptr;
     _psi = nullptr;
     _psi_temp = nullptr;
     _S = nullptr;

@@ -20,6 +20,7 @@ void Petsc::Eigen(  const Matrix A, const Matrix S,
     // ierr = MPI_Comm_rank(PETSC_COMM_WORLD, &rank); PETSCASSERT(ierr);
     ierr = EPSCreate( PETSC_COMM_WORLD, &petsc_eps ); PETSCASSERT(ierr);
     ierr = EPSSetOperators( petsc_eps, petscA->_petsc_mat, petscS->_petsc_mat ); PETSCASSERT(ierr);
+    // try symmetric positive def. EPS_PGNHEP becuase B is positive definite
     ierr = EPSSetProblemType(petsc_eps, EPS_GNHEP ); PETSCASSERT(ierr);
     ierr = EPSSetTolerances(petsc_eps, tol, PETSC_DEFAULT); PETSCASSERT(ierr);
     ierr = EPSSetDimensions(petsc_eps, numVectors, PETSC_DEFAULT, std::max(petscA->Rows(),100)); PETSCASSERT(ierr);

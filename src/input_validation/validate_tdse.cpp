@@ -68,7 +68,7 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
     LOG_INFO("...");
         
 
-    // only need the "filename" entry from eigenstate calculation
+    // only need the "filename"/nmax/lmax entry from eigenstate calculation
     // assumes it is a valid filename since eigenstate calculation went through
     if (!(input.contains("eigen_state") && input["eigen_state"].is_object())) {
         MustContain("eigen_state", "object");
@@ -76,6 +76,14 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
     }
     if (!(input["eigen_state"].contains("filename") && input["eigen_state"]["filename"].is_string())) {
         MustContain("filename", "string");
+        return false;
+    }
+    if (!(input["eigen_state"].contains("nmax") && input["eigen_state"]["nmax"].is_number())) {
+        MustContain("nmax", "number");
+        return false;
+    }
+    if (input["eigen_state"].contains("lmax") && !input["eigen_state"]["lmax"].is_number()) {
+        MustContain("lmax", "number");
         return false;
     }
     if (!(input.contains("time_step") && input["time_step"].is_number())) {
@@ -140,13 +148,30 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
             frequency = pulse["energy"];
 
 
-        if (pulse["envelope"] == "sin2")
+        if (pulse["envelope"] == "sin2") {
             tdse->AddPulse(Pulse::Create(
                 Pulse::Sin2, 
                 cycles_delay, cep, intensity, 
                 frequency, num_cycles, 
                 ellipticity, 
                 pol_vector, poy_vector));
+        } else if (pulse["envelope"] == "trap" || 
+                   pulse["envelope"] == "trapezoidal") {
+            auto p = Pulse::Create(
+                Pulse::Trap, 
+                cycles_delay, cep, intensity, 
+                frequency, num_cycles, 
+                ellipticity, 
+                pol_vector, poy_vector);
+            auto trap = std::dynamic_pointer_cast<TrapezoidalPulse>(p);
+            if (pulse.contains("cycles_up"))
+                trap->cycles_up = pulse["cycles_up"].get<double>();
+            if (pulse.contains("cycles_down"))
+                trap->cycles_down = pulse["cycles_down"].get<double>();
+            trap->cycles_plateau = num_cycles - trap->cycles_down - trap->cycles_up;
+
+            tdse->AddPulse(p);
+        }
     }
     
     // setup initial state
@@ -154,7 +179,11 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
 
 
     tdse->SetInitialStateFile(input["eigen_state"]["filename"]);
-    tdse->SetEigenStateNmax(input["eigen_state"]["nmax"]);
+    tdse->SetEigenStateNmax(input["eigen_state"]["nmax"].get<int>());
+    tdse->SetEigenStateLmax(input["eigen_state"]["nmax"].get<int>()-1);  // default to nmax-1
+    if (input["eigen_state"].contains("lmax"))
+        tdse->SetEigenStateLmax(input["eigen_state"]["lmax"].get<int>());
+
     auto& initial_state = input["initial_state"];
     for (auto& state : initial_state) {
         int n = state["n"];

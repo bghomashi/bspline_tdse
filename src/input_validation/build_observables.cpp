@@ -7,6 +7,7 @@
 #include "observables/potential_obs.h"
 #include "observables/basis_obs.h"
 #include "observables/knot_obs.h"
+#include "observables/density_observable.h"
 #include "observables/debug_wavefunction_obs.h"
 #include "observables/debug_eigenstates.h"
 
@@ -106,6 +107,15 @@ Observable::Ptr_t BuildObservable(const std::string& key, const nlohmann::json& 
         LOG_INFO("success");
 
         return Observable::Ptr_t(eigen_obs);
+    } else if (key == "density") {
+        DensityObservable* density_obs = new DensityObservable(*tdse);
+
+        density_obs->SetComputePeriod(compute_period);
+        density_obs->SetNumGrid(obs_item["grid_points"]);
+
+        LOG_INFO("success");
+
+        return Observable::Ptr_t(density_obs);
     }
     return nullptr;
 }

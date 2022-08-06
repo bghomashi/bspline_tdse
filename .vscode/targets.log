@@ -8,11 +8,11 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jun 21 20:29:46 2022
+# Make data base, printed on Wed Aug  3 18:42:13 2022
 
 # Variables
 
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 22)
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 9)
 OBJ = $(subst $(SDIR), $(ODIR), $(csrc:.c=.o)) $(subst $(SDIR), $(ODIR), $(ccsrc:.cpp=.o))
 # environment
 GDK_BACKEND = x11
@@ -21,13 +21,11 @@ LC_ALL = C
 # environment
 NO_AT_BRIDGE = 1
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-9792f962-02dc-4bca-8a50-5d90bb93010a.sock
-# environment
 LC_NAME = en_US.UTF-8
 # environment
 LC_NUMERIC = en_US.UTF-8
 # environment
-VSCODE_CWD = /home/bghomashi
+VSCODE_CWD = /home/bghomashi/Documents/projects/tdse_more_organized
 # environment
 LC_ADDRESS = en_US.UTF-8
 # environment
@@ -52,12 +50,10 @@ MAIL = /var/spool/mail/bghomashi
 XDG_DATA_DIRS = /home/bghomashi/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop:/usr/share
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
-# environment
-VSCODE_LOG_STACK = false
 # automatic
 %F = $(notdir $%)
 # environment
-VSCODE_CODE_CACHE_PATH = /home/bghomashi/.config/Code - OSS/CachedData/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+VSCODE_CODE_CACHE_PATH = /home/bghomashi/.config/Code - OSS/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
 # environment
@@ -70,12 +66,10 @@ XAUTHORITY = /home/bghomashi/.Xauthority
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # makefile
 MAKEFLAGS = pqrR
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 24)
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 11)
 DEP = $(subst $(ODIR), $(DDIR), $(OBJ:.o=.d))
 # makefile
 CURDIR := /home/bghomashi/Documents/projects/tdse_more_organized
-# environment
-VSCODE_PIPE_LOGGING = true
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
@@ -83,7 +77,7 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXX8Qr0aN/agent.1224
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXYzpp1f/agent.1295
 # default
 .SHELLFLAGS := -c
 # environment
@@ -94,14 +88,12 @@ XDG_CONFIG_DIRS = /etc/xdg
 ODIR = obj/
 # environment
 XDG_SESSION_DESKTOP = xfce
-# makefile (from 'dep/input_validation/validate_tise.d', line 1)
-MAKEFILE_LIST := /home/bghomashi/Documents/projects/tdse_more_organized/Makefile dep/main.d dep/core/maths/iascii.d dep/core/bspline/bspline_coeff_matrix.d dep/core/bspline/bspline_evaluate.d dep/core/bspline/bspline_helper.d dep/core/bspline/bspline_initialize.d dep/core/bspline/bspline_integrate.d dep/core/bspline/bspline_node_dist.d dep/core/bspline/guass_quad.d dep/core/tdse/laser.d dep/core/tdse/observable.d dep/core/tdse/tdse.d dep/core/tise/tise.d dep/core/utility/index_manip.d dep/core/utility/logger.d dep/core/utility/profiler.d dep/core/utility/spherical_harmonics.d dep/core/utility/timer.d dep/eigen_solvers/gen_eigen_tise.d dep/math_libs/petsc/petsc_ASCII.d dep/math_libs/petsc/petsc_eigensolver.d dep/math_libs/petsc/petsc_hdf5.d dep/math_libs/petsc/petsc_lib.d dep/math_libs/petsc/petsc_logger.d dep/math_libs/petsc/petsc_matrix.d dep/math_libs/petsc/petsc_profiler.d dep/math_libs/petsc/petsc_solver.d dep/math_libs/petsc/petsc_vector.d dep/tdse_propagators/cranknicolson.d dep/tdse_propagators/cranknicolson_fill_FF.d dep/tdse_propagators/cranknicolson_fill_HI_x.d dep/tdse_propagators/cranknicolson_fill_HI_y.d dep/tdse_propagators/cranknicolson_fill_HI_z.d dep/tdse_propagators/cranknicolson_fill_S.d dep/tdse_propagators/cranknicolson_fill_U0.d dep/observables/basis_obs.d dep/observables/debug_eigenstates.d dep/observables/debug_wavefunction_obs.d dep/observables/density_observable.d dep/observables/dipole_acc_obs.d dep/observables/knot_obs.d dep/observables/norm_obs.d dep/observables/population_obs.d dep/observables/potential_obs.d dep/observables/pulse_obs.d dep/observables/wavefunction_obs.d dep/potentials/coulomb_pot.d dep/potentials/exponential_pot.d dep/potentials/yukawa_pot.d dep/input_validation/build_observables.d dep/input_validation/build_potentials.d dep/input_validation/validate_basis.d dep/input_validation/validate_eigen_state_calc.d dep/input_validation/validate_initial_state.d dep/input_validation/validate_lasers.d dep/input_validation/validate_mathlib.d dep/input_validation/validate_observables.d dep/input_validation/validate_potential.d dep/input_validation/validate_propagator.d dep/input_validation/validate_tdse.d dep/input_validation/validate_tise.d
+# makefile (from 'dep/math_libs/petsc/petsc_eigensolver.d', line 1)
+MAKEFILE_LIST := /home/bghomashi/Documents/projects/tdse_more_organized/Makefile dep/eigen_solvers/gen_eigen_tise.d dep/observables/wavefunction_obs.d dep/observables/pulse_obs.d dep/observables/debug_eigenstates.d dep/observables/density_observable.d dep/observables/dipole_acc_obs.d dep/observables/knot_obs.d dep/observables/basis_obs.d dep/observables/norm_obs.d dep/observables/potential_obs.d dep/observables/debug_wavefunction_obs.d dep/observables/population_obs.d dep/potentials/yukawa_pot.d dep/potentials/coulomb_pot.d dep/potentials/exponential_pot.d dep/main.d dep/input_validation/validate_tise.d dep/input_validation/validate_tdse.d dep/input_validation/validate_lasers.d dep/input_validation/validate_initial_state.d dep/input_validation/build_observables.d dep/input_validation/validate_eigen_state_calc.d dep/input_validation/validate_observables.d dep/input_validation/validate_basis.d dep/input_validation/validate_propagator.d dep/input_validation/validate_potential.d dep/input_validation/build_potentials.d dep/input_validation/validate_mathlib.d dep/tdse_propagators/cranknicolson_fill_S.d dep/tdse_propagators/cranknicolson_fill_HI_x.d dep/tdse_propagators/cranknicolson_fill_FF.d dep/tdse_propagators/cranknicolson_fill_HI_y.d dep/tdse_propagators/cranknicolson_fill_U0.d dep/tdse_propagators/cranknicolson.d dep/tdse_propagators/cranknicolson_fill_HI_z.d dep/core/maths/iascii.d dep/core/utility/index_manip.d dep/core/utility/spherical_harmonics.d dep/core/utility/logger.d dep/core/utility/timer.d dep/core/utility/profiler.d dep/core/bspline/guass_quad.d dep/core/bspline/bspline_evaluate.d dep/core/bspline/bspline_node_dist.d dep/core/bspline/bspline_helper.d dep/core/bspline/bspline_coeff_matrix.d dep/core/bspline/bspline_integrate.d dep/core/bspline/bspline_initialize.d dep/core/tdse/tdse.d dep/core/tdse/laser.d dep/core/tdse/observable.d dep/core/tise/tise.d dep/math_libs/petsc/petsc_profiler.d dep/math_libs/petsc/petsc_hdf5.d dep/math_libs/petsc/petsc_logger.d dep/math_libs/petsc/petsc_matrix.d dep/math_libs/petsc/petsc_solver.d dep/math_libs/petsc/petsc_lib.d dep/math_libs/petsc/petsc_vector.d dep/math_libs/petsc/petsc_ASCII.d dep/math_libs/petsc/petsc_eigensolver.d
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_VERBOSE_LOGGING = true
-# environment
-VSCODE_PID = 4356
+VSCODE_PID = 2013
 # environment
 XDG_SESSION_TYPE = x11
 # environment
@@ -109,9 +101,9 @@ CUDA_PATH = /opt/cuda
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 7)
-ccsrc = $(wildcard src/*.cpp) $(wildcard src/core/maths/*.cpp) $(wildcard src/core/bspline/*.cpp) $(wildcard src/core/tdse/*.cpp) $(wildcard src/core/tise/*.cpp) $(wildcard src/core/utility/*.cpp) $(wildcard src/eigen_solvers/*.cpp) $(wildcard src/math_libs/*.cpp) $(wildcard src/math_libs/petsc/*.cpp) $(wildcard src/tdse_propagators/*.cpp) $(wildcard src/observables/*.cpp) $(wildcard src/potentials/*.cpp) $(wildcard src/input_validation/*.cpp) $(wildcard src/tests/*.cpp)
+ccsrc = $(shell find $(SDIR) -name "*.cpp")
 # environment
-SESSION_MANAGER = local/TheMachine:@/tmp/.ICE-unix/1166,unix/TheMachine:/tmp/.ICE-unix/1166
+SESSION_MANAGER = local/TheMachine:@/tmp/.ICE-unix/1238,unix/TheMachine:/tmp/.ICE-unix/1238
 # automatic
 *F = $(notdir $*)
 # environment
@@ -144,7 +136,7 @@ MAKE = $(MAKE_COMMAND)
 PATH = /home/bghomashi/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:/var/lib/snapd/snap/bin
 # default
 MAKEFILES := 
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 28)
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 15)
 EXTRAFLAGS = -g -O0 
 # environment
 LC_MONETARY = en_US.UTF-8
@@ -152,16 +144,14 @@ LC_MONETARY = en_US.UTF-8
 MOTD_SHOWN = pam
 # automatic
 ^F = $(notdir $^)
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 42)
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 29)
 LDLIBS = -lm -pthread -lhdf5 -L$(SLEPC_DIR)/$(PETSC_ARCH)/lib -L$(PETSC_DIR)/$(PETSC_ARCH)/lib -lpetsc -lslepc
 # environment
 LC_TIME = en_US.UTF-8
 # environment
 XDG_CONFIG_HOME = /home/bghomashi/.config
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 46)
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 33)
 CPP = $(PETSC_DIR)/$(PETSC_ARCH)/bin/mpicxx
-# environment
-VSCODE_LOG_NATIVE = false
 # environment
 LC_TELEPHONE = en_US.UTF-8
 # automatic
@@ -182,7 +172,7 @@ ORIGINAL_XDG_CURRENT_DESKTOP = XFCE
 GNUMAKEFLAGS := 
 # environment
 LOGNAME = bghomashi
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 30)
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 17)
 CPPFLAGS = -DHAVE_LAPACK_CONFIG_H -DLAPACK_COMPLEX_CPP -Dlapack_complex_float="std::complex<float>" -Dlapack_complex_double="std::complex<double>" -D__STDCPP_WANT_MATH_SPEC_FUNCS__ -I$(PETSC_DIR)/include -I$(PETSC_DIR)/$(PETSC_ARCH)/include -I$(SLEPC_DIR)/include -I$(SLEPC_DIR)/$(PETSC_ARCH)/include -Iinc -I/usr/include -Isrc/core -Isrc/core/bspline -Isrc/core/maths -Isrc/core/tdse -Isrc/core/tise -Isrc -std=c++14
 # environment
 XDG_VTNR = 7
@@ -198,14 +188,16 @@ GTK_MODULES = canberra-gtk-module:canberra-gtk-module
 USER = bghomashi
 # default
 MAKE_VERSION := 4.3
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 5)
-csrc = $(wildcard src/*.c)
+# 'override' directive
+.SHELLSTATUS := 0
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 6)
+csrc = $(shell find $(SDIR) -name "*.c")
 # environment
 LC_MEASUREMENT = en_US.UTF-8
 # environment
 DEBUGINFOD_URLS = https://debuginfod.archlinux.org 
 # environment
-SSH_AGENT_PID = 1225
+SSH_AGENT_PID = 1296
 # environment
 ETS_TOOLKIT = qt
 # environment
@@ -227,11 +219,9 @@ HOME = /home/bghomashi
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-167b5ada-1.67.2-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-167b5ada-1.69.2-main.sock
 # environment
 XDG_SESSION_ID = 1
-# environment
-PANEL_GDK_CORE_DEVICE_EVENTS = 0
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -248,9 +238,9 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/bghomashi
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink guile load
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 47)
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 34)
 CXX = $(PETSC_DIR)/$(PETSC_ARCH)/bin/mpicxx
-# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 45)
+# makefile (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 32)
 CC = $(PETSC_DIR)/$(PETSC_ARCH)/bin/mpicxx
 # environment
 XDG_MENU_PREFIX = xfce-
@@ -259,7 +249,7 @@ GDMSESSION = xfce
 # environment
 LC_IDENTIFICATION = en_US.UTF-8
 # variable set hash-table stats:
-# Load=123/1024=12%, Rehash=0, Collisions=9/299=3%
+# Load=118/1024=12%, Rehash=0, Collisions=8/313=3%
 
 # Pattern-specific Variable Values
 
@@ -267,56 +257,54 @@ LC_IDENTIFICATION = en_US.UTF-8
 
 # Directories
 
-# src/math_libs/petsc (device 2066, inode 5114239): 12 files, no impossibilities.
+# src/math_libs/petsc (device 2066, inode 5114239): No files, no impossibilities so far.
 # src/eigen_solvers (device 2066, inode 5113987): 4 files, no impossibilities.
 # dep (device 2066, inode 5113732): 15 files, no impossibilities.
-# src/math_libs (device 2066, inode 5113787): 4 files, no impossibilities.
 # src/observables (device 2066, inode 5114251): 24 files, no impossibilities.
 # dep/core/bspline (device 2066, inode 5113744): 9 files, no impossibilities.
 # dep/core/tise (device 2066, inode 5113758): No files, no impossibilities so far.
-# dep/potentials (device 2066, inode 5113817): No files, no impossibilities so far.
-# dep/core/utility (device 2066, inode 5113760): No files, no impossibilities so far.
-# dep/eigen_solvers (device 2066, inode 5113767): No files, no impossibilities so far.
+# dep/potentials (device 2066, inode 5113817): 6 files, no impossibilities.
+# dep/core/utility (device 2066, inode 5113760): 7 files, no impossibilities.
+# dep/eigen_solvers (device 2066, inode 5113767): 3 files, no impossibilities.
 # dep/math_libs/petsc (device 2066, inode 5113784): No files, no impossibilities so far.
-# src (device 2066, inode 5113606): 10 files, no impossibilities.
+# src (device 2066, inode 5113606): No files, no impossibilities so far.
 # .. (device 2066, inode 13239221): No files, no impossibilities so far.
-# dep/core/tdse (device 2066, inode 5113754): 5 files, no impossibilities.
+# dep/core/tdse (device 2066, inode 5113754): No files, no impossibilities so far.
 # src/core/maths (device 2066, inode 5113960): 4 files, no impossibilities.
 # src/potentials (device 2066, inode 5114262): 9 files, no impossibilities.
-# src/core/tise (device 2066, inode 5113972): 4 files, no impossibilities.
-# dep/input_validation (device 2066, inode 5113769): No files, no impossibilities so far.
+# src/core/tise (device 2066, inode 5113972): No files, no impossibilities so far.
+# dep/input_validation (device 2066, inode 5113769): 14 files, no impossibilities.
 # src/input_validation (device 2066, inode 5113990): 15 files, no impossibilities.
-# dep/tdse_propagators (device 2066, inode 5113826): No files, no impossibilities so far.
-# src/core/bspline (device 2066, inode 5113951): 10 files, no impossibilities.
+# dep/tdse_propagators (device 2066, inode 5113826): 9 files, no impossibilities.
+# src/core/bspline (device 2066, inode 5113951): No files, no impossibilities so far.
 # dep/core/maths (device 2066, inode 5113752): 3 files, no impossibilities.
-# src/core/tdse (device 2066, inode 5113963): 9 files, no impossibilities.
+# src/core/tdse (device 2066, inode 5113963): No files, no impossibilities so far.
 # src/core/utility (device 2066, inode 5113975): 14 files, no impossibilities.
 # src/tdse_propagators (device 2066, inode 5114624): 10 files, no impossibilities.
-# src/tests: could not be stat'd.
-# dep/observables (device 2066, inode 5113811): No files, no impossibilities so far.
+# dep/observables (device 2066, inode 5113811): 14 files, no impossibilities.
 
-# 161 files, no impossibilities in 27 directories.
+# 160 files, no impossibilities in 25 directories.
 
 # Implicit Rules
 
 %/:
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 dep/%.d: src/%.cpp | $(dir $@)
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/%.o: src/%.c | $(dir $@)
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 69):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 56):
 	$(CC) $(CPPFLAGS) $(EXTRAFLAGS) -c $< -o $@
 
 obj/%.o: ../%.c | $(dir $@)
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 72):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 59):
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 obj/%.o: src/%.cpp | $(dir $@)
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 75):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 62):
 	$(CXX) $(CPPFLAGS) $(EXTRAFLAGS) -c $< -o $@
 
 # 5 implicit rules, 0 (0.0%) terminal.
@@ -325,7 +313,7 @@ obj/%.o: src/%.cpp | $(dir $@)
 dep/input_validation/validate_potential.d: src/input_validation/validate_potential.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_potential'
-#  Last modified 2022-06-20 23:07:17.780116287
+#  Last modified 2022-08-03 18:42:12.113809627
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -337,7 +325,6 @@ dep/input_validation/validate_potential.d: src/input_validation/validate_potenti
 # automatic
 # + := 
 # automatic
- 
 # % := 
 # automatic
 # ^ := 
@@ -347,7 +334,7 @@ dep/input_validation/validate_potential.d: src/input_validation/validate_potenti
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/tdse_propagators/cranknicolson_fill_U0.o: src/tdse_propagators/cranknicolson_fill_U0.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h
@@ -380,18 +367,19 @@ src/eigen_solvers/gen_eigen_tise.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+ 
 
-bspline_tdse.out: obj/main.o obj/core/maths/iascii.o obj/core/bspline/bspline_coeff_matrix.o obj/core/bspline/bspline_evaluate.o obj/core/bspline/bspline_helper.o obj/core/bspline/bspline_initialize.o obj/core/bspline/bspline_integrate.o obj/core/bspline/bspline_node_dist.o obj/core/bspline/guass_quad.o obj/core/tdse/laser.o obj/core/tdse/observable.o obj/core/tdse/tdse.o obj/core/tise/tise.o obj/core/utility/index_manip.o obj/core/utility/logger.o obj/core/utility/profiler.o obj/core/utility/spherical_harmonics.o obj/core/utility/timer.o obj/eigen_solvers/gen_eigen_tise.o obj/math_libs/petsc/petsc_ASCII.o obj/math_libs/petsc/petsc_eigensolver.o obj/math_libs/petsc/petsc_hdf5.o obj/math_libs/petsc/petsc_lib.o obj/math_libs/petsc/petsc_logger.o obj/math_libs/petsc/petsc_matrix.o obj/math_libs/petsc/petsc_profiler.o obj/math_libs/petsc/petsc_solver.o obj/math_libs/petsc/petsc_vector.o obj/tdse_propagators/cranknicolson.o obj/tdse_propagators/cranknicolson_fill_FF.o obj/tdse_propagators/cranknicolson_fill_HI_x.o obj/tdse_propagators/cranknicolson_fill_HI_y.o obj/tdse_propagators/cranknicolson_fill_HI_z.o obj/tdse_propagators/cranknicolson_fill_S.o obj/tdse_propagators/cranknicolson_fill_U0.o obj/observables/basis_obs.o obj/observables/debug_eigenstates.o obj/observables/debug_wavefunction_obs.o obj/observables/density_observable.o obj/observables/dipole_acc_obs.o obj/observables/knot_obs.o obj/observables/norm_obs.o obj/observables/population_obs.o obj/observables/potential_obs.o obj/observables/pulse_obs.o obj/observables/wavefunction_obs.o obj/potentials/coulomb_pot.o obj/potentials/exponential_pot.o obj/potentials/yukawa_pot.o obj/input_validation/build_observables.o obj/input_validation/build_potentials.o obj/input_validation/validate_basis.o obj/input_validation/validate_eigen_state_calc.o obj/input_validation/validate_initial_state.o obj/input_validation/validate_lasers.o obj/input_validation/validate_mathlib.o obj/input_validation/validate_observables.o obj/input_validation/validate_potential.o obj/input_validation/validate_propagator.o obj/input_validation/validate_tdse.o obj/input_validation/validate_tise.o
+bspline_tdse.out: obj/eigen_solvers/gen_eigen_tise.o obj/observables/wavefunction_obs.o obj/observables/pulse_obs.o obj/observables/debug_eigenstates.o obj/observables/density_observable.o obj/observables/dipole_acc_obs.o obj/observables/knot_obs.o obj/observables/basis_obs.o obj/observables/norm_obs.o obj/observables/potential_obs.o obj/observables/debug_wavefunction_obs.o obj/observables/population_obs.o obj/potentials/yukawa_pot.o obj/potentials/coulomb_pot.o obj/potentials/exponential_pot.o obj/main.o obj/input_validation/validate_tise.o obj/input_validation/validate_tdse.o obj/input_validation/validate_lasers.o obj/input_validation/validate_initial_state.o obj/input_validation/build_observables.o obj/input_validation/validate_eigen_state_calc.o obj/input_validation/validate_observables.o obj/input_validation/validate_basis.o obj/input_validation/validate_propagator.o obj/input_validation/validate_potential.o obj/input_validation/build_potentials.o obj/input_validation/validate_mathlib.o obj/tdse_propagators/cranknicolson_fill_S.o obj/tdse_propagators/cranknicolson_fill_HI_x.o obj/tdse_propagators/cranknicolson_fill_FF.o obj/tdse_propagators/cranknicolson_fill_HI_y.o obj/tdse_propagators/cranknicolson_fill_U0.o obj/tdse_propagators/cranknicolson.o obj/tdse_propagators/cranknicolson_fill_HI_z.o obj/core/maths/iascii.o obj/core/utility/index_manip.o obj/core/utility/spherical_harmonics.o obj/core/utility/logger.o obj/core/utility/timer.o obj/core/utility/profiler.o obj/core/bspline/guass_quad.o obj/core/bspline/bspline_evaluate.o obj/core/bspline/bspline_node_dist.o obj/core/bspline/bspline_helper.o obj/core/bspline/bspline_coeff_matrix.o obj/core/bspline/bspline_integrate.o obj/core/bspline/bspline_initialize.o obj/core/tdse/tdse.o obj/core/tdse/laser.o obj/core/tdse/observable.o obj/core/tise/tise.o obj/math_libs/petsc/petsc_profiler.o obj/math_libs/petsc/petsc_hdf5.o obj/math_libs/petsc/petsc_logger.o obj/math_libs/petsc/petsc_matrix.o obj/math_libs/petsc/petsc_solver.o obj/math_libs/petsc/petsc_lib.o obj/math_libs/petsc/petsc_vector.o obj/math_libs/petsc/petsc_ASCII.o obj/math_libs/petsc/petsc_eigensolver.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 50):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 37):
 	$(CXX) $(EXTRAFLAGS) -o $@ $^ $(LDLIBS)
 
 dep/core/bspline/bspline_evaluate.d: src/core/bspline/bspline_evaluate.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_evaluate'
-#  Last modified 2022-06-20 23:07:20.086845333
+#  Last modified 2022-08-03 18:42:11.453768785
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -412,7 +400,7 @@ dep/core/bspline/bspline_evaluate.d: src/core/bspline/bspline_evaluate.cpp | dep
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -431,7 +419,7 @@ src/input_validation/validate_lasers.cpp:
 dep/math_libs/petsc/petsc_eigensolver.d: src/math_libs/petsc/petsc_eigensolver.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_eigensolver'
-#  Last modified 2022-06-20 23:07:19.466828565
+#  Last modified 2022-08-03 18:42:10.777059114
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -452,7 +440,7 @@ dep/math_libs/petsc/petsc_eigensolver.d: src/math_libs/petsc/petsc_eigensolver.c
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/core/tdse/tdse.o: src/core/tdse/tdse.cpp src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h src/core/utility/file_exists.h src/math_libs/petsc/petsc_lib.h
@@ -493,13 +481,13 @@ dep/potentials/:
 #  Last modified 2022-06-14 23:20:19.43254345
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 dep/input_validation/validate_lasers.d: src/input_validation/validate_lasers.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_lasers'
-#  Last modified 2022-06-20 23:07:17.950120885
+#  Last modified 2022-08-03 18:42:12.483831545
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -520,13 +508,20 @@ dep/input_validation/validate_lasers.d: src/input_validation/validate_lasers.cpp
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
+
+# Not a target:
+src/observables/population_obs.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-29 11:55:01.245385201
+#  File has been updated.
+#  Successfully updated.
 
 dep/math_libs/petsc/petsc_profiler.d: src/math_libs/petsc/petsc_profiler.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_profiler'
-#  Last modified 2022-06-20 23:07:19.220155228
+#  Last modified 2022-08-03 18:42:11.100413397
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -546,17 +541,9 @@ dep/math_libs/petsc/petsc_profiler.d: src/math_libs/petsc/petsc_profiler.cpp | d
 # automatic
 # | := 
 # variable set hash-table stats:
- 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
-
-# Not a target:
-src/observables/population_obs.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-01 14:21:45.871355954
-#  File has been updated.
-#  Successfully updated.
 
 obj/math_libs/petsc/petsc_ASCII.o: src/math_libs/petsc/petsc_ASCII.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
 #  Implicit rule search has not been done.
@@ -583,15 +570,16 @@ src/tdse_propagators/cranknicolson_fill_HI_z.cpp:
 #  File has been updated.
 #  Successfully updated.
 
-obj/observables/density_observable.o: src/observables/density_observable.cpp src/observables/density_observable.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h
+obj/observables/density_observable.o: src/observables/density_observable.cpp src/observables/density_observable.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h src/core/utility/index_manip.h src/core/utility/spherical_harmonics.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
+ 
 #  File has not been updated.
 
 dep/observables/knot_obs.d: src/observables/knot_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/knot_obs'
-#  Last modified 2022-06-20 23:07:18.646806391
+#  Last modified 2022-08-03 18:42:12.977194101
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -612,7 +600,7 @@ dep/observables/knot_obs.d: src/observables/knot_obs.cpp | dep/observables/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/core/tdse/:
@@ -621,7 +609,7 @@ dep/core/tdse/:
 #  Last modified 2022-06-14 23:20:21.239249013
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 obj/observables/population_obs.o: src/observables/population_obs.cpp src/observables/population_obs.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h src/core/utility/index_manip.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h
@@ -639,7 +627,7 @@ src/potentials/coulomb_pot.cpp:
 # Not a target:
 src/core/tdse/laser.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 20:21:17.228648478
+#  Last modified 2022-08-03 18:37:30.854092959
 #  File has been updated.
 #  Successfully updated.
 
@@ -649,13 +637,13 @@ obj/observables/debug_eigenstates.o: src/observables/debug_eigenstates.cpp src/o
 #  File has not been updated.
 
 # Not a target:
-src/core/utility/spherical_harmonics.h:
+src/observables/pulse_obs.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-src/observables/pulse_obs.h:
+src/core/utility/spherical_harmonics.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -668,7 +656,7 @@ obj/math_libs/petsc/petsc_logger.o: src/math_libs/petsc/petsc_logger.cpp src/mat
 dep/math_libs/petsc/petsc_lib.d: src/math_libs/petsc/petsc_lib.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_lib'
-#  Last modified 2022-06-20 23:07:19.370159285
+#  Last modified 2022-08-03 18:42:10.907067673
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -689,14 +677,13 @@ dep/math_libs/petsc/petsc_lib.d: src/math_libs/petsc/petsc_lib.cpp | dep/math_li
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
 src/core/utility/logger.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-06 00:42:02.173177143
- 
 #  File has been updated.
 #  Successfully updated.
 
@@ -708,14 +695,14 @@ obj/main.o: src/main.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse
 # Not a target:
 src/input_validation/validate_tdse.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-16 12:27:52.846738002
+#  Last modified 2022-08-03 18:13:51.731419546
 #  File has been updated.
 #  Successfully updated.
 
 dep/core/bspline/bspline_initialize.d: src/core/bspline/bspline_initialize.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_initialize'
-#  Last modified 2022-06-20 23:07:20.020176864
+#  Last modified 2022-08-03 18:42:11.283758173
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -736,8 +723,9 @@ dep/core/bspline/bspline_initialize.d: src/core/bspline/bspline_initialize.cpp |
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
+ 
 
 dep/observables/:
 #  Implicit rule search has been done.
@@ -745,7 +733,7 @@ dep/observables/:
 #  Last modified 2022-06-21 20:28:35.906854705
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 obj/core/bspline/guass_quad.o: src/core/bspline/guass_quad.cpp src/core/bspline/bspline.h src/core/maths/maths.h
@@ -769,7 +757,7 @@ src/core/bspline/bspline_initialize.cpp:
 # Not a target:
 /home/bghomashi/Documents/projects/tdse_more_organized/Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 20:29:36.238105632
+#  Last modified 2022-06-22 18:00:30.368993267
 #  File has been updated.
 #  Successfully updated.
 
@@ -812,7 +800,7 @@ obj/tdse_propagators/cranknicolson_fill_HI_y.o: src/tdse_propagators/cranknicols
 dep/tdse_propagators/cranknicolson_fill_FF.d: src/tdse_propagators/cranknicolson_fill_FF.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_FF'
-#  Last modified 2022-06-20 23:07:19.036816936
+#  Last modified 2022-08-03 18:42:11.857127297
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -820,7 +808,6 @@ dep/tdse_propagators/cranknicolson_fill_FF.d: src/tdse_propagators/cranknicolson
 # automatic
 # * := tdse_propagators/cranknicolson_fill_FF
 # automatic
- 
 # < := 
 # automatic
 # + := 
@@ -834,13 +821,13 @@ dep/tdse_propagators/cranknicolson_fill_FF.d: src/tdse_propagators/cranknicolson
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/potentials/coulomb_pot.d: src/potentials/coulomb_pot.cpp | dep/potentials/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'potentials/coulomb_pot'
-#  Last modified 2022-06-20 23:07:18.393466205
+#  Last modified 2022-08-03 18:42:12.72051223
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -861,13 +848,14 @@ dep/potentials/coulomb_pot.d: src/potentials/coulomb_pot.cpp | dep/potentials/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/observables/wavefunction_obs.d: src/observables/wavefunction_obs.cpp | dep/observables/
+ 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/wavefunction_obs'
-#  Last modified 2022-06-20 23:07:18.433467287
+#  Last modified 2022-08-03 18:42:13.160537818
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -888,7 +876,7 @@ dep/observables/wavefunction_obs.d: src/observables/wavefunction_obs.cpp | dep/o
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -919,7 +907,7 @@ inc/json.hpp:
 dep/math_libs/petsc/petsc_solver.d: src/math_libs/petsc/petsc_solver.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_solver'
-#  Last modified 2022-06-20 23:07:19.176820722
+#  Last modified 2022-08-03 18:42:10.943736753
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -940,14 +928,13 @@ dep/math_libs/petsc/petsc_solver.d: src/math_libs/petsc/petsc_solver.cpp | dep/m
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/observables/debug_eigenstates.d: src/observables/debug_eigenstates.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/debug_eigenstates'
- 
-#  Last modified 2022-06-20 23:07:18.766809636
+#  Last modified 2022-08-03 18:42:13.087200362
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -968,7 +955,7 @@ dep/observables/debug_eigenstates.d: src/observables/debug_eigenstates.cpp | dep
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/input_validation/validate_tdse.o: src/input_validation/validate_tdse.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h src/tdse_propagators/cranknicolson.h src/observables/norm_obs.h src/observables/dipole_acc_obs.h
@@ -987,7 +974,8 @@ dep/eigen_solvers/:
 #  Last modified 2022-06-14 23:20:20.825906779
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
+ 
 	@mkdir -p $@
 
 # Not a target:
@@ -1007,7 +995,7 @@ src/tdse_propagators/cranknicolson.cpp:
 dep/core/utility/logger.d: src/core/utility/logger.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/logger'
-#  Last modified 2022-06-20 23:07:19.690167939
+#  Last modified 2022-08-03 18:42:11.55710857
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1028,13 +1016,13 @@ dep/core/utility/logger.d: src/core/utility/logger.cpp | dep/core/utility/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/tdse_propagators/cranknicolson_fill_HI_z.d: src/tdse_propagators/cranknicolson_fill_HI_z.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_HI_z'
-#  Last modified 2022-06-20 23:07:18.926813961
+#  Last modified 2022-08-03 18:42:11.70045085
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1055,8 +1043,7 @@ dep/tdse_propagators/cranknicolson_fill_HI_z.d: src/tdse_propagators/cranknicols
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
- 
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -1069,7 +1056,7 @@ src/main.cpp:
 # Not a target:
 src/math_libs/petsc/petsc_vector.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-15 01:12:30.480731133
+#  Last modified 2022-06-22 21:49:13.439926396
 #  File has been updated.
 #  Successfully updated.
 
@@ -1082,7 +1069,7 @@ src/core/utility/logger.h:
 dep/math_libs/petsc/petsc_logger.d: src/math_libs/petsc/petsc_logger.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_logger'
-#  Last modified 2022-06-20 23:07:19.313491087
+#  Last modified 2022-08-03 18:42:11.023741944
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1103,13 +1090,14 @@ dep/math_libs/petsc/petsc_logger.d: src/math_libs/petsc/petsc_logger.cpp | dep/m
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
+ 
 
 dep/observables/basis_obs.d: src/observables/basis_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/basis_obs'
-#  Last modified 2022-06-20 23:07:18.803477294
+#  Last modified 2022-08-03 18:42:12.940525261
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1130,7 +1118,7 @@ dep/observables/basis_obs.d: src/observables/basis_obs.cpp | dep/observables/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/core/bspline/bspline_evaluate.o: src/core/bspline/bspline_evaluate.cpp src/core/bspline/bspline.h src/core/maths/maths.h
@@ -1141,7 +1129,7 @@ obj/core/bspline/bspline_evaluate.o: src/core/bspline/bspline_evaluate.cpp src/c
 dep/observables/population_obs.d: src/observables/population_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/population_obs'
-#  Last modified 2022-06-20 23:07:18.566804227
+#  Last modified 2022-08-03 18:42:12.793849908
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1162,7 +1150,7 @@ dep/observables/population_obs.d: src/observables/population_obs.cpp | dep/obser
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 clean:
@@ -1170,7 +1158,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 56):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 43):
 	rm -f $(OBJ) plotter_test
 	rm -f $(DEP)
 
@@ -1192,7 +1180,6 @@ src/tdse_propagators/cranknicolson_fill_HI_x.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-12 15:58:45.24872946
 #  File has been updated.
- 
 #  Successfully updated.
 
 # Not a target:
@@ -1208,17 +1195,18 @@ src/math_libs/petsc/petsc_lib.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/math_libs/petsc/petsc_solver.o: src/math_libs/petsc/petsc_solver.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 obj/observables/dipole_acc_obs.o: src/observables/dipole_acc_obs.cpp src/observables/dipole_acc_obs.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h src/core/utility/file_exists.h src/math_libs/petsc/petsc_lib.h src/core/utility/profiler.h src/core/utility/timer.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+obj/math_libs/petsc/petsc_solver.o: src/math_libs/petsc/petsc_solver.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # Not a target:
+ 
 src/core/utility/vec3.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1239,7 +1227,7 @@ obj/core/bspline/bspline_coeff_matrix.o: src/core/bspline/bspline_coeff_matrix.c
 dep/core/tdse/observable.d: src/core/tdse/observable.cpp | dep/core/tdse/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/tdse/observable'
-#  Last modified 2022-06-20 23:07:19.850172267
+#  Last modified 2022-08-03 18:42:11.170417765
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1260,7 +1248,7 @@ dep/core/tdse/observable.d: src/core/tdse/observable.cpp | dep/core/tdse/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/input_validation/validate_tise.o: src/input_validation/validate_tise.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/core/utility/profiler.h src/core/utility/timer.h src/math_libs/petsc/petsc_lib.h src/eigen_solvers/gen_eigen_tise.h
@@ -1274,7 +1262,7 @@ dep/core/utility/:
 #  Last modified 2022-06-14 23:20:21.045911517
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 # Not a target:
@@ -1295,7 +1283,6 @@ obj/math_libs/petsc/petsc_vector.o: src/math_libs/petsc/petsc_vector.cpp src/mat
 #  Modification time never checked.
 #  File has not been updated.
 
- 
 # Not a target:
 src/potentials/exponential_pot.cpp:
 #  Implicit rule search has been done.
@@ -1306,7 +1293,7 @@ src/potentials/exponential_pot.cpp:
 dep/observables/pulse_obs.d: src/observables/pulse_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/pulse_obs'
-#  Last modified 2022-06-20 23:07:18.470134947
+#  Last modified 2022-08-03 18:42:13.123869089
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1326,8 +1313,9 @@ dep/observables/pulse_obs.d: src/observables/pulse_obs.cpp | dep/observables/
 # automatic
 # | := 
 # variable set hash-table stats:
+ 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/eigen_solvers/gen_eigen_tise.o: src/eigen_solvers/gen_eigen_tise.cpp src/eigen_solvers/gen_eigen_tise.h src/core/tise/tise.h src/core/maths/maths.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h src/core/utility/file_exists.h
@@ -1338,7 +1326,7 @@ obj/eigen_solvers/gen_eigen_tise.o: src/eigen_solvers/gen_eigen_tise.cpp src/eig
 # Not a target:
 src/core/utility/spherical_harmonics.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 20:28:34.063483271
+#  Last modified 2022-06-21 20:30:58.336485912
 #  File has been updated.
 #  Successfully updated.
 
@@ -1355,7 +1343,7 @@ obj/core/tise/tise.o: src/core/tise/tise.cpp src/core/tise/tise.h src/core/maths
 dep/tdse_propagators/cranknicolson_fill_S.d: src/tdse_propagators/cranknicolson_fill_S.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_S'
-#  Last modified 2022-06-20 23:07:18.883479458
+#  Last modified 2022-08-03 18:42:11.930465208
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1376,7 +1364,7 @@ dep/tdse_propagators/cranknicolson_fill_S.d: src/tdse_propagators/cranknicolson_
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/core/bspline/bspline_integrate.o: src/core/bspline/bspline_integrate.cpp src/core/bspline/bspline.h src/core/maths/maths.h
@@ -1387,7 +1375,7 @@ obj/core/bspline/bspline_integrate.o: src/core/bspline/bspline_integrate.cpp src
 dep/main.d: src/main.cpp | dep/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main'
-#  Last modified 2022-06-20 23:07:20.213515427
+#  Last modified 2022-08-03 18:42:12.650508085
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1408,11 +1396,10 @@ dep/main.d: src/main.cpp | dep/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
- 
 src/core/utility/index_manip.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -1429,13 +1416,13 @@ dep/core/tise/:
 #  Last modified 2022-06-14 23:20:21.075912163
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 dep/input_validation/validate_propagator.d: src/input_validation/validate_propagator.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_propagator'
-#  Last modified 2022-06-20 23:07:17.720114664
+#  Last modified 2022-08-03 18:42:12.16714612
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1456,7 +1443,8 @@ dep/input_validation/validate_propagator.d: src/input_validation/validate_propag
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+ 
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -1495,7 +1483,7 @@ src/core/bspline/bspline_helper.cpp:
 dep/math_libs/petsc/petsc_hdf5.d: src/math_libs/petsc/petsc_hdf5.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_hdf5'
-#  Last modified 2022-06-20 23:07:19.423494062
+#  Last modified 2022-08-03 18:42:11.063744439
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1516,14 +1504,13 @@ dep/math_libs/petsc/petsc_hdf5.d: src/math_libs/petsc/petsc_hdf5.cpp | dep/math_
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/core/utility/spherical_harmonics.d: src/core/utility/spherical_harmonics.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/spherical_harmonics'
- 
-#  Last modified 2022-06-21 20:28:36.003523368
+#  Last modified 2022-08-03 18:42:11.597111067
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1544,13 +1531,13 @@ dep/core/utility/spherical_harmonics.d: src/core/utility/spherical_harmonics.cpp
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/math_libs/petsc/petsc_matrix.d: src/math_libs/petsc/petsc_matrix.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_matrix'
-#  Last modified 2022-06-20 23:07:19.266823156
+#  Last modified 2022-08-03 18:42:10.983739385
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1567,24 +1554,25 @@ dep/math_libs/petsc/petsc_matrix.d: src/math_libs/petsc/petsc_matrix.cpp | dep/m
 # ^ := 
 # automatic
 # ? := 
+ 
 # automatic
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
-src/math_libs/petsc/petsc_solver.cpp:
+src/observables/pulse_obs.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-09 14:47:55.613776841
+#  Last modified 2022-06-17 20:33:37.969498997
 #  File has been updated.
 #  Successfully updated.
 
 dep/observables/debug_wavefunction_obs.d: src/observables/debug_wavefunction_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/debug_wavefunction_obs'
-#  Last modified 2022-06-20 23:07:18.730141976
+#  Last modified 2022-08-03 18:42:12.830518746
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1605,7 +1593,7 @@ dep/observables/debug_wavefunction_obs.d: src/observables/debug_wavefunction_obs
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/core/utility/logger.o: src/core/utility/logger.cpp src/core/utility/logger.h
@@ -1613,18 +1601,10 @@ obj/core/utility/logger.o: src/core/utility/logger.cpp src/core/utility/logger.h
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-src/observables/pulse_obs.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-17 20:33:37.969498997
-#  File has been updated.
-#  Successfully updated.
-
 dep/input_validation/build_observables.d: src/input_validation/build_observables.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/build_observables'
-#  Last modified 2022-06-20 23:07:18.273462962
- 
+#  Last modified 2022-08-03 18:42:12.38049209
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1645,8 +1625,15 @@ dep/input_validation/build_observables.d: src/input_validation/build_observables
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
+
+# Not a target:
+src/math_libs/petsc/petsc_solver.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 14:47:55.613776841
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 src/core/utility/profiler.cpp:
@@ -1658,7 +1645,7 @@ src/core/utility/profiler.cpp:
 dep/tdse_propagators/cranknicolson_fill_U0.d: src/tdse_propagators/cranknicolson_fill_U0.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_U0'
-#  Last modified 2022-06-20 23:07:18.843478376
+#  Last modified 2022-08-03 18:42:11.777122302
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1679,13 +1666,14 @@ dep/tdse_propagators/cranknicolson_fill_U0.d: src/tdse_propagators/cranknicolson
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
+ 
 
 dep/math_libs/petsc/petsc_vector.d: src/math_libs/petsc/petsc_vector.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_vector'
-#  Last modified 2022-06-20 23:07:19.12681937
+#  Last modified 2022-08-03 18:42:10.867065039
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1706,20 +1694,20 @@ dep/math_libs/petsc/petsc_vector.d: src/math_libs/petsc/petsc_vector.cpp | dep/m
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
-
-# Not a target:
-src/core/utility/index_manip.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-06-15 11:07:20.633779628
-#  File has been updated.
-#  Successfully updated.
 
 # Not a target:
 src/tdse_propagators/cranknicolson_fill_FF.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-06-15 11:09:30.996415399
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/core/utility/index_manip.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-06-15 11:07:20.633779628
 #  File has been updated.
 #  Successfully updated.
 
@@ -1731,10 +1719,9 @@ obj/core/maths/iascii.o: src/core/maths/iascii.cpp src/core/maths/maths.h
 dep/core/bspline/guass_quad.d: src/core/bspline/guass_quad.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/guass_quad'
-#  Last modified 2022-06-20 23:07:19.923507582
+#  Last modified 2022-08-03 18:42:11.49043774
 #  File has been updated.
 #  Successfully updated.
- 
 # automatic
 # @ := dep/core/bspline/guass_quad.d
 # automatic
@@ -1753,7 +1740,7 @@ dep/core/bspline/guass_quad.d: src/core/bspline/guass_quad.cpp | dep/core/bsplin
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -1777,22 +1764,23 @@ src/eigen_solvers/gen_eigen_tise.cpp:
 #  File has not been updated.
 
 # Not a target:
+src/observables/potential_obs.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
 src/math_libs/petsc/petsc_lib.cpp:
 #  Implicit rule search has been done.
 #  Last modified 2022-05-09 14:47:55.613776841
 #  File has been updated.
 #  Successfully updated.
 
-# Not a target:
-src/observables/potential_obs.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 dep/observables/dipole_acc_obs.d: src/observables/dipole_acc_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/dipole_acc_obs'
-#  Last modified 2022-06-20 23:07:18.693474318
+#  Last modified 2022-08-03 18:42:13.017196424
+ 
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1813,13 +1801,13 @@ dep/observables/dipole_acc_obs.d: src/observables/dipole_acc_obs.cpp | dep/obser
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
 src/input_validation/build_observables.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-18 14:05:47.803917016
+#  Last modified 2022-06-22 00:32:01.702804195
 #  File has been updated.
 #  Successfully updated.
 
@@ -1829,7 +1817,7 @@ dep/core/bspline/:
 #  Last modified 2022-06-14 23:20:21.552589093
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 # Not a target:
@@ -1847,9 +1835,8 @@ all:
 
 dep/core/bspline/bspline_node_dist.d: src/core/bspline/bspline_node_dist.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
- 
 #  Implicit/static pattern stem: 'core/bspline/bspline_node_dist'
-#  Last modified 2022-06-20 23:07:19.950174971
+#  Last modified 2022-08-03 18:42:11.420433371
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1870,7 +1857,7 @@ dep/core/bspline/bspline_node_dist.d: src/core/bspline/bspline_node_dist.cpp | d
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -1889,7 +1876,7 @@ src/input_validation/validate.h:
 dep/core/tdse/tdse.d: src/core/tdse/tdse.cpp | dep/core/tdse/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/tdse/tdse'
-#  Last modified 2022-06-20 23:07:19.813504607
+#  Last modified 2022-08-03 18:42:11.250422759
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1902,6 +1889,7 @@ dep/core/tdse/tdse.d: src/core/tdse/tdse.cpp | dep/core/tdse/
 # + := 
 # automatic
 # % := 
+ 
 # automatic
 # ^ := 
 # automatic
@@ -1910,13 +1898,13 @@ dep/core/tdse/tdse.d: src/core/tdse/tdse.cpp | dep/core/tdse/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/potentials/yukawa_pot.d: src/potentials/yukawa_pot.cpp | dep/potentials/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'potentials/yukawa_pot'
-#  Last modified 2022-06-20 23:07:18.316797465
+#  Last modified 2022-08-03 18:42:12.753847539
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1937,7 +1925,7 @@ dep/potentials/yukawa_pot.d: src/potentials/yukawa_pot.cpp | dep/potentials/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -1957,13 +1945,12 @@ src/core/bspline/bspline_integrate.cpp:
 obj/observables/basis_obs.o: src/observables/basis_obs.cpp src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/observables/basis_obs.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 dep/core/bspline/bspline_helper.d: src/core/bspline/bspline_helper.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_helper'
-#  Last modified 2022-06-20 23:07:20.0535111
+#  Last modified 2022-08-03 18:42:11.390431498
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -1984,13 +1971,13 @@ dep/core/bspline/bspline_helper.d: src/core/bspline/bspline_helper.cpp | dep/cor
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/core/tise/tise.d: src/core/tise/tise.cpp | dep/core/tise/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/tise/tise'
-#  Last modified 2022-06-20 23:07:19.753502987
+#  Last modified 2022-08-03 18:42:11.13374881
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2011,8 +1998,9 @@ dep/core/tise/tise.d: src/core/tise/tise.cpp | dep/core/tise/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
+ 
 
 # Not a target:
 src/observables/potential_obs.cpp:
@@ -2040,14 +2028,14 @@ obj/observables/wavefunction_obs.o: src/observables/wavefunction_obs.cpp src/obs
 # Not a target:
 src/observables/density_observable.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-21 20:18:38.824212131
+#  Last modified 2022-06-22 00:53:42.371622483
 #  File has been updated.
 #  Successfully updated.
 
 dep/input_validation/validate_tise.d: src/input_validation/validate_tise.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_tise'
-#  Last modified 2022-06-20 23:07:17.603444843
+#  Last modified 2022-08-03 18:42:12.597171591
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2060,7 +2048,6 @@ dep/input_validation/validate_tise.d: src/input_validation/validate_tise.cpp | d
 # + := 
 # automatic
 # % := 
- 
 # automatic
 # ^ := 
 # automatic
@@ -2069,7 +2056,7 @@ dep/input_validation/validate_tise.d: src/input_validation/validate_tise.cpp | d
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/math_libs/petsc/:
@@ -2078,13 +2065,13 @@ dep/math_libs/petsc/:
 #  Last modified 2022-06-14 23:20:20.762572083
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 dep/core/utility/timer.d: src/core/utility/timer.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/timer'
-#  Last modified 2022-06-20 23:07:19.580164964
+#  Last modified 2022-08-03 18:42:11.530440237
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2105,7 +2092,7 @@ dep/core/utility/timer.d: src/core/utility/timer.cpp | dep/core/utility/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/input_validation/validate_initial_state.o: src/input_validation/validate_initial_state.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h
@@ -2127,6 +2114,7 @@ obj/core/tdse/laser.o: src/core/tdse/laser.cpp src/core/tdse/laser.h src/core/ma
 # Not a target:
 src/observables/dipole_acc_obs.cpp:
 #  Implicit rule search has been done.
+ 
 #  Last modified 2022-06-01 14:46:58.109128086
 #  File has been updated.
 #  Successfully updated.
@@ -2134,7 +2122,7 @@ src/observables/dipole_acc_obs.cpp:
 dep/core/utility/profiler.d: src/core/utility/profiler.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/profiler'
-#  Last modified 2022-06-20 23:07:19.656833704
+#  Last modified 2022-08-03 18:42:11.527106696
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2155,7 +2143,7 @@ dep/core/utility/profiler.d: src/core/utility/profiler.cpp | dep/core/utility/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -2165,7 +2153,6 @@ src/math_libs/petsc/petsc_hdf5.cpp:
 #  File has been updated.
 #  Successfully updated.
 
- 
 obj/math_libs/petsc/petsc_lib.o: src/math_libs/petsc/petsc_lib.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -2174,7 +2161,7 @@ obj/math_libs/petsc/petsc_lib.o: src/math_libs/petsc/petsc_lib.cpp src/math_libs
 dep/observables/norm_obs.d: src/observables/norm_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/norm_obs'
-#  Last modified 2022-06-20 23:07:18.610138731
+#  Last modified 2022-08-03 18:42:12.900522892
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2195,40 +2182,13 @@ dep/observables/norm_obs.d: src/observables/norm_obs.cpp | dep/observables/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
-	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
-
-dep/tdse_propagators/cranknicolson.d: src/tdse_propagators/cranknicolson.cpp | dep/tdse_propagators/
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'tdse_propagators/cranknicolson'
-#  Last modified 2022-06-20 23:07:19.080151442
-#  File has been updated.
-#  Successfully updated.
-# automatic
-# @ := dep/tdse_propagators/cranknicolson.d
-# automatic
-# * := tdse_propagators/cranknicolson
-# automatic
-# < := 
-# automatic
-# + := 
-# automatic
-# % := 
-# automatic
-# ^ := 
-# automatic
-# ? := 
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/input_validation/build_potentials.d: src/input_validation/build_potentials.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/build_potentials'
-#  Last modified 2022-06-20 23:07:18.18679395
+#  Last modified 2022-08-03 18:42:12.060473135
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2249,7 +2209,35 @@ dep/input_validation/build_potentials.d: src/input_validation/build_potentials.c
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
+	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
+
+dep/tdse_propagators/cranknicolson.d: src/tdse_propagators/cranknicolson.cpp | dep/tdse_propagators/
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'tdse_propagators/cranknicolson'
+#  Last modified 2022-08-03 18:42:11.740453347
+#  File has been updated.
+#  Successfully updated.
+# automatic
+# @ := dep/tdse_propagators/cranknicolson.d
+# automatic
+# * := tdse_propagators/cranknicolson
+# automatic
+# < := 
+# automatic
+# + := 
+# automatic
+# % := 
+# automatic
+# ^ := 
+# automatic
+# ? := 
+# automatic
+# | := 
+# variable set hash-table stats:
+ 
+# Load=8/32=25%, Rehash=0, Collisions=1/11=9%
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/tdse_propagators/:
@@ -2258,14 +2246,13 @@ dep/tdse_propagators/:
 #  Last modified 2022-06-14 23:20:20.192559811
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
- 
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 # Not a target:
 src/core/tdse/tdse.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-17 20:27:34.324234595
+#  Last modified 2022-06-29 11:45:40.726856399
 #  File has been updated.
 #  Successfully updated.
 
@@ -2290,7 +2277,7 @@ obj/input_validation/validate_potential.o: src/input_validation/validate_potenti
 dep/tdse_propagators/cranknicolson_fill_HI_y.d: src/tdse_propagators/cranknicolson_fill_HI_y.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_HI_y'
-#  Last modified 2022-06-20 23:07:18.963481621
+#  Last modified 2022-08-03 18:42:11.8171248
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2311,13 +2298,13 @@ dep/tdse_propagators/cranknicolson_fill_HI_y.d: src/tdse_propagators/cranknicols
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
 src/input_validation/validate_observables.cpp:
 #  Implicit rule search has been done.
-#  Last modified 2022-06-18 14:05:21.916566224
+#  Last modified 2022-06-25 12:39:16.555933292
 #  File has been updated.
 #  Successfully updated.
 
@@ -2327,7 +2314,7 @@ src/core/maths/maths.h:
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/input_validation/build_observables.o: src/input_validation/build_observables.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/observables/norm_obs.h src/observables/dipole_acc_obs.h src/observables/wavefunction_obs.h src/observables/population_obs.h src/observables/pulse_obs.h src/observables/potential_obs.h src/observables/basis_obs.h src/observables/knot_obs.h src/observables/debug_wavefunction_obs.h src/observables/debug_eigenstates.h
+obj/input_validation/build_observables.o: src/input_validation/build_observables.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/observables/norm_obs.h src/observables/dipole_acc_obs.h src/observables/wavefunction_obs.h src/observables/population_obs.h src/observables/pulse_obs.h src/observables/potential_obs.h src/observables/basis_obs.h src/observables/knot_obs.h src/observables/density_observable.h src/observables/debug_wavefunction_obs.h src/observables/debug_eigenstates.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2342,7 +2329,7 @@ src/core/bspline/bspline_coeff_matrix.cpp:
 dep/eigen_solvers/gen_eigen_tise.d: src/eigen_solvers/gen_eigen_tise.cpp | dep/eigen_solvers/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'eigen_solvers/gen_eigen_tise'
-#  Last modified 2022-06-20 23:07:19.573498118
+#  Last modified 2022-08-03 18:42:13.200540069
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2354,6 +2341,7 @@ dep/eigen_solvers/gen_eigen_tise.d: src/eigen_solvers/gen_eigen_tise.cpp | dep/e
 # automatic
 # + := 
 # automatic
+ 
 # % := 
 # automatic
 # ^ := 
@@ -2363,7 +2351,7 @@ dep/eigen_solvers/gen_eigen_tise.d: src/eigen_solvers/gen_eigen_tise.cpp | dep/e
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -2371,7 +2359,6 @@ src/potentials/coulomb_pot.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 
 obj/input_validation/build_potentials.o: src/input_validation/build_potentials.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h src/potentials/coulomb_pot.h src/potentials/yukawa_pot.h src/potentials/exponential_pot.h
 #  Implicit rule search has not been done.
@@ -2412,7 +2399,7 @@ obj/potentials/exponential_pot.o: src/potentials/exponential_pot.cpp src/potenti
 dep/input_validation/validate_tdse.d: src/input_validation/validate_tdse.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_tdse'
-#  Last modified 2022-06-20 23:07:17.663446465
+#  Last modified 2022-08-03 18:42:12.540501569
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2433,7 +2420,7 @@ dep/input_validation/validate_tdse.d: src/input_validation/validate_tdse.cpp | d
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -2464,12 +2451,13 @@ obj/tdse_propagators/cranknicolson_fill_HI_x.o: src/tdse_propagators/cranknicols
 dep/math_libs/petsc/petsc_ASCII.d: src/math_libs/petsc/petsc_ASCII.cpp | dep/math_libs/petsc/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'math_libs/petsc/petsc_ASCII'
-#  Last modified 2022-06-20 23:07:19.530163612
+#  Last modified 2022-08-03 18:42:10.8203953
 #  File has been updated.
 #  Successfully updated.
 # automatic
 # @ := dep/math_libs/petsc/petsc_ASCII.d
 # automatic
+ 
 # * := math_libs/petsc/petsc_ASCII
 # automatic
 # < := 
@@ -2485,22 +2473,21 @@ dep/math_libs/petsc/petsc_ASCII.d: src/math_libs/petsc/petsc_ASCII.cpp | dep/mat
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
-
-# Not a target:
- 
-src/core/bspline/bspline_evaluate.cpp:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-09 14:47:55.613776841
-#  File has been updated.
-#  Successfully updated.
 
 # Not a target:
 src/observables/knot_obs.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+
+# Not a target:
+src/core/bspline/bspline_evaluate.cpp:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-09 14:47:55.613776841
+#  File has been updated.
+#  Successfully updated.
 
 obj/observables/norm_obs.o: src/observables/norm_obs.cpp src/observables/norm_obs.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/logger.h src/core/utility/file_exists.h
 #  Implicit rule search has not been done.
@@ -2510,7 +2497,7 @@ obj/observables/norm_obs.o: src/observables/norm_obs.cpp src/observables/norm_ob
 dep/tdse_propagators/cranknicolson_fill_HI_x.d: src/tdse_propagators/cranknicolson_fill_HI_x.cpp | dep/tdse_propagators/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'tdse_propagators/cranknicolson_fill_HI_x'
-#  Last modified 2022-06-20 23:07:19.000149278
+#  Last modified 2022-08-03 18:42:11.893796252
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2531,7 +2518,7 @@ dep/tdse_propagators/cranknicolson_fill_HI_x.d: src/tdse_propagators/cranknicols
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/input_validation/:
@@ -2540,13 +2527,13 @@ dep/input_validation/:
 #  Last modified 2022-06-14 23:20:19.27587341
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 dep/core/bspline/bspline_integrate.d: src/core/bspline/bspline_integrate.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_integrate'
-#  Last modified 2022-06-20 23:07:19.986842629
+#  Last modified 2022-08-03 18:42:11.320427129
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2567,13 +2554,13 @@ dep/core/bspline/bspline_integrate.d: src/core/bspline/bspline_integrate.cpp | d
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/input_validation/validate_initial_state.d: src/input_validation/validate_initial_state.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_initial_state'
-#  Last modified 2022-06-20 23:07:18.016789354
+#  Last modified 2022-08-03 18:42:12.433828583
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2593,22 +2580,22 @@ dep/input_validation/validate_initial_state.d: src/input_validation/validate_ini
 # automatic
 # | := 
 # variable set hash-table stats:
+ 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
 src/math_libs/petsc/petsc_eigensolver.cpp:
 #  Implicit rule search has been done.
- 
-#  Last modified 2022-06-14 22:51:59.125087456
+#  Last modified 2022-06-22 13:11:14.575369791
 #  File has been updated.
 #  Successfully updated.
 
 dep/input_validation/validate_mathlib.d: src/input_validation/validate_mathlib.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_mathlib'
-#  Last modified 2022-06-20 23:07:17.893452684
+#  Last modified 2022-08-03 18:42:12.007136644
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2629,7 +2616,7 @@ dep/input_validation/validate_mathlib.d: src/input_validation/validate_mathlib.c
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 .SECONDEXPANSION:
@@ -2640,7 +2627,7 @@ dep/input_validation/validate_mathlib.d: src/input_validation/validate_mathlib.c
 dep/core/maths/iascii.d: src/core/maths/iascii.cpp | dep/core/maths/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/maths/iascii'
-#  Last modified 2022-06-20 23:07:20.156847226
+#  Last modified 2022-08-03 18:42:11.660448353
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2661,7 +2648,7 @@ dep/core/maths/iascii.d: src/core/maths/iascii.cpp | dep/core/maths/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -2687,13 +2674,13 @@ dep/:
 #  Last modified 2022-06-14 23:20:21.64259103
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 dep/input_validation/validate_basis.d: src/input_validation/validate_basis.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_basis'
-#  Last modified 2022-06-20 23:07:18.126792329
+#  Last modified 2022-08-03 18:42:12.220482614
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2709,13 +2696,13 @@ dep/input_validation/validate_basis.d: src/input_validation/validate_basis.cpp |
 # automatic
 # ^ := 
 # automatic
+ 
 # ? := 
 # automatic
 # | := 
 # variable set hash-table stats:
- 
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -2740,7 +2727,7 @@ obj/core/bspline/bspline_initialize.o: src/core/bspline/bspline_initialize.cpp s
 dep/observables/potential_obs.d: src/observables/potential_obs.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/potential_obs'
-#  Last modified 2022-06-20 23:07:18.51346945
+#  Last modified 2022-08-03 18:42:12.867187586
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2761,7 +2748,7 @@ dep/observables/potential_obs.d: src/observables/potential_obs.cpp | dep/observa
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/tdse_propagators/cranknicolson_fill_FF.o: src/tdse_propagators/cranknicolson_fill_FF.cpp src/tdse_propagators/cranknicolson.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/maths/maths.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/utility/index_manip.h
@@ -2772,7 +2759,7 @@ obj/tdse_propagators/cranknicolson_fill_FF.o: src/tdse_propagators/cranknicolson
 dep/core/bspline/bspline_coeff_matrix.d: src/core/bspline/bspline_coeff_matrix.cpp | dep/core/bspline/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/bspline/bspline_coeff_matrix'
-#  Last modified 2022-06-20 23:07:20.123512993
+#  Last modified 2022-08-03 18:42:11.353762543
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2793,7 +2780,7 @@ dep/core/bspline/bspline_coeff_matrix.d: src/core/bspline/bspline_coeff_matrix.c
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -2811,10 +2798,11 @@ obj/input_validation/validate_basis.o: src/input_validation/validate_basis.cpp s
 dep/input_validation/validate_eigen_state_calc.d: src/input_validation/validate_eigen_state_calc.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_eigen_state_calc'
-#  Last modified 2022-06-20 23:07:18.073457552
+#  Last modified 2022-08-03 18:42:12.323822068
 #  File has been updated.
 #  Successfully updated.
 # automatic
+ 
 # @ := dep/input_validation/validate_eigen_state_calc.d
 # automatic
 # * := input_validation/validate_eigen_state_calc
@@ -2822,7 +2810,6 @@ dep/input_validation/validate_eigen_state_calc.d: src/input_validation/validate_
 # < := 
 # automatic
 # + := 
- 
 # automatic
 # % := 
 # automatic
@@ -2833,7 +2820,7 @@ dep/input_validation/validate_eigen_state_calc.d: src/input_validation/validate_
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -2853,12 +2840,12 @@ obj/math_libs/petsc/petsc_eigensolver.o: src/math_libs/petsc/petsc_eigensolver.c
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/math_libs/petsc/petsc_hdf5.o: src/math_libs/petsc/petsc_hdf5.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
+obj/potentials/yukawa_pot.o: src/potentials/yukawa_pot.cpp src/potentials/yukawa_pot.h src/core/tdse/potential.h src/core/maths/maths.h src/core/bspline/bspline.h src/core/utility/index_manip.h src/core/utility/logger.h src/core/utility/spherical_harmonics.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-obj/potentials/yukawa_pot.o: src/potentials/yukawa_pot.cpp src/potentials/yukawa_pot.h src/core/tdse/potential.h src/core/maths/maths.h src/core/bspline/bspline.h src/core/utility/index_manip.h src/core/utility/logger.h src/core/utility/spherical_harmonics.h
+obj/math_libs/petsc/petsc_hdf5.o: src/math_libs/petsc/petsc_hdf5.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -2869,7 +2856,7 @@ dep/core/maths/:
 #  Last modified 2022-06-14 23:20:21.599256764
 #  File has been updated.
 #  Successfully updated.
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 61):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 48):
 	@mkdir -p $@
 
 # Not a target:
@@ -2893,7 +2880,7 @@ obj/observables/debug_wavefunction_obs.o: src/observables/debug_wavefunction_obs
 dep/potentials/exponential_pot.d: src/potentials/exponential_pot.cpp | dep/potentials/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'potentials/exponential_pot'
-#  Last modified 2022-06-20 23:07:18.353465125
+#  Last modified 2022-08-03 18:42:12.683843393
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2914,19 +2901,19 @@ dep/potentials/exponential_pot.d: src/potentials/exponential_pot.cpp | dep/poten
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 dep/observables/density_observable.d: src/observables/density_observable.cpp | dep/observables/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'observables/density_observable'
-#  Last modified 2022-06-21 20:28:35.956855739
+#  Last modified 2022-08-03 18:42:13.053865153
 #  File has been updated.
 #  Successfully updated.
- 
 # automatic
 # @ := dep/observables/density_observable.d
 # automatic
+ 
 # * := observables/density_observable
 # automatic
 # < := 
@@ -2942,7 +2929,7 @@ dep/observables/density_observable.d: src/observables/density_observable.cpp | d
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 # Not a target:
@@ -2966,7 +2953,7 @@ obj/tdse_propagators/cranknicolson.o: src/tdse_propagators/cranknicolson.cpp src
 dep/core/utility/index_manip.d: src/core/utility/index_manip.cpp | dep/core/utility/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/utility/index_manip'
-#  Last modified 2022-06-20 23:07:19.716835327
+#  Last modified 2022-08-03 18:42:11.623779397
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -2987,7 +2974,7 @@ dep/core/utility/index_manip.d: src/core/utility/index_manip.cpp | dep/core/util
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/math_libs/petsc/petsc_profiler.o: src/math_libs/petsc/petsc_profiler.cpp src/math_libs/petsc/petsc_lib.h src/core/maths/maths.h src/core/utility/logger.h src/core/utility/profiler.h src/core/utility/timer.h
@@ -3000,10 +2987,21 @@ obj/input_validation/validate_lasers.o: src/input_validation/validate_lasers.cpp
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/observables/dipole_acc_obs.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/input_validation/validate_mathlib.o: src/input_validation/validate_mathlib.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 dep/core/tdse/laser.d: src/core/tdse/laser.cpp | dep/core/tdse/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'core/tdse/laser'
-#  Last modified 2022-06-20 23:07:19.886839924
+#  Last modified 2022-08-03 18:42:11.203753179
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -3024,31 +3022,20 @@ dep/core/tdse/laser.d: src/core/tdse/laser.cpp | dep/core/tdse/
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
-obj/input_validation/validate_mathlib.o: src/input_validation/validate_mathlib.cpp src/input_validation/validate.h inc/json.hpp src/core/utility/logger.h src/core/maths/maths.h src/core/tdse/tdse.h src/core/bspline/bspline.h src/core/tdse/potential.h src/core/tdse/laser.h src/core/utility/vec3.h src/core/tdse/observable.h src/core/tise/tise.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/observables/dipole_acc_obs.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
- 
 # Not a target:
 src/tdse_propagators/cranknicolson.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 dep/input_validation/validate_observables.d: src/input_validation/validate_observables.cpp | dep/input_validation/
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'input_validation/validate_observables'
-#  Last modified 2022-06-20 23:07:17.840117909
+#  Last modified 2022-08-03 18:42:12.270485575
 #  File has been updated.
 #  Successfully updated.
 # automatic
@@ -3069,7 +3056,7 @@ dep/input_validation/validate_observables.d: src/input_validation/validate_obser
 # | := 
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=1/11=9%
-#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 65):
+#  recipe to execute (from '/home/bghomashi/Documents/projects/tdse_more_organized/Makefile', line 52):
 	@$(CPP) $(CPPFLAGS) $(EXTRAFLAGS) $< -MM -MT $(subst $(DDIR), $(ODIR), $(@:.d=.o)) >$@
 
 obj/core/utility/index_manip.o: src/core/utility/index_manip.cpp src/core/utility/index_manip.h
@@ -3078,21 +3065,21 @@ obj/core/utility/index_manip.o: src/core/utility/index_manip.cpp src/core/utilit
 #  File has not been updated.
 
 # files hash-table stats:
-# Load=236/1024=23%, Rehash=0, Collisions=190/1282=15%
+# Load=236/1024=23%, Rehash=0, Collisions=193/1285=15%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 2 (1) / strings = 449 / storage = 11976 B / avg = 26 B
-# current buf: size = 8162 B / used = 3825 B / count = 146 / avg = 26 B
-# other used: total = 8151 B / count = 303 / avg = 26 B
-# other free: total = 11 B / max = 11 B / min = 11 B / avg = 11 B
+# strcache buffers: 2 (1) / strings = 455 / storage = 12233 B / avg = 26 B
+# current buf: size = 8162 B / used = 4092 B / count = 203 / avg = 20 B
+# other used: total = 8141 B / count = 252 / avg = 32 B
+# other free: total = 21 B / max = 21 B / min = 21 B / avg = 21 B
 
-# strcache performance: lookups = 1366 / hit rate = 67%
+# strcache performance: lookups = 1366 / hit rate = 66%
 # hash-table stats:
-# Load=449/8192=5%, Rehash=0, Collisions=39/1366=3%
-# Finished Make data base on Tue Jun 21 20:29:46 2022
+# Load=455/8192=6%, Rehash=0, Collisions=11/1366=1%
+# Finished Make data base on Wed Aug  3 18:42:13 2022
 
  

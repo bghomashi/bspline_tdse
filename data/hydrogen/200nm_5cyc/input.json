@@ -3,18 +3,17 @@
     "time_step": 0.1,
     "math_library": "PETsc",
     "checkpoint": 5000,
-    "do_propagate" : false,
     "restart" : false,
-    
+    "do_propagate" : true,
     "basis": {
         "order": 8,
         "node_sequence": "parabolic",
+        "num_nodes": 200,
         "parameter": 30,
-        "num_nodes": 500,
         "x_min": 0.0,
-        "x_max": 300.0,
+        "x_max": 100.0,
         "lmax": 10,
-        "mmax": 0,
+        "mmax": 10,
         "ecs_r0": 0.9
     },
     "lasers": [
@@ -22,19 +21,21 @@
             "num_cycles": 5.0,
             "cycles_delay": 0.0,
             "envelope": "sin2",
-            "intensity": 100000000000000.0,
+            "intensity": 1e14,
             "wavelength": 200,
             "cep": 0,
             "polarization_vector": [
-               	0.0,
-                0.0,
+               	1.0,
+                1.0,
                 1.0
             ],
             "poynting_vector": [
                 1.0,
-                0.0,
-                0.0
-            ]
+                1.0,
+                -2.0
+            ],
+            "cycles_up": 2,
+            "cycles_down": 2
         }
     ],
     "initial_state": [
@@ -49,18 +50,7 @@
         {
             "type": "coulomb",
             "Z": 1
-        },
-        {
-            "type": "yukawa",
-            "Z": 1,
-            "decay": 2.0329
-        },
-        {
-            "type": "exponential",
-            "amplitude": 0.3953,
-            "decay": 6.1805
         }
-
     ],
     "observables": {
         "norm": {
@@ -79,29 +69,13 @@
         "potential": {
             "grid_points" : 500,
             "filename" : "potential.txt"
-        },
-        "basis": {
-            "grid_points" : 3000,
-            "filename" : "basis.txt"
-        },
-        "knots": {
-            "filename" : "knots.txt"
-        },
-        "debug_wavefunction" : {
-            "compute_period": 500,
-            "grid_points" : 5000,
-            "filename" : "wavefunction.txt"
-        },
-        "debug_eigenstates" : {
-            "grid_points" : 5000,
-            "nmax": 5
         }
     },
     "eigen_state": {
         "solver": "SLEPC",
         "nmax": 4,
         "tol": 1e-10,
-        "filename": "He.h5"
+        "filename": "H.h5"
     },
     "log_filename": "log.txt"
 }

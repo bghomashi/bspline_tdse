@@ -11,7 +11,7 @@ PetscVector::PetscVector() {
 PetscVector::PetscVector(int length) {
     PetscErrorCode ierr;
     _petsc_ctx = 0;
-    _petsc_sca_vec =0;
+    _petsc_sca_vec = 0;
     ierr = VecCreate(PETSC_COMM_WORLD,&_petsc_vec);PETSCASSERT(ierr);
     ierr = VecSetSizes(_petsc_vec,PETSC_DECIDE,length);PETSCASSERT(ierr);
     ierr = VecSetFromOptions(_petsc_vec);PETSCASSERT(ierr);

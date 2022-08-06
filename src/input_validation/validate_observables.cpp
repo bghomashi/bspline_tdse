@@ -50,7 +50,7 @@ bool ValidateObservables(const nlohmann::json& input) {
         } else if (obs_pair.key() == "pulse") {
             // an output file is required
             if (!obs_pair.value().contains("filename")) {
-                MustContain("filename", "string", "populations observable");
+                MustContain("filename", "string", "pulse observable");
                 return false;
             }
         } else if (obs_pair.key() == "potential") {
@@ -109,6 +109,11 @@ bool ValidateObservables(const nlohmann::json& input) {
             //     MustContain("filename", "string", "debug_wavefunction observable");
             //     return false;
             // }
+        } else if (obs_pair.key() == "density") {
+            if (!(obs_pair.value().contains("grid_points") && obs_pair.value()["grid_points"].is_number())) {
+                MustContain("grid_points", "number", "density observable");
+                return false;
+            }
         }
     }
     return true;

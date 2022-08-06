@@ -26,11 +26,10 @@ void DensityObservable::Shutdown() {
     _txt_file = nullptr;
 }
 void DensityObservable::Compute(int it, double t, double dt) {
-    _txt_file = _MathLib.OpenASCII("wavefunction_"+std::to_string(it)+".txt", 'w');
+    _txt_file = _MathLib.OpenASCII("density_"+std::to_string(it)+".txt", 'w');
 
     std::vector<complex> psi(_tdse.DOF()), n_block_coeff;
     std::vector<complex> temp(_grid.size());
-    std::vector<complex> out(_grid.size()*_grid.size()*_grid.size(), 0);
     std::stringstream ss;
     auto& basis = _tdse.Basis();
     int N = basis.getNumBSplines();
@@ -41,43 +40,41 @@ void DensityObservable::Compute(int it, double t, double dt) {
 
     _tdse.Psi()->CopyTo(psi);                                                                   // copy entire wf into vector
 
-    for (int m : Ms) {                                                                              // for each m
-        for (int l = std::abs(m); l <= lmax; l++) {                                                 // for each l
-            int start = RowFrom(0, m, l, N, Ms, MRows);                                             // first index of this block
-            n_block_coeff = std::vector<complex>(psi.begin() + start, psi.begin() + (start+N)); // copy n_block coeffs
+    for (int i = 0; i < _numGrid; i++) {
+        for (int j = 0; j < _numGrid; j++) {
+            for (int k = 0; k < _numGrid; k++) {
+                double x = _grid[i];
+                double y = _grid[j];
+                double z = _grid[k];
+
+                double r = std::sqrt(x*x + y*y + z*z);
+                double theta = (x == 0 && y == 0 && z == 0 ? 0.0 : std::atan2(std::sqrt(x*x + y*y), z));
+                double phi = (x == 0 && y == 0 ? 0.0 : std::atan2(y, x));
+
+                // if r == 0 : r = epsilon ? to avoid divide by zero?
+
+                complex amplitude = 0.0;
+                for (int m : Ms) {                                                                              // for each m
+                    for (int l = std::abs(m); l <= lmax; l++) {                                                 // for each l
+                        int start = RowFrom(0, m, l, N, Ms, MRows);                                             // first index of this block
+                        n_block_coeff = std::vector<complex>(psi.begin() + start, psi.begin() + (start+N)); // copy n_block coeffs
             
-            for (int i = 0; i < _numGrid; i++) {
-                for (int j = 0; j < _numGrid; j++) {
-                    for (int k = 0; k < _numGrid; k++) {
-                        double x = _grid[i];
-                        double y = _grid[j];
-                        double z = _grid[k];
-
-                        double r = std::sqrt(x*x + y*y + z*z);
-                        double theta = (x == 0 && y == 0 && z == 0 ? 0.0 : std::atan2(std::sqrt(x*x + y*y), z));
-                        double phi = (x == 0 && y == 0 ? 0.0 : std::atan2(y, x));
-
-                        out[i + j*N + k*N*N] += basis.FunctionEvaluate(r, n_block_coeff)*Ylm(l, m, theta, phi); // evaluate on grid this chuck on the grid
+                        amplitude += basis.FunctionEvaluate(r, n_block_coeff)*Ylm(l, m, theta, phi) / r; // evaluate on grid this chuck on the grid
                     }
                 }
+
+                ss.str("");
+                ss << x << "\t";
+                ss << y << "\t";
+                ss << z << "\t";
+                ss << std::abs(amplitude)*std::abs(amplitude) << "\t";
+                ss << std::real(amplitude) << "\t";
+                ss << std::imag(amplitude) << "\n";
+                _txt_file->Write(ss.str()); 
+
             }            
         }  
     }       
-
-    for (int i = 0; i < _numGrid; i++) {
-        for (int j = 0; j < _numGrid; j++) {
-            for (int k = 0; k < _numGrid; k++) {  
-                ss.str("");
-                ss << _grid[i] << "\t"; // x
-                ss << _grid[j] << "\t"; // y
-                ss << _grid[k] << "\t"; // z
-                ss << std::real(out[i]) << "\t";
-                ss << std::imag(out[i]) << "\t";
-                ss << std::abs(out[i])*std::abs(out[i]) << "\n";
-                _txt_file->Write(ss.str());  
-            }
-        }
-    }
 
     _txt_file = nullptr;
 }

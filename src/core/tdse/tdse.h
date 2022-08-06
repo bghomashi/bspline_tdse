@@ -47,7 +47,7 @@ protected:
 
     // where to load initial state from
     std::string _initial_state_filename;
-    int _eigen_state_nmax;
+    int _eigen_state_nmax, _eigen_state_lmax;
 
     // a list of observables specified in the input file.
     std::vector<Observable::Ptr_t> _observables;
@@ -77,8 +77,10 @@ public:
     void SetECS(double ecs_r0, double ecs_theta);
     void SetInitialStateFile(const std::string& filename);
     void SetEigenStateNmax(int nmax);
+    void SetEigenStateLmax(int lmax);
     const std::string& GetInitialStateFile() const;
     int GetInitialStateNmax() const;
+    int GetInitialStateLmax() const;
 
     void AddInitialState(int n, int l, int m, double phase, double amplitude);
 

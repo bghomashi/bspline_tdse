@@ -50,6 +50,9 @@ Pulse::Ptr_t Pulse::Create(Envelope env,
     case Box:
         // not yet supported
         break;
+    case Trap:
+        return Pulse::Ptr_t(new TrapezoidalPulse(delay_cycles, cep, intensity, frequency, numCycles, ellipticity, polarization, poynting_vector));
+        break;
     
     default:
         // LogError
@@ -64,19 +67,95 @@ Vec3 Sin2Pulse::operator() (double t) const {
 Vec3 Sin2Pulse::A(double t) const {     // A(t)
     if (t < delay) return Vec3{0};
 
-    double T = t-delay+cep;
+    double T = t-delay;
     double Env = -E0*sin(Pi*T/duration)*sin(Pi*T/duration)/frequency;
-    Vec3 p = sin(frequency*T)*polarization_vector - cos(frequency*T)*minor_polarization_vector;
+    Vec3 p = sin(frequency*T)*polarization_vector - cos(frequency*T + cep)*minor_polarization_vector;
     return Env*p;
 }
 
 Vec3 Sin2Pulse::E(double t) const {              // E=-dA/dt
     if (t < delay) return Vec3{0};
 
-    double T = t-delay+cep;
+    double T = t-delay;
     // product rule
     double Env1 = E0*sin(Pi*T/duration)*sin(Pi*T/duration);                             // dont diff. env
     double Env2 = 2.*Pi*E0*sin(Pi*T/duration)*cos(Pi*T/duration)/frequency/duration;    // do diff. env
+
+    Vec3 p1 = cos(frequency*T + cep)*polarization_vector + sin(frequency*T + cep)*minor_polarization_vector;       // do diff. carrier wave
+    Vec3 p2 = sin(frequency*T + cep)*polarization_vector - cos(frequency*T + cep)*minor_polarization_vector;                           // dont
+
+    return Env1*p1 + Env2*p2;
+
+}
+
+
+
+
+
+Vec3 TrapezoidalPulse::operator() (double t) const {
+    return A(t);
+}
+Vec3 TrapezoidalPulse::A(double t) const {     // A(t)
+    if (t < delay) return Vec3{0};
+
+    auto envelope = [=](double t) {
+        double t1 = cycles_up*2.*Pi/frequency;
+        double t2 = cycles_plateau*2.*Pi/frequency + t1;
+        double t3 = cycles_down*2.*Pi/frequency + t2;
+        if (t <= 0)
+            return 0.0;
+        else if (t <= t1)
+            return t/t1;
+        else if (t <= t2)
+            return 1.0;
+        else if (t <= t3)
+            return (t3-t) / (t3-t2);
+        return 0.0;
+    };
+
+    double T = t-delay+cep;
+    double Env = -E0*envelope(T)/frequency;
+    Vec3 p = sin(frequency*T)*polarization_vector - cos(frequency*T)*minor_polarization_vector;
+    return Env*p;
+}
+
+Vec3 TrapezoidalPulse::E(double t) const {              // E=-dA/dt
+    if (t < delay) return Vec3{0};
+
+    auto envelope = [=](double t) {
+        double t1 = cycles_up*2.*Pi/frequency;
+        double t2 = cycles_plateau*2.*Pi/frequency + t1;
+        double t3 = cycles_down*2.*Pi/frequency + t2;
+        if (t <= 0)
+            return 0.0;
+        else if (t <= t1)
+            return t/t1;
+        else if (t <= t2)
+            return 1.0;
+        else if (t <= t3)
+            return (t3-t) / (t3-t2);
+        return 0.0;
+    };
+    auto denvelope = [=](double t) {
+        double t1 = cycles_up*2.*Pi/frequency;
+        double t2 = cycles_plateau*2.*Pi/frequency + t1;
+        double t3 = cycles_down*2.*Pi/frequency + t2;
+        if (t <= 0)
+            return 0.0;
+        else if (t <= t1)
+            return 1./t1;
+        else if (t <= t2)
+            return 0.0;
+        else if (t <= t3)
+            return -1. / (t3-t2);
+        return 0.0;
+    };
+
+
+    double T = t-delay+cep;
+    // product rule
+    double Env1 = E0*envelope(T);                             // dont diff. env
+    double Env2 = E0*denvelope(T)/frequency;    // do diff. env
 
     Vec3 p1 = cos(frequency*T)*polarization_vector + sin(frequency*T)*minor_polarization_vector;       // do diff. carrier wave
     Vec3 p2 = sin(frequency*T)*polarization_vector - cos(frequency*T)*minor_polarization_vector;                           // dont
