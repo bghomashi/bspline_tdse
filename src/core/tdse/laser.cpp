@@ -3,20 +3,22 @@
 #include "core/utility/logger.h"
 #include <sstream>
 
-Pulse::Pulse() : period(0), delay(0), numCycles(0), E0(0), duration(0), frequency(0), intensity(0), ellipticity(0), cep(0),
+Pulse::Pulse() : period(0), delay(0), num_cycles(0), cycles_up(0), cycles_down(0), cycles_plateau(0), E0(0), duration(0), frequency(0), intensity(0), ellipticity(0), cep(0),
 polarization_vector(), poynting_vector(), minor_polarization_vector()
 {}
-Pulse::Pulse(double delay_cycles, double cep, double intensity, 
-             double frequency, int numCycles, 
+Pulse::Pulse(double delay_cycles, double cep, double intensity, double frequency, 
+             double num_cycles, double cycles_up, double cycles_down,
              double ellipticity,
              const Vec3& polarization,
              const Vec3& poynting_vector) : 
-    numCycles(numCycles), cep(cep*2.*Pi), frequency(frequency), 
+    num_cycles(num_cycles), cycles_up(cycles_up), 
+    cycles_down(cycles_down), cycles_plateau(num_cycles - cycles_up - cycles_down),
+    cep(cep*2.*Pi), frequency(frequency), 
     intensity(intensity),
     E0(std::sqrt(intensity / 3.51e16)), 
     period(2.*Pi/frequency),
     delay(period*delay_cycles),
-    duration(numCycles*period),
+    duration(num_cycles*period),
     ellipticity(ellipticity),
     polarization_vector(normal(polarization)/std::sqrt(1.+ellipticity*ellipticity)),
     poynting_vector(normal(poynting_vector)),
@@ -29,13 +31,16 @@ Pulse::Pulse(double delay_cycles, double cep, double intensity,
         ss << "Poynting = " << poynting_vector.x << ", " << poynting_vector.y << ", " << poynting_vector.z << std::endl;
         LOG_INFO(ss.str()); ss.str("");
         ss << "MinorPolarization = " << minor_polarization_vector.x << ", " << minor_polarization_vector.y << ", " << minor_polarization_vector.z << std::endl;
-        LOG_INFO(ss.str());
+        LOG_INFO(ss.str()); ss.str("");
+        ss << "Intensity = " << intensity << " W/cm^2, E0 = " << E0  << "au" << std::endl;
+        LOG_INFO(ss.str()); ss.str("");
     }
     
 Pulse::Ptr_t Pulse::Create(Envelope env, 
                            double delay_cycles, double cep,
                            double intensity, 
-                           double frequency, int numCycles, 
+                           double frequency, double num_cycles, 
+                           double cycles_up, double cycles_down,
                            double ellipticity,
                            const Vec3& polarization,
                            const Vec3& poynting_vector) {
@@ -45,13 +50,13 @@ Pulse::Ptr_t Pulse::Create(Envelope env,
         // not yet supported
         break;
     case Sin2:
-        return Pulse::Ptr_t(new Sin2Pulse(delay_cycles, cep, intensity, frequency, numCycles, ellipticity, polarization, poynting_vector));
+        return Pulse::Ptr_t(new Sin2Pulse(delay_cycles, cep, intensity, frequency, num_cycles, cycles_up, cycles_down, ellipticity, polarization, poynting_vector));
         break;
     case Box:
         // not yet supported
         break;
     case Trap:
-        return Pulse::Ptr_t(new TrapezoidalPulse(delay_cycles, cep, intensity, frequency, numCycles, ellipticity, polarization, poynting_vector));
+        return Pulse::Ptr_t(new TrapezoidalPulse(delay_cycles, cep, intensity, frequency, num_cycles, cycles_up, cycles_down, ellipticity, polarization, poynting_vector));
         break;
     
     default:
@@ -67,19 +72,73 @@ Vec3 Sin2Pulse::operator() (double t) const {
 Vec3 Sin2Pulse::A(double t) const {     // A(t)
     if (t < delay) return Vec3{0};
 
+    auto envelope = [=](double t) {
+        double t1 = cycles_up*2.*Pi/frequency;
+        double t2 = cycles_plateau*2.*Pi/frequency + t1;
+        double t3 = cycles_down*2.*Pi/frequency + t2;
+        if (t <= 0)                                     // before ramp up
+            return 0.0;
+        else if (t <= t1)                               // ramp up
+            return sin(frequency*t/(4.*cycles_up))*sin(frequency*t/(4.*cycles_up));
+        else if (t <= t2)                               // plateau
+            return 1.0;
+        else if (t <= t3)                               // ramp down
+            return sin(frequency*t/(4.*cycles_down) - 0.5*Pi*num_cycles/cycles_down)*sin(frequency*t/(4.*cycles_down) - 0.5*Pi*num_cycles/cycles_down);
+        return 0.0;                                     // after ramp down
+    };
+
+
     double T = t-delay;
-    double Env = -E0*sin(Pi*T/duration)*sin(Pi*T/duration)/frequency;
+    double Env = -E0*envelope(T)/frequency;
     Vec3 p = sin(frequency*T+ cep)*polarization_vector - cos(frequency*T + cep)*minor_polarization_vector;
+    
     return Env*p;
 }
 
 Vec3 Sin2Pulse::E(double t) const {              // E=-dA/dt
     if (t < delay) return Vec3{0};
 
+
+
+    auto envelope = [=](double t) {
+        double t1 = cycles_up*2.*Pi/frequency;
+        double t2 = cycles_plateau*2.*Pi/frequency + t1;
+        double t3 = cycles_down*2.*Pi/frequency + t2;
+        if (t <= 0)                                     // before ramp up
+            return 0.0;
+        else if (t <= t1)                               // ramp up
+            return sin(frequency*t/(4.*cycles_up))*sin(frequency*t/(4.*cycles_up));
+        else if (t <= t2)                               // plateau
+            return 1.0;
+        else if (t <= t3)                               // ramp down
+            return sin(frequency*t/(4.*cycles_down) - 0.5*Pi*num_cycles/cycles_down)*sin(frequency*t/(4.*cycles_down) - 0.5*Pi*num_cycles/cycles_down);
+        return 0.0;                                     // after ramp down
+    };
+
+    auto denvelope = [=](double t) {
+        double t1 = cycles_up*2.*Pi/frequency;
+        double t2 = cycles_plateau*2.*Pi/frequency + t1;
+        double t3 = cycles_down*2.*Pi/frequency + t2;
+        
+        if (t <= 0)                                     // before ramp up
+            return 0.0;
+        else if (t <= t1)                               // ramp up
+            return 2.*frequency/(4.*cycles_up)*
+                    sin(frequency*t/(4.*cycles_up))*    
+                    cos(frequency*t/(4.*cycles_up));
+        else if (t <= t2)                               // plateau
+            return 0.0;
+        else if (t <= t3)                               // ramp down
+            return  2.*frequency/(4.*cycles_down)*
+                    sin(frequency*t/(4.*cycles_down) - 0.5*Pi*num_cycles/cycles_down)*
+                    cos(frequency*t/(4.*cycles_down) - 0.5*Pi*num_cycles/cycles_down);
+        return 0.0;          
+    };
+
     double T = t-delay;
     // product rule
-    double Env1 = E0*sin(Pi*T/duration)*sin(Pi*T/duration);                             // dont diff. env
-    double Env2 = 2.*Pi*E0*sin(Pi*T/duration)*cos(Pi*T/duration)/frequency/duration;    // do diff. env
+    double Env1 = E0*envelope(T);                             // dont diff. env
+    double Env2 = E0*denvelope(T)/frequency;                  // do diff. env
 
     Vec3 p1 = cos(frequency*T + cep)*polarization_vector + sin(frequency*T + cep)*minor_polarization_vector;       // do diff. carrier wave
     Vec3 p2 = sin(frequency*T + cep)*polarization_vector - cos(frequency*T + cep)*minor_polarization_vector;                           // dont

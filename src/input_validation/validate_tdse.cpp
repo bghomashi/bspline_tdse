@@ -122,6 +122,8 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
     for (auto& pulse : lasers) {
         double frequency;
         double num_cycles = pulse["num_cycles"];
+        double cycles_up = 0.5*num_cycles;
+        double cycles_down = 0.5*num_cycles;
         double cycles_delay = pulse["cycles_delay"];
         double intensity = pulse["intensity"];
         double cep = pulse["cep"];
@@ -146,13 +148,17 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
             frequency = LnmToEnergy/pulse["wavelength"].get<double>();   // not sure why "get..." is needed here
         if (pulse.contains("energy"))
             frequency = pulse["energy"];
+        if (pulse.contains("cycles_up"))
+            cycles_up = pulse["cycles_up"].get<double>();
+        if (pulse.contains("cycles_down"))
+            cycles_down = pulse["cycles_down"].get<double>();
 
 
         if (pulse["envelope"] == "sin2") {
             tdse->AddPulse(Pulse::Create(
                 Pulse::Sin2, 
                 cycles_delay, cep, intensity, 
-                frequency, num_cycles, 
+                frequency, num_cycles, cycles_up, cycles_down, 
                 ellipticity, 
                 pol_vector, poy_vector));
         } else if (pulse["envelope"] == "trap" || 
@@ -160,16 +166,10 @@ bool ValidateTDSEInputFile(int argc, char **args, const std::string& filename, M
             auto p = Pulse::Create(
                 Pulse::Trap, 
                 cycles_delay, cep, intensity, 
-                frequency, num_cycles, 
+                frequency, num_cycles, cycles_up, cycles_down,
                 ellipticity, 
                 pol_vector, poy_vector);
-            auto trap = std::dynamic_pointer_cast<TrapezoidalPulse>(p);
-            if (pulse.contains("cycles_up"))
-                trap->cycles_up = pulse["cycles_up"].get<double>();
-            if (pulse.contains("cycles_down"))
-                trap->cycles_down = pulse["cycles_down"].get<double>();
-            trap->cycles_plateau = num_cycles - trap->cycles_down - trap->cycles_up;
-
+            
             tdse->AddPulse(p);
         }
     }
