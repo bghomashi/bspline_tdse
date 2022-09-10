@@ -94,9 +94,11 @@ void PopulationObservable::Shutdown() {
     else
         Log::info("\n");
     for (auto m : Ms) {
-        if (std::abs(m) >= _eigen_state_lmax)   // we do not have this state to project on to
+        Log::debug("m=" + std::to_string(m) + "\n");
+        if (std::abs(m) > _eigen_state_lmax)   // we do not have this state to project on to
             continue;                       // so skip
         for (int l = std::abs(m); l <= min_lmax; l++) {
+            Log::debug("l=" + std::to_string(l) + "\n");
             // get a subvector
             int start = RowFrom(m, Ms, mRows) + (l-std::abs(m))*_N;
             Vector ml_block = _psi->GetSubVector(start, start+_N);

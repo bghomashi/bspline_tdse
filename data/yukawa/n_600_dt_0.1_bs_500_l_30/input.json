@@ -73,7 +73,10 @@
         "nmax": 1,
         "lmax": 0,
         "tol": 1e-10,
-        "filename": "yukawa.h5"
+        "filename": "yukawa.h5",
+        "bound": {
+            "nmax": 1
+        }
     },
     "log_filename": "log.txt"
 }

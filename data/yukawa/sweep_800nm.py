@@ -48,6 +48,7 @@ for ip in range(len(params)):
   os.system("rm -r " + dir)
   os.system("mkdir " + dir)
   os.system("cp base_input.json " + dir + "input.json")
+  os.system("cp yukawa.h5 " + dir + "yukawa.h5")
   os.chdir(dir)                        # go to working directory
 
   # open the input file
