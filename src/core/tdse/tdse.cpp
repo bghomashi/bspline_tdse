@@ -204,7 +204,7 @@ void TDSE::Propagate() {
     // find total length of simulation by finding the latest nonzero pulse.
     _tmin = _tmax = 0; 
     for (auto& p : _pulses)
-        _tmax = std::min(_tmax, p->delay);
+        _tmin = std::min(_tmin, p->delay);
     for (auto& p : _pulses)
         _tmax = std::max(_tmax, p->delay + p->duration);
     _NT =  (_tmax - _tmin)/ _dt + 1;
